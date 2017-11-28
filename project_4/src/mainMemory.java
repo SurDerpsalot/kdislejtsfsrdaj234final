@@ -24,9 +24,8 @@ public class mainMemory {
      * @param fill is the number of characters added to main memory
      * @return the size in byte of the number of characters in mainmemory
      */
-    public int addToTheFill(int fill) {
-        blockFillSize += fill;
-        if (blockFillSize > blockSize) { 
+    public int addToTheFill(byte[] fillvalue) {
+        if (blockFillSize + fillvalue.length > blockSize) { 
             //if the number of bytes will exceed the main memory's size, it will grow
             byte[] newbuff = new byte[buff.length + blockSize];  
             ByteBuffer newInBuff = ByteBuffer.wrap(newbuff);
@@ -34,7 +33,9 @@ public class mainMemory {
             buff = newbuff;
             inBuff.limit(buff.length + blockSize);
         }
-        return blockFillSize; 
+        inBuff.put(fillvalue, blockFillSize, fillvalue.length);
+        blockFillSize += fillvalue.length;
+        return (blockFillSize - fillvalue.length); 
     }
 //    /**
 //     * pushes a block of data into this buffer space
@@ -88,6 +89,18 @@ public class mainMemory {
             return b.toString();
         }
         return "";
+    }
+    public String readEntry(int handle) {
+        if(inBuff.get(handle) == 0) {
+            return "";
+        }
+        else {
+            int size = inBuff.get(handle + 1) << 4;
+            size += inBuff.get(handle + 2);
+            byte[] ret = new byte[size];
+            inBuff.get(ret, handle + 3, ret.length);
+            return ret.toString();
+        }
     }
 
 }

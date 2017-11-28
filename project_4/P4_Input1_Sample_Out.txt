@@ -1,0 +1,2694 @@
+total songs: 0
+total artists: 0
+Printing 2-3 tree:
+|Blind Lemon Jefferson| does not exist in the artist database.
+|Blind Lemon Jefferson| does not exist in the artist database.
+|Blind Lemon Jefferson| is added to the Artist database.
+|Long Lonesome Blues| is added to the Song database.
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|),(0,24) is added to the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|),(24,0) is added to the tree.
+|Blind Lemon Jefferson| duplicates a record already in the Artist database.
+|Long Lonesome Blues| duplicates a record already in the Song database.
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|),(0,24) duplicates a record already in the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|),(24,0) duplicates a record already in the tree.
+|Bukka White| does not exist in the artist database.
+|Bukka White's first song| does not exist in the song database.
+|Long Lonesome Blues| 
+total songs: 1
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|) is deleted from the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|) is deleted from the tree.
+|Blind Lemon Jefferson| is deleted from the artist database.
+|Long Lonesome Blues| is deleted from the song database.
+total artists: 0
+|Bukka White| is added to the Artist database.
+|Bukka White's first song| is added to the Song database.
+The KVPair (|Bukka White|,|Bukka White's first song|),(46,60) is added to the tree.
+The KVPair (|Bukka White's first song|,|Bukka White|),(60,46) is added to the tree.
+Printing 2-3 tree:
+46 60 60 46
+|Charley Patton| is added to the Artist database.
+|Mississippi Boweavil Blues| is added to the Song database.
+The KVPair (|Charley Patton|,|Mississippi Boweavil Blues|),(87,104) is added to the tree.
+The KVPair (|Mississippi Boweavil Blues|,|Charley Patton|),(104,87) is added to the tree.
+The KVPair (|Bukka White|,|Mississippi Boweavil Blues|) was not found in the database.
+The KVPair (|Mississippi Boweavil Blues|,|Bukka White|) was not found in the database.
+The KVPair (|Charley Patton|,|Mississippi Boweavil Blues|) is deleted from the tree.
+The KVPair (|Mississippi Boweavil Blues|,|Charley Patton|) is deleted from the tree.
+|Charley Patton| is deleted from the Artist database.
+|Mississippi Boweavil Blues| is deleted from the Song database.
+|Sleepy John Estes| is added to the Artist database.
+|Street Car Blues| is added to the Song database.
+The KVPair (|Sleepy John Estes|,|Street Car Blues|),(133,153) is added to the tree.
+The KVPair (|Street Car Blues|,|Sleepy John Estes|),(153,133) is added to the tree.
+|Bukka White| duplicates a record already in the Artist database.
+|Bukka White's second song| is added to the Song database.
+The KVPair (|Bukka White|,|Bukka White's second song|),(46,172) is added to the tree.
+The KVPair (|Bukka White's second song|,|Bukka White|),(172,46) is added to the tree.
+|Another Bukka White| is added to the Artist database.
+|Bukka White's first song| duplicates a record already in the Song database.
+The KVPair (|Another Bukka White|,|Bukka White's first song|),(200,60) is added to the tree.
+The KVPair (|Bukka White's first song|,|Another Bukka White|),(60,200) is added to the tree.
+|Bukka White| duplicates a record already in the Artist database.
+|Bukka White's third song| is added to the Song database.
+The KVPair (|Bukka White|,|Bukka White's third song|),(46,222) is added to the tree.
+The KVPair (|Bukka White's third song|,|Bukka White|),(222,46) is added to the tree.
+|Another Bukka White| duplicates a record already in the Artist database.
+|Bukka White's second song| duplicates a record already in the Song database.
+The KVPair (|Another Bukka White|,|Bukka White's second song|),(200,172) is added to the tree.
+The KVPair (|Bukka White's second song|,|Another Bukka White|),(172,200) is added to the tree.
+|Bukka White| duplicates a record already in the Artist database.
+|Bukka White's fourth song| is added to the Song database.
+The KVPair (|Bukka White|,|Bukka White's fourth song|),(46,249) is added to the tree.
+The KVPair (|Bukka White's fourth song|,|Bukka White|),(249,46) is added to the tree.
+|Another Bukka White| duplicates a record already in the Artist database.
+|Bukka White's third song| duplicates a record already in the Song database.
+The KVPair (|Another Bukka White|,|Bukka White's third song|),(200,222) is added to the tree.
+The KVPair (|Bukka White's third song|,|Another Bukka White|),(222,200) is added to the tree.
+|Johnny Winter| is added to the Artist database.
+|Bukka White's first song| duplicates a record already in the Song database.
+The KVPair (|Johnny Winter|,|Bukka White's first song|),(277,60) is added to the tree.
+The KVPair (|Bukka White's first song|,|Johnny Winter|),(60,277) is added to the tree.
+|Bukka White's first song|
+|Bukka White's second song|
+|Bukka White's third song|
+Printing 2-3 tree:
+133 153 200 172
+  46 222
+    46 172
+      46 60
+      46 172
+    60 46 60 200
+      46 222 46 249
+      60 46
+      60 200 60 277
+  172 46
+    153 133
+      133 153
+      153 133
+    200 60
+      172 46 172 200
+      200 60
+  222 200
+    222 46
+      200 172 200 222
+      222 46
+    249 46
+      222 200
+      249 46 277 60
+The KVPair (|Sleepy John Estes|,|Street Car Blues|) is deleted from the tree.
+The KVPair (|Street Car Blues|,|Sleepy John Estes|) is deleted from the tree.
+|Sleepy John Estes| is deleted from the artist database.
+|Street Car Blues| is deleted from the song database.
+|Bukka White|
+|Another Bukka White|
+|Johnny Winter|
+|Bukka White's first song|
+|Bukka White's second song|
+|Bukka White's third song|
+|Bukka White's fourth song|
+The KVPair (|Bukka White|,|Bukka White's first song|) is deleted from the tree.
+The KVPair (|Bukka White's first song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's second song|) is deleted from the tree.
+The KVPair (|Bukka White's second song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's third song|) is deleted from the tree.
+The KVPair (|Bukka White's third song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's fourth song|) is deleted from the tree.
+The KVPair (|Bukka White's fourth song|,|Bukka White|) is deleted from the tree.
+|Bukka White| is deleted from the Artist database.
+|Bukka White's fourth song| is deleted from the Song database.
+|Another Bukka White| 
+|Johnny Winter| 
+total artists: 2
+|Bukka White's third song| 
+|Bukka White's first song| 
+|Bukka White's second song| 
+total songs: 3
+The KVPair (|Bukka White's first song|,|Another Bukka White|) is deleted from the tree.
+The KVPair (|Another Bukka White|,|Bukka White's first song|) is deleted from the tree.
+The KVPair (|Bukka White's first song|,|Johnny Winter|) is deleted from the tree.
+The KVPair (|Johnny Winter|,|Bukka White's first song|) is deleted from the tree.
+|Bukka White's first song| is deleted from the Song database.
+|Johnny Winter| is deleted from the Artist database.
+|Another Bukka White| 
+total artists: 1
+|Bukka White's third song| 
+|Bukka White's second song| 
+total songs: 2
+|Johnny Winter| is added to the Artist database.
+|Johnny Winter's first song| is added to the Song database.
+The KVPair (|Johnny Winter|,|Johnny Winter's first song|),(293,309) is added to the tree.
+The KVPair (|Johnny Winter's first song|,|Johnny Winter|),(309,293) is added to the tree.
+The KVPair (|Another Bukka White|,|Bukka White's second song|) is deleted from the tree.
+The KVPair (|Bukka White's second song|,|Another Bukka White|) is deleted from the tree.
+|Bukka White's second song| is deleted from the song database.
+|Another Bukka White| 
+|Johnny Winter| 
+total artists: 2
+|Bukka White's third song| 
+|Johnny Winter's first song| 
+total songs: 2
+|Another Johnny Winter| is added to the Artist database.
+|Johnny Winter's first song| duplicates a record already in the Song database.
+The KVPair (|Another Johnny Winter|,|Johnny Winter's first song|),(338,309) is added to the tree.
+The KVPair (|Johnny Winter's first song|,|Another Johnny Winter|),(309,338) is added to the tree.
+Printing 2-3 tree:
+293 309
+  222 200
+    200 222
+    222 200
+  309 293 309 338
+    293 309
+    309 293
+    309 338 338 309
+|Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's second song| is added to the Song database.
+The KVPair (|Johnny Winter|,|Johnny Winter's second song|),(293,362) is added to the tree.
+The KVPair (|Johnny Winter's second song|,|Johnny Winter|),(362,293) is added to the tree.
+|Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's third song| is added to the Song database.
+The KVPair (|Johnny Winter|,|Johnny Winter's third song|),(293,392) is added to the tree.
+The KVPair (|Johnny Winter's third song|,|Johnny Winter|),(392,293) is added to the tree.
+|Another Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's second song| duplicates a record already in the Song database.
+The KVPair (|Another Johnny Winter|,|Johnny Winter's second song|),(338,362) is added to the tree.
+The KVPair (|Johnny Winter's second song|,|Another Johnny Winter|),(362,338) is added to the tree.
+Printing 2-3 tree:
+309 338
+  293 309
+    222 200
+      200 222
+      222 200
+    293 362 309 293
+      293 309
+      293 362 293 392
+      309 293
+  362 293
+    338 309
+      309 338
+      338 309 338 362
+    362 338
+      362 293
+      362 338 392 293
+|Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's first song| duplicates a record already in the Song database.
+The KVPair (|Johnny Winter|,|Johnny Winter's first song|),(293,309) duplicates a record already in the tree.
+The KVPair (|Johnny Winter's first song|,|Johnny Winter|),(309,293) duplicates a record already in the tree.
+|Another Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's third song| duplicates a record already in the Song database.
+The KVPair (|Another Johnny Winter|,|Johnny Winter's third song|),(338,392) is added to the tree.
+The KVPair (|Johnny Winter's third song|,|Another Johnny Winter|),(392,338) is added to the tree.
+|Another Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's fourth song| is added to the Song database.
+The KVPair (|Another Johnny Winter|,|Johnny Winter's fourth song|),(338,421) is added to the tree.
+The KVPair (|Johnny Winter's fourth song|,|Another Johnny Winter|),(421,338) is added to the tree.
+Printing 2-3 tree:
+309 338 362 293
+  293 309
+    222 200
+      200 222
+      222 200
+    293 362 309 293
+      293 309
+      293 362 293 392
+      309 293
+  338 362
+    338 309
+      309 338
+      338 309
+    338 392
+      338 362
+      338 392 338 421
+  392 293
+    362 338
+      362 293
+      362 338
+    392 338
+      392 293
+      392 338 421 338
+|Another Johnny Winter| duplicates a record already in the Artist database.
+|Johnny Winter's fifth song| is added to the Song database.
+The KVPair (|Another Johnny Winter|,|Johnny Winter's fifth song|),(338,451) is added to the tree.
+The KVPair (|Johnny Winter's fifth song|,|Another Johnny Winter|),(451,338) is added to the tree.
+|Bukka White| does not exist in the artist database.
+|Johnny Winter's first song|
+|Johnny Winter's second song|
+|Johnny Winter's third song|
+|Johnny Winter's fourth song|
+|Johnny Winter's fifth song|
+Printing 2-3 tree:
+309 338 362 293
+  293 309
+    222 200
+      200 222
+      222 200
+    293 362 309 293
+      293 309
+      293 362 293 392
+      309 293
+  338 362
+    338 309
+      309 338
+      338 309
+    338 392 338 421
+      338 362
+      338 392
+      338 421 338 451
+  392 293
+    362 338
+      362 293
+      362 338
+    392 338 421 338
+      392 293
+      392 338
+      421 338 451 338
+|Bruce Rowland| is added to the Artist database.
+|Mountain Theme| is added to the Song database.
+The KVPair (|Bruce Rowland|,|Mountain Theme|),(480,496) is added to the tree.
+The KVPair (|Mountain Theme|,|Bruce Rowland|),(496,480) is added to the tree.
+|Thomas Dolby| is added to the Artist database.
+|She Blinded Me With Science| is added to the Song database.
+The KVPair (|Thomas Dolby|,|She Blinded Me With Science|),(513,528) is added to the tree.
+The KVPair (|She Blinded Me With Science|,|Thomas Dolby|),(528,513) is added to the tree.
+|Cheo Feliciano| is added to the Artist database.
+|Juguete| is added to the Song database.
+The KVPair (|Cheo Feliciano|,|Juguete|),(558,575) is added to the tree.
+The KVPair (|Juguete|,|Cheo Feliciano|),(575,558) is added to the tree.
+|Johnny Winter| duplicates a record already in the Artist database.
+|Be Careful With A Fool| is added to the Song database.
+The KVPair (|Johnny Winter|,|Be Careful With A Fool|),(293,585) is added to the tree.
+The KVPair (|Be Careful With A Fool|,|Johnny Winter|),(585,293) is added to the tree.
+Printing 2-3 tree:
+362 293
+  309 338
+    293 309 293 392
+      222 200
+        200 222
+        222 200
+      293 362
+        293 309
+        293 362
+      309 293
+        293 392 293 585
+        309 293
+    338 362
+      338 309
+        309 338
+        338 309
+      338 392 338 421
+        338 362
+        338 392
+        338 421 338 451
+  421 338 513 528
+    392 293
+      362 338
+        362 293
+        362 338
+      392 338
+        392 293
+        392 338
+    480 496
+      451 338
+        421 338
+        451 338
+      496 480
+        480 496
+        496 480
+    558 575
+      528 513
+        513 528
+        528 513
+      575 558
+        558 575
+        575 558 585 293
+|Bruce Rowland| duplicates a record already in the Artist database.
+|Mountain Theme| duplicates a record already in the Song database.
+The KVPair (|Bruce Rowland|,|Mountain Theme|),(480,496) duplicates a record already in the tree.
+The KVPair (|Mountain Theme|,|Bruce Rowland|),(496,480) duplicates a record already in the tree.
+|Thomas Dolby| duplicates a record already in the Artist database.
+|She Blinded Me With Science| duplicates a record already in the Song database.
+The KVPair (|Thomas Dolby|,|She Blinded Me With Science|),(513,528) duplicates a record already in the tree.
+The KVPair (|She Blinded Me With Science|,|Thomas Dolby|),(528,513) duplicates a record already in the tree.
+|Cheo Feliciano| duplicates a record already in the Artist database.
+|Juguete| duplicates a record already in the Song database.
+The KVPair (|Cheo Feliciano|,|Juguete|),(558,575) duplicates a record already in the tree.
+The KVPair (|Juguete|,|Cheo Feliciano|),(575,558) duplicates a record already in the tree.
+|Johnny Winter| duplicates a record already in the Artist database.
+|Be Careful With A Fool| duplicates a record already in the Song database.
+The KVPair (|Johnny Winter|,|Be Careful With A Fool|),(293,585) duplicates a record already in the tree.
+The KVPair (|Be Careful With A Fool|,|Johnny Winter|),(585,293) duplicates a record already in the tree.
+|Kings Of Leon| is added to the Artist database.
+|Wicker Chair| is added to the Song database.
+The KVPair (|Kings Of Leon|,|Wicker Chair|),(610,626) is added to the tree.
+The KVPair (|Wicker Chair|,|Kings Of Leon|),(626,610) is added to the tree.
+|Happy Mondays| is added to the Artist database.
+|Wrote For Luck (12 - Remastered version)| is added to the Song database.
+The KVPair (|Happy Mondays|,|Wrote For Luck (12 - Remastered version)|),(641,657) is added to the tree.
+The KVPair (|Wrote For Luck (12 - Remastered version)|,|Happy Mondays|),(657,641) is added to the tree.
+|Rita Chiarelli| is added to the Artist database.
+|Doggin' Around| is added to the Song database.
+The KVPair (|Rita Chiarelli|,|Doggin' Around|),(700,717) is added to the tree.
+The KVPair (|Doggin' Around|,|Rita Chiarelli|),(717,700) is added to the tree.
+|Tim Wilson| is added to the Artist database.
+|I Think My Wife Is Running Around On Me (Taco Hell)| is added to the Song database.
+The KVPair (|Tim Wilson|,|I Think My Wife Is Running Around On Me (Taco Hell)|),(734,747) is added to the tree.
+The KVPair (|I Think My Wife Is Running Around On Me (Taco Hell)|,|Tim Wilson|),(747,734) is added to the tree.
+|Ennio Morricone| is added to the Artist database.
+|Sporco Ma Distinto| is added to the Song database.
+The KVPair (|Ennio Morricone|,|Sporco Ma Distinto|),(801,819) is added to the tree.
+The KVPair (|Sporco Ma Distinto|,|Ennio Morricone|),(819,801) is added to the tree.
+|Tiny Bradshaw| is added to the Artist database.
+|Well Oh Well| is added to the Song database.
+The KVPair (|Tiny Bradshaw|,|Well Oh Well|),(840,856) is added to the tree.
+The KVPair (|Well Oh Well|,|Tiny Bradshaw|),(856,840) is added to the tree.
+|Cheo Feliciano| 
+|Rita Chiarelli| 
+|Happy Mondays| 
+|Another Johnny Winter| 
+|Thomas Dolby| 
+|Kings Of Leon| 
+|Another Bukka White| 
+|Tim Wilson| 
+|Bruce Rowland| 
+|Ennio Morricone| 
+|Johnny Winter| 
+|Tiny Bradshaw| 
+total artists: 12
+The KVPair (|Bruce Rowland|,|Mountain Theme|) is deleted from the tree.
+The KVPair (|Mountain Theme|,|Bruce Rowland|) is deleted from the tree.
+|Bruce Rowland| is deleted from the Artist database.
+|Mountain Theme| is deleted from the Song database.
+The KVPair (|Thomas Dolby|,|She Blinded Me With Science|) is deleted from the tree.
+The KVPair (|She Blinded Me With Science|,|Thomas Dolby|) is deleted from the tree.
+|Thomas Dolby| is deleted from the Artist database.
+|She Blinded Me With Science| is deleted from the Song database.
+|Mountain Theme| does not exist in the song database.
+|3 Doors Down| is added to the Artist database.
+|Sarah Yellin'| is added to the Song database.
+The KVPair (|3 Doors Down|,|Sarah Yellin'|),(871,886) is added to the tree.
+The KVPair (|Sarah Yellin'|,|3 Doors Down|),(886,871) is added to the tree.
+|Wrote For Luck (12 - Remastered version)| 
+|Bukka White's third song| 
+|Sarah Yellin'| 
+|Johnny Winter's second song| 
+|Well Oh Well| 
+|Johnny Winter's fifth song| 
+|Juguete| 
+|Doggin' Around| 
+|Johnny Winter's first song| 
+|Johnny Winter's third song| 
+|I Think My Wife Is Running Around On Me (Taco Hell)| 
+|Be Careful With A Fool| 
+|Sporco Ma Distinto| 
+|Wicker Chair| 
+|Johnny Winter's fourth song| 
+total songs: 15
+|Akon| is added to the Artist database.
+|Over The Edge| is added to the Song database.
+The KVPair (|Akon|,|Over The Edge|),(902,909) is added to the tree.
+The KVPair (|Over The Edge|,|Akon|),(909,902) is added to the tree.
+|Gerard Lenorman| is added to the Artist database.
+|Soldats Ne Tirez Pas| is added to the Song database.
+The KVPair (|Gerard Lenorman|,|Soldats Ne Tirez Pas|),(925,943) is added to the tree.
+The KVPair (|Soldats Ne Tirez Pas|,|Gerard Lenorman|),(943,925) is added to the tree.
+|All Time Low| is added to the Artist database.
+|Shameless| is added to the Song database.
+The KVPair (|All Time Low|,|Shameless|),(966,981) is added to the tree.
+The KVPair (|Shameless|,|All Time Low|),(981,966) is added to the tree.
+|Barenaked Ladies| is added to the Artist database.
+|This Is Where It Ends (Album Version)| is added to the Song database.
+The KVPair (|Barenaked Ladies|,|This Is Where It Ends (Album Version)|),(993,1012) is added to the tree.
+The KVPair (|This Is Where It Ends (Album Version)|,|Barenaked Ladies|),(1012,993) is added to the tree.
+|themselves| is added to the Artist database.
+|Oversleeping| is added to the Song database.
+The KVPair (|themselves|,|Oversleeping|),(1052,1065) is added to the tree.
+The KVPair (|Oversleeping|,|themselves|),(1065,1052) is added to the tree.
+|DJ Quik| is added to the Artist database.
+|Born and Raised In Compton| is added to the Song database.
+The KVPair (|DJ Quik|,|Born and Raised In Compton|),(1080,1090) is added to the tree.
+The KVPair (|Born and Raised In Compton|,|DJ Quik|),(1090,1080) is added to the tree.
+|Carl Smith| is added to the Artist database.
+|Hey Joe| is added to the Song database.
+The KVPair (|Carl Smith|,|Hey Joe|),(1119,1132) is added to the tree.
+The KVPair (|Hey Joe|,|Carl Smith|),(1132,1119) is added to the tree.
+|Jesus Jones| is added to the Artist database.
+|All The Answers| is added to the Song database.
+The KVPair (|Jesus Jones|,|All The Answers|),(1142,1156) is added to the tree.
+The KVPair (|All The Answers|,|Jesus Jones|),(1156,1142) is added to the tree.
+|Audio Adrenaline| is added to the Artist database.
+|My God (Audio Adrenaline Album Version)| is added to the Song database.
+The KVPair (|Audio Adrenaline|,|My God (Audio Adrenaline Album Version)|),(1174,1193) is added to the tree.
+The KVPair (|My God (Audio Adrenaline Album Version)|,|Audio Adrenaline|),(1193,1174) is added to the tree.
+|Chris Clark| is added to the Artist database.
+|If You Should Walk Away| is added to the Song database.
+The KVPair (|Chris Clark|,|If You Should Walk Away|),(1235,1249) is added to the tree.
+The KVPair (|If You Should Walk Away|,|Chris Clark|),(1249,1235) is added to the tree.
+|Loop Guru| is added to the Artist database.
+|The Mystery Epoch| is added to the Song database.
+The KVPair (|Loop Guru|,|The Mystery Epoch|),(1275,1287) is added to the tree.
+The KVPair (|The Mystery Epoch|,|Loop Guru|),(1287,1275) is added to the tree.
+|Chelsea| is added to the Artist database.
+|Decide| is added to the Song database.
+The KVPair (|Chelsea|,|Decide|),(1307,1317) is added to the tree.
+The KVPair (|Decide|,|Chelsea|),(1317,1307) is added to the tree.
+|Mr. Lif| is added to the Artist database.
+|For You| is added to the Song database.
+The KVPair (|Mr. Lif|,|For You|),(1326,1336) is added to the tree.
+The KVPair (|For You|,|Mr. Lif|),(1336,1326) is added to the tree.
+The KVPair (|All Time Low|,|Shameless|) is deleted from the tree.
+The KVPair (|Shameless|,|All Time Low|) is deleted from the tree.
+|All Time Low| is deleted from the Artist database.
+|Shameless| is deleted from the Song database.
+|Aeoliah| is added to the Artist database.
+|For Your Passion My Love| is added to the Song database.
+The KVPair (|Aeoliah|,|For Your Passion My Love|),(1346,1356) is added to the tree.
+The KVPair (|For Your Passion My Love|,|Aeoliah|),(1356,1346) is added to the tree.
+|Kyle Riabko| is added to the Artist database.
+|Doesn't Get Much Better| is added to the Song database.
+The KVPair (|Kyle Riabko|,|Doesn't Get Much Better|),(1383,1397) is added to the tree.
+The KVPair (|Doesn't Get Much Better|,|Kyle Riabko|),(1397,1383) is added to the tree.
+|Gary Moore| is added to the Artist database.
+|What Are We Here For| is added to the Song database.
+The KVPair (|Gary Moore|,|What Are We Here For|),(1423,1436) is added to the tree.
+The KVPair (|What Are We Here For|,|Gary Moore|),(1436,1423) is added to the tree.
+|Faithless| is added to the Artist database.
+|Six| is added to the Song database.
+The KVPair (|Faithless|,|Six|),(1459,1471) is added to the tree.
+The KVPair (|Six|,|Faithless|),(1471,1459) is added to the tree.
+The KVPair (|For You|,|Mr. Lif|) is deleted from the tree.
+The KVPair (|Mr. Lif|,|For You|) is deleted from the tree.
+|For You| is deleted from the Song database.
+|Mr. Lif| is deleted from the Artist database.
+The KVPair (|My God (Audio Adrenaline Album Version)|,|Audio Adrenaline|) is deleted from the tree.
+The KVPair (|Audio Adrenaline|,|My God (Audio Adrenaline Album Version)|) is deleted from the tree.
+|My God (Audio Adrenaline Album Version)| is deleted from the Song database.
+|Audio Adrenaline| is deleted from the Artist database.
+|Y&T| is added to the Artist database.
+|Black Tiger| is added to the Song database.
+The KVPair (|Y&T|,|Black Tiger|),(1477,1483) is added to the tree.
+The KVPair (|Black Tiger|,|Y&T|),(1483,1477) is added to the tree.
+|8Ball & MJG| is added to the Artist database.
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| is added to the Song database.
+The KVPair (|8Ball & MJG|,|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)|),(1497,1511) is added to the tree.
+The KVPair (|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)|,|8Ball & MJG|),(1511,1497) is added to the tree.
+|No Address| is added to the Artist database.
+|Pretty Girl (Amended Version)| is added to the Song database.
+The KVPair (|No Address|,|Pretty Girl (Amended Version)|),(1599,1612) is added to the tree.
+The KVPair (|Pretty Girl (Amended Version)|,|No Address|),(1612,1599) is added to the tree.
+|Green Day| is added to the Artist database.
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| is added to the Song database.
+The KVPair (|Green Day|,|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)|),(1644,1656) is added to the tree.
+The KVPair (|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)|,|Green Day|),(1656,1644) is added to the tree.
+|Dream Warriors| is added to the Artist database.
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| is added to the Song database.
+The KVPair (|Dream Warriors|,|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix|),(1718,1735) is added to the tree.
+The KVPair (|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix|,|Dream Warriors|),(1735,1718) is added to the tree.
+|Charlie Peacock| is added to the Artist database.
+|Down in the Lowlands| is added to the Song database.
+The KVPair (|Charlie Peacock|,|Down in the Lowlands|),(1796,1814) is added to the tree.
+The KVPair (|Down in the Lowlands|,|Charlie Peacock|),(1814,1796) is added to the tree.
+|Paula Santoro| is added to the Artist database.
+|The Girl From Ipanema (Garota De Ipanema)| is added to the Song database.
+The KVPair (|Paula Santoro|,|The Girl From Ipanema (Garota De Ipanema)|),(1837,1853) is added to the tree.
+The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|),(1853,1837) is added to the tree.
+|Sylver| is added to the Artist database.
+|Sympathy| is added to the Song database.
+The KVPair (|Sylver|,|Sympathy|),(1897,1906) is added to the tree.
+The KVPair (|Sympathy|,|Sylver|),(1906,1897) is added to the tree.
+|Funeral For A Friend| is added to the Artist database.
+|Your Revolution Is A Joke| is added to the Song database.
+The KVPair (|Funeral For A Friend|,|Your Revolution Is A Joke|),(1917,1940) is added to the tree.
+The KVPair (|Your Revolution Is A Joke|,|Funeral For A Friend|),(1940,1917) is added to the tree.
+|Dons| is added to the Artist database.
+|American Lovebite| is added to the Song database.
+The KVPair (|Dons|,|American Lovebite|),(1968,1975) is added to the tree.
+The KVPair (|American Lovebite|,|Dons|),(1975,1968) is added to the tree.
+|Over The Hill| does not exist in the song database.
+|Hot Chip| is added to the Artist database.
+|No| is added to the Song database.
+The KVPair (|Hot Chip|,|No|),(1995,2006) is added to the tree.
+The KVPair (|No|,|Hot Chip|),(2006,1995) is added to the tree.
+|Liam O'Flynn| is added to the Artist database.
+|Romeo's Exile| is added to the Song database.
+The KVPair (|Liam O'Flynn|,|Romeo's Exile|),(2011,2026) is added to the tree.
+The KVPair (|Romeo's Exile|,|Liam O'Flynn|),(2026,2011) is added to the tree.
+|Open Hand| is added to the Artist database.
+|11th Street| is added to the Song database.
+The KVPair (|Open Hand|,|11th Street|),(2042,2054) is added to the tree.
+The KVPair (|11th Street|,|Open Hand|),(2054,2042) is added to the tree.
+|Tilman Sillescu| is added to the Artist database.
+|Escape From The Underrealm| is added to the Song database.
+The KVPair (|Tilman Sillescu|,|Escape From The Underrealm|),(2068,2086) is added to the tree.
+The KVPair (|Escape From The Underrealm|,|Tilman Sillescu|),(2086,2068) is added to the tree.
+The KVPair (|Tilman Sillescu|,|Escape From The Underrealm|) is deleted from the tree.
+The KVPair (|Escape From The Underrealm|,|Tilman Sillescu|) is deleted from the tree.
+|Tilman Sillescu| is deleted from the Artist database.
+|Escape From The Underrealm| is deleted from the Song database.
+|Novaspace| is added to the Artist database.
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| is added to the Song database.
+The KVPair (|Novaspace|,|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))|),(2115,2127) is added to the tree.
+The KVPair (|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))|,|Novaspace|),(2127,2115) is added to the tree.
+|The Ruby Suns| is added to the Artist database.
+|Function Of The Sun| is added to the Song database.
+The KVPair (|The Ruby Suns|,|Function Of The Sun|),(2190,2206) is added to the tree.
+The KVPair (|Function Of The Sun|,|The Ruby Suns|),(2206,2190) is added to the tree.
+|Buddy Miles| is added to the Artist database.
+|Don't Keep Me Wondering| is added to the Song database.
+The KVPair (|Buddy Miles|,|Don't Keep Me Wondering|),(2228,2242) is added to the tree.
+The KVPair (|Don't Keep Me Wondering|,|Buddy Miles|),(2242,2228) is added to the tree.
+|Esperanza Spalding / Leo Genovese| is added to the Artist database.
+|If That's True| is added to the Song database.
+The KVPair (|Esperanza Spalding / Leo Genovese|,|If That's True|),(2268,2304) is added to the tree.
+The KVPair (|If That's True|,|Esperanza Spalding / Leo Genovese|),(2304,2268) is added to the tree.
+|Dave Eggar| is added to the Artist database.
+|Deep Blue| is added to the Song database.
+The KVPair (|Dave Eggar|,|Deep Blue|),(2321,2334) is added to the tree.
+The KVPair (|Deep Blue|,|Dave Eggar|),(2334,2321) is added to the tree.
+|Michael Gettel| is added to the Artist database.
+|Safe Passage| is added to the Song database.
+The KVPair (|Michael Gettel|,|Safe Passage|),(2346,2363) is added to the tree.
+The KVPair (|Safe Passage|,|Michael Gettel|),(2363,2346) is added to the tree.
+|John Cale| is added to the Artist database.
+|Movement 4 [from Kiss] (Album Version)| is added to the Song database.
+The KVPair (|John Cale|,|Movement 4 [from Kiss] (Album Version)|),(2378,2390) is added to the tree.
+The KVPair (|Movement 4 [from Kiss] (Album Version)|,|John Cale|),(2390,2378) is added to the tree.
+|Jean Corti| is added to the Artist database.
+|C'Etait Bien| is added to the Song database.
+The KVPair (|Jean Corti|,|C'Etait Bien|),(2431,2444) is added to the tree.
+The KVPair (|C'Etait Bien|,|Jean Corti|),(2444,2431) is added to the tree.
+|L7| is added to the Artist database.
+Song hash table size doubled.
+|Baggage| is added to the Song database.
+The KVPair (|L7|,|Baggage|),(2459,2464) is added to the tree.
+The KVPair (|Baggage|,|L7|),(2464,2459) is added to the tree.
+The KVPair (|C'Etait Bien|,|Jean Corti|) is deleted from the tree.
+The KVPair (|Jean Corti|,|C'Etait Bien|) is deleted from the tree.
+|C'Etait Bien| is deleted from the Song database.
+|Jean Corti| is deleted from the Artist database.
+The KVPair (|Baggage|,|L7|) is deleted from the tree.
+The KVPair (|L7|,|Baggage|) is deleted from the tree.
+|Baggage| is deleted from the Song database.
+|L7| is deleted from the Artist database.
+|L7| does not exist in the artist database.
+|John Cale| 
+|themselves| 
+|DJ Quik| 
+|Akon| 
+|Chelsea| 
+|Paula Santoro| 
+|Sylver| 
+|The Ruby Suns| 
+|Cheo Feliciano| 
+|Aeoliah| 
+|Gary Moore| 
+|8Ball & MJG| 
+|Rita Chiarelli| 
+|Dream Warriors| 
+|Green Day| 
+|Hot Chip| 
+|Loop Guru| 
+|Happy Mondays| 
+|3 Doors Down| 
+|Y&T| 
+|Michael Gettel| 
+|Gerard Lenorman| 
+|Another Johnny Winter| 
+|Carl Smith| 
+|Kings Of Leon| 
+|Another Bukka White| 
+|Novaspace| 
+|Chris Clark| 
+|No Address| 
+|Charlie Peacock| 
+|Open Hand| 
+|Barenaked Ladies| 
+|Tim Wilson| 
+|Funeral For A Friend| 
+|Liam O'Flynn| 
+|Faithless| 
+|Dons| 
+|Buddy Miles| 
+|Ennio Morricone| 
+|Esperanza Spalding / Leo Genovese| 
+|Johnny Winter| 
+|Jesus Jones| 
+|Kyle Riabko| 
+|Dave Eggar| 
+|Tiny Bradshaw| 
+total artists: 45
+|Bruce Rowland| is added to the Artist database.
+|Mountain Theme| is added to the Song database.
+The KVPair (|Bruce Rowland|,|Mountain Theme|),(2474,2490) is added to the tree.
+The KVPair (|Mountain Theme|,|Bruce Rowland|),(2490,2474) is added to the tree.
+|Thomas Dolby| is added to the Artist database.
+|She Blinded Me With Science| is added to the Song database.
+The KVPair (|Thomas Dolby|,|She Blinded Me With Science|),(2507,2522) is added to the tree.
+The KVPair (|She Blinded Me With Science|,|Thomas Dolby|),(2522,2507) is added to the tree.
+The KVPair (|Bruce Rowland|,|Mountain Theme|) is deleted from the tree.
+The KVPair (|Mountain Theme|,|Bruce Rowland|) is deleted from the tree.
+|Bruce Rowland| is deleted from the Artist database.
+|Mountain Theme| is deleted from the Song database.
+|Mountain Theme| does not exist in the song database.
+|Cheo Feliciano| duplicates a record already in the Artist database.
+|Juguete| duplicates a record already in the Song database.
+The KVPair (|Cheo Feliciano|,|Juguete|),(558,575) duplicates a record already in the tree.
+The KVPair (|Juguete|,|Cheo Feliciano|),(575,558) duplicates a record already in the tree.
+|Johnny Winter| duplicates a record already in the Artist database.
+|Be Careful With A Fool| duplicates a record already in the Song database.
+The KVPair (|Johnny Winter|,|Be Careful With A Fool|),(293,585) duplicates a record already in the tree.
+The KVPair (|Be Careful With A Fool|,|Johnny Winter|),(585,293) duplicates a record already in the tree.
+|Kings Of Leon| duplicates a record already in the Artist database.
+|Wicker Chair| duplicates a record already in the Song database.
+The KVPair (|Kings Of Leon|,|Wicker Chair|),(610,626) duplicates a record already in the tree.
+The KVPair (|Wicker Chair|,|Kings Of Leon|),(626,610) duplicates a record already in the tree.
+|Happy Mondays| duplicates a record already in the Artist database.
+|Wrote For Luck (12 - Remastered version)| duplicates a record already in the Song database.
+The KVPair (|Happy Mondays|,|Wrote For Luck (12 - Remastered version)|),(641,657) duplicates a record already in the tree.
+The KVPair (|Wrote For Luck (12 - Remastered version)|,|Happy Mondays|),(657,641) duplicates a record already in the tree.
+|Rita Chiarelli| duplicates a record already in the Artist database.
+|Doggin' Around| duplicates a record already in the Song database.
+The KVPair (|Rita Chiarelli|,|Doggin' Around|),(700,717) duplicates a record already in the tree.
+The KVPair (|Doggin' Around|,|Rita Chiarelli|),(717,700) duplicates a record already in the tree.
+|Tim Wilson| duplicates a record already in the Artist database.
+|I Think My Wife Is Running Around On Me (Taco Hell)| duplicates a record already in the Song database.
+The KVPair (|Tim Wilson|,|I Think My Wife Is Running Around On Me (Taco Hell)|),(734,747) duplicates a record already in the tree.
+The KVPair (|I Think My Wife Is Running Around On Me (Taco Hell)|,|Tim Wilson|),(747,734) duplicates a record already in the tree.
+|Ennio Morricone| duplicates a record already in the Artist database.
+|Sporco Ma Distinto| duplicates a record already in the Song database.
+The KVPair (|Ennio Morricone|,|Sporco Ma Distinto|),(801,819) duplicates a record already in the tree.
+The KVPair (|Sporco Ma Distinto|,|Ennio Morricone|),(819,801) duplicates a record already in the tree.
+|Tiny Bradshaw| duplicates a record already in the Artist database.
+|Well Oh Well| duplicates a record already in the Song database.
+The KVPair (|Tiny Bradshaw|,|Well Oh Well|),(840,856) duplicates a record already in the tree.
+The KVPair (|Well Oh Well|,|Tiny Bradshaw|),(856,840) duplicates a record already in the tree.
+|3 Doors Down| duplicates a record already in the Artist database.
+|Sarah Yellin'| duplicates a record already in the Song database.
+The KVPair (|3 Doors Down|,|Sarah Yellin'|),(871,886) duplicates a record already in the tree.
+The KVPair (|Sarah Yellin'|,|3 Doors Down|),(886,871) duplicates a record already in the tree.
+|Akon| duplicates a record already in the Artist database.
+|Over The Edge| duplicates a record already in the Song database.
+The KVPair (|Akon|,|Over The Edge|),(902,909) duplicates a record already in the tree.
+The KVPair (|Over The Edge|,|Akon|),(909,902) duplicates a record already in the tree.
+|akkkk| does not exist in the artist database.
+The KVPair (|Over The Edge|,|Akon|) is deleted from the tree.
+The KVPair (|Akon|,|Over The Edge|) is deleted from the tree.
+|Over The Edge| is deleted from the Song database.
+|Akon| is deleted from the Artist database.
+|Gerard Lenorman| duplicates a record already in the Artist database.
+|Soldats Ne Tirez Pas| duplicates a record already in the Song database.
+The KVPair (|Gerard Lenorman|,|Soldats Ne Tirez Pas|),(925,943) duplicates a record already in the tree.
+The KVPair (|Soldats Ne Tirez Pas|,|Gerard Lenorman|),(943,925) duplicates a record already in the tree.
+|All Time Low| is added to the Artist database.
+|Shameless| is added to the Song database.
+The KVPair (|All Time Low|,|Shameless|),(2552,2567) is added to the tree.
+The KVPair (|Shameless|,|All Time Low|),(2567,2552) is added to the tree.
+|Barenaked Ladies| duplicates a record already in the Artist database.
+|This Is Where It Ends (Album Version)| duplicates a record already in the Song database.
+The KVPair (|Barenaked Ladies|,|This Is Where It Ends (Album Version)|),(993,1012) duplicates a record already in the tree.
+The KVPair (|This Is Where It Ends (Album Version)|,|Barenaked Ladies|),(1012,993) duplicates a record already in the tree.
+|themselves| duplicates a record already in the Artist database.
+|Oversleeping| duplicates a record already in the Song database.
+The KVPair (|themselves|,|Oversleeping|),(1052,1065) duplicates a record already in the tree.
+The KVPair (|Oversleeping|,|themselves|),(1065,1052) duplicates a record already in the tree.
+|DJ Quik| duplicates a record already in the Artist database.
+|Born and Raised In Compton| duplicates a record already in the Song database.
+The KVPair (|DJ Quik|,|Born and Raised In Compton|),(1080,1090) duplicates a record already in the tree.
+The KVPair (|Born and Raised In Compton|,|DJ Quik|),(1090,1080) duplicates a record already in the tree.
+|Carl Smith| duplicates a record already in the Artist database.
+|Hey Joe| duplicates a record already in the Song database.
+The KVPair (|Carl Smith|,|Hey Joe|),(1119,1132) duplicates a record already in the tree.
+The KVPair (|Hey Joe|,|Carl Smith|),(1132,1119) duplicates a record already in the tree.
+|Jesus Jones| duplicates a record already in the Artist database.
+|All The Answers| duplicates a record already in the Song database.
+The KVPair (|Jesus Jones|,|All The Answers|),(1142,1156) duplicates a record already in the tree.
+The KVPair (|All The Answers|,|Jesus Jones|),(1156,1142) duplicates a record already in the tree.
+|Audio Adrenaline| is added to the Artist database.
+|My God (Audio Adrenaline Album Version)| is added to the Song database.
+The KVPair (|Audio Adrenaline|,|My God (Audio Adrenaline Album Version)|),(2579,2598) is added to the tree.
+The KVPair (|My God (Audio Adrenaline Album Version)|,|Audio Adrenaline|),(2598,2579) is added to the tree.
+|Chris Clark| duplicates a record already in the Artist database.
+|If You Should Walk Away| duplicates a record already in the Song database.
+The KVPair (|Chris Clark|,|If You Should Walk Away|),(1235,1249) duplicates a record already in the tree.
+The KVPair (|If You Should Walk Away|,|Chris Clark|),(1249,1235) duplicates a record already in the tree.
+|Loop Guru| duplicates a record already in the Artist database.
+|The Mystery Epoch| duplicates a record already in the Song database.
+The KVPair (|Loop Guru|,|The Mystery Epoch|),(1275,1287) duplicates a record already in the tree.
+The KVPair (|The Mystery Epoch|,|Loop Guru|),(1287,1275) duplicates a record already in the tree.
+|Chelsea| duplicates a record already in the Artist database.
+|Decide| duplicates a record already in the Song database.
+The KVPair (|Chelsea|,|Decide|),(1307,1317) duplicates a record already in the tree.
+The KVPair (|Decide|,|Chelsea|),(1317,1307) duplicates a record already in the tree.
+The KVPair (|Kyle Riabko|,|Doesn't Get Much Better|) is deleted from the tree.
+The KVPair (|Doesn't Get Much Better|,|Kyle Riabko|) is deleted from the tree.
+|Kyle Riabko| is deleted from the Artist database.
+|Doesn't Get Much Better| is deleted from the Song database.
+The KVPair (|Carl Smith|,|Hey Joe|) is deleted from the tree.
+The KVPair (|Hey Joe|,|Carl Smith|) is deleted from the tree.
+|Carl Smith| is deleted from the Artist database.
+|Hey Joe| is deleted from the Song database.
+The KVPair (|Jesus Jones|,|All The Answers|) is deleted from the tree.
+The KVPair (|All The Answers|,|Jesus Jones|) is deleted from the tree.
+|Jesus Jones| is deleted from the Artist database.
+|All The Answers| is deleted from the Song database.
+The KVPair (|Loop Guru|,|The Mystery Epoch|) is deleted from the tree.
+The KVPair (|The Mystery Epoch|,|Loop Guru|) is deleted from the tree.
+|Loop Guru| is deleted from the Artist database.
+|The Mystery Epoch| is deleted from the Song database.
+The KVPair (|Sylver|,|Sympathy|) is deleted from the tree.
+The KVPair (|Sympathy|,|Sylver|) is deleted from the tree.
+|Sylver| is deleted from the Artist database.
+|Sympathy| is deleted from the Song database.
+The KVPair (|Dons|,|American Lovebite|) is deleted from the tree.
+The KVPair (|American Lovebite|,|Dons|) is deleted from the tree.
+|Dons| is deleted from the Artist database.
+|American Lovebite| is deleted from the Song database.
+|Dons| does not exist in the artist database.
+|Dons| does not exist in the artist database.
+|Dons| does not exist in the artist database.
+|John Cale| 
+|All Time Low| 
+|themselves| 
+|DJ Quik| 
+|Chelsea| 
+|Paula Santoro| 
+|The Ruby Suns| 
+|Cheo Feliciano| 
+|Aeoliah| 
+|Gary Moore| 
+|8Ball & MJG| 
+|Rita Chiarelli| 
+|Dream Warriors| 
+|Green Day| 
+|Hot Chip| 
+|Happy Mondays| 
+|3 Doors Down| 
+|Y&T| 
+|Michael Gettel| 
+|Gerard Lenorman| 
+|Another Johnny Winter| 
+|Thomas Dolby| 
+|Kings Of Leon| 
+|Another Bukka White| 
+|Novaspace| 
+|Chris Clark| 
+|No Address| 
+|Charlie Peacock| 
+|Open Hand| 
+|Barenaked Ladies| 
+|Tim Wilson| 
+|Funeral For A Friend| 
+|Liam O'Flynn| 
+|Faithless| 
+|Audio Adrenaline| 
+|Buddy Miles| 
+|Ennio Morricone| 
+|Esperanza Spalding / Leo Genovese| 
+|Johnny Winter| 
+|Dave Eggar| 
+|Tiny Bradshaw| 
+total artists: 41
+|For Your Passion My Love| 
+|Function Of The Sun| 
+|Sarah Yellin'| 
+|What Are We Here For| 
+|Decide| 
+|Movement 4 [from Kiss] (Album Version)| 
+|Well Oh Well| 
+|Johnny Winter's fifth song| 
+|She Blinded Me With Science| 
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 
+|Juguete| 
+|If You Should Walk Away| 
+|Deep Blue| 
+|This Is Where It Ends (Album Version)| 
+|11th Street| 
+|Johnny Winter's first song| 
+|My God (Audio Adrenaline Album Version)| 
+|I Think My Wife Is Running Around On Me (Taco Hell)| 
+|The Girl From Ipanema (Garota De Ipanema)| 
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 
+|Be Careful With A Fool| 
+|Romeo's Exile| 
+|Soldats Ne Tirez Pas| 
+|Six| 
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 
+|Wicker Chair| 
+|No| 
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 
+|Shameless| 
+|Wrote For Luck (12 - Remastered version)| 
+|Down in the Lowlands| 
+|Bukka White's third song| 
+|Safe Passage| 
+|Johnny Winter's second song| 
+|If That's True| 
+|Doggin' Around| 
+|Black Tiger| 
+|Johnny Winter's third song| 
+|Oversleeping| 
+|Sporco Ma Distinto| 
+|Born and Raised In Compton| 
+|Pretty Girl (Amended Version)| 
+|Don't Keep Me Wondering| 
+|Johnny Winter's fourth song| 
+|Your Revolution Is A Joke| 
+total songs: 45
+|Silverstein| is added to the Artist database.
+|Always And Never (Album Version)| is added to the Song database.
+The KVPair (|Silverstein|,|Always And Never (Album Version)|),(2640,2654) is added to the tree.
+The KVPair (|Always And Never (Album Version)|,|Silverstein|),(2654,2640) is added to the tree.
+|David Arkenstone| is added to the Artist database.
+|The Forgotten Lands| is added to the Song database.
+The KVPair (|David Arkenstone|,|The Forgotten Lands|),(2689,2708) is added to the tree.
+The KVPair (|The Forgotten Lands|,|David Arkenstone|),(2708,2689) is added to the tree.
+|Dead Kennedys| is added to the Artist database.
+|Kill the Poor| is added to the Song database.
+The KVPair (|Dead Kennedys|,|Kill the Poor|),(2730,2746) is added to the tree.
+The KVPair (|Kill the Poor|,|Dead Kennedys|),(2746,2730) is added to the tree.
+|Placebo| is added to the Artist database.
+|The Never-Ending Why| is added to the Song database.
+The KVPair (|Placebo|,|The Never-Ending Why|),(2762,2772) is added to the tree.
+The KVPair (|The Never-Ending Why|,|Placebo|),(2772,2762) is added to the tree.
+|R.L. Burnside| is added to the Artist database.
+|Over The Hill| is added to the Song database.
+The KVPair (|R.L. Burnside|,|Over The Hill|),(2795,2811) is added to the tree.
+The KVPair (|Over The Hill|,|R.L. Burnside|),(2811,2795) is added to the tree.
+|Liquid Stranger| is added to the Artist database.
+|Drop Sacrifice| is added to the Song database.
+The KVPair (|Liquid Stranger|,|Drop Sacrifice|),(2827,2845) is added to the tree.
+The KVPair (|Drop Sacrifice|,|Liquid Stranger|),(2845,2827) is added to the tree.
+|Mr. Lif| is added to the Artist database.
+|For You| is added to the Song database.
+The KVPair (|Mr. Lif|,|For You|),(2862,2872) is added to the tree.
+The KVPair (|For You|,|Mr. Lif|),(2872,2862) is added to the tree.
+|Aeoliah| duplicates a record already in the Artist database.
+|For Your Passion My Love| duplicates a record already in the Song database.
+The KVPair (|Aeoliah|,|For Your Passion My Love|),(1346,1356) duplicates a record already in the tree.
+The KVPair (|For Your Passion My Love|,|Aeoliah|),(1356,1346) duplicates a record already in the tree.
+|Kyle Riabko| is added to the Artist database.
+|Doesn't Get Much Better| is added to the Song database.
+The KVPair (|Kyle Riabko|,|Doesn't Get Much Better|),(2882,2896) is added to the tree.
+The KVPair (|Doesn't Get Much Better|,|Kyle Riabko|),(2896,2882) is added to the tree.
+|Gary Moore| duplicates a record already in the Artist database.
+|What Are We Here For| duplicates a record already in the Song database.
+The KVPair (|Gary Moore|,|What Are We Here For|),(1423,1436) duplicates a record already in the tree.
+The KVPair (|What Are We Here For|,|Gary Moore|),(1436,1423) duplicates a record already in the tree.
+|Faithless| duplicates a record already in the Artist database.
+|Six| duplicates a record already in the Song database.
+The KVPair (|Faithless|,|Six|),(1459,1471) duplicates a record already in the tree.
+The KVPair (|Six|,|Faithless|),(1471,1459) duplicates a record already in the tree.
+|8Ball & MJG| duplicates a record already in the Artist database.
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| duplicates a record already in the Song database.
+The KVPair (|8Ball & MJG|,|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)|),(1497,1511) duplicates a record already in the tree.
+The KVPair (|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)|,|8Ball & MJG|),(1511,1497) duplicates a record already in the tree.
+|No Address| duplicates a record already in the Artist database.
+|Pretty Girl (Amended Version)| duplicates a record already in the Song database.
+The KVPair (|No Address|,|Pretty Girl (Amended Version)|),(1599,1612) duplicates a record already in the tree.
+The KVPair (|Pretty Girl (Amended Version)|,|No Address|),(1612,1599) duplicates a record already in the tree.
+|Green Day| duplicates a record already in the Artist database.
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| duplicates a record already in the Song database.
+The KVPair (|Green Day|,|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)|),(1644,1656) duplicates a record already in the tree.
+The KVPair (|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)|,|Green Day|),(1656,1644) duplicates a record already in the tree.
+|Dream Warriors| duplicates a record already in the Artist database.
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| duplicates a record already in the Song database.
+The KVPair (|Dream Warriors|,|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix|),(1718,1735) duplicates a record already in the tree.
+The KVPair (|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix|,|Dream Warriors|),(1735,1718) duplicates a record already in the tree.
+|Charlie Peacock| duplicates a record already in the Artist database.
+|Down in the Lowlands| duplicates a record already in the Song database.
+The KVPair (|Charlie Peacock|,|Down in the Lowlands|),(1796,1814) duplicates a record already in the tree.
+The KVPair (|Down in the Lowlands|,|Charlie Peacock|),(1814,1796) duplicates a record already in the tree.
+|Paula Santoro| duplicates a record already in the Artist database.
+|The Girl From Ipanema (Garota De Ipanema)| duplicates a record already in the Song database.
+The KVPair (|Paula Santoro|,|The Girl From Ipanema (Garota De Ipanema)|),(1837,1853) duplicates a record already in the tree.
+The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|),(1853,1837) duplicates a record already in the tree.
+|Sylver| is added to the Artist database.
+|Sympathy| is added to the Song database.
+The KVPair (|Sylver|,|Sympathy|),(2922,2931) is added to the tree.
+The KVPair (|Sympathy|,|Sylver|),(2931,2922) is added to the tree.
+The KVPair (|Kill the Poor|,|Dead Kennedys|) is deleted from the tree.
+The KVPair (|Dead Kennedys|,|Kill the Poor|) is deleted from the tree.
+|Kill the Poor| is deleted from the Song database.
+|Dead Kennedys| is deleted from the Artist database.
+The KVPair (|The Never-Ending Why|,|Placebo|) is deleted from the tree.
+The KVPair (|Placebo|,|The Never-Ending Why|) is deleted from the tree.
+|The Never-Ending Why| is deleted from the Song database.
+|Placebo| is deleted from the Artist database.
+The KVPair (|Over The Hill|,|R.L. Burnside|) is deleted from the tree.
+The KVPair (|R.L. Burnside|,|Over The Hill|) is deleted from the tree.
+|Over The Hill| is deleted from the Song database.
+|R.L. Burnside| is deleted from the Artist database.
+The KVPair (|Drop Sacrifice|,|Liquid Stranger|) is deleted from the tree.
+The KVPair (|Liquid Stranger|,|Drop Sacrifice|) is deleted from the tree.
+|Drop Sacrifice| is deleted from the Song database.
+|Liquid Stranger| is deleted from the Artist database.
+|Sylver| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+The KVPair (|The Girl From Ipanema (Garota De Ipanema)|,|Paula Santoro|) is deleted from the tree.
+The KVPair (|Paula Santoro|,|The Girl From Ipanema (Garota De Ipanema)|) is deleted from the tree.
+|The Girl From Ipanema (Garota De Ipanema)| is deleted from the Song database.
+|Paula Santoro| is deleted from the Artist database.
+|John Cale| 
+|All Time Low| 
+|themselves| 
+|DJ Quik| 
+|Chelsea| 
+|Sylver| 
+|The Ruby Suns| 
+|Cheo Feliciano| 
+|Aeoliah| 
+|Gary Moore| 
+|8Ball & MJG| 
+|Rita Chiarelli| 
+|Dream Warriors| 
+|Green Day| 
+|Hot Chip| 
+|Happy Mondays| 
+|3 Doors Down| 
+|Y&T| 
+|Michael Gettel| 
+|Gerard Lenorman| 
+|Another Johnny Winter| 
+|Thomas Dolby| 
+|David Arkenstone| 
+|Kings Of Leon| 
+|Another Bukka White| 
+|Novaspace| 
+|Chris Clark| 
+|No Address| 
+|Charlie Peacock| 
+|Open Hand| 
+|Barenaked Ladies| 
+|Silverstein| 
+|Tim Wilson| 
+|Funeral For A Friend| 
+|Mr. Lif| 
+|Liam O'Flynn| 
+|Faithless| 
+|Audio Adrenaline| 
+|Buddy Miles| 
+|Ennio Morricone| 
+|Esperanza Spalding / Leo Genovese| 
+|Johnny Winter| 
+|Kyle Riabko| 
+|Dave Eggar| 
+|Tiny Bradshaw| 
+total artists: 45
+|For Your Passion My Love| 
+|Function Of The Sun| 
+|Doesn't Get Much Better| 
+|Sarah Yellin'| 
+|What Are We Here For| 
+|Decide| 
+|Movement 4 [from Kiss] (Album Version)| 
+|Well Oh Well| 
+|Johnny Winter's fifth song| 
+|She Blinded Me With Science| 
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 
+|Juguete| 
+|If You Should Walk Away| 
+|Deep Blue| 
+|This Is Where It Ends (Album Version)| 
+|11th Street| 
+|Always And Never (Album Version)| 
+|Johnny Winter's first song| 
+|My God (Audio Adrenaline Album Version)| 
+|I Think My Wife Is Running Around On Me (Taco Hell)| 
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 
+|Be Careful With A Fool| 
+|Romeo's Exile| 
+|Soldats Ne Tirez Pas| 
+|Six| 
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 
+|Wicker Chair| 
+|No| 
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 
+|Shameless| 
+|Wrote For Luck (12 - Remastered version)| 
+|Down in the Lowlands| 
+|Bukka White's third song| 
+|Safe Passage| 
+|For You| 
+|Johnny Winter's second song| 
+|The Forgotten Lands| 
+|If That's True| 
+|Doggin' Around| 
+|Sympathy| 
+|Black Tiger| 
+|Johnny Winter's third song| 
+|Oversleeping| 
+|Sporco Ma Distinto| 
+|Born and Raised In Compton| 
+|Pretty Girl (Amended Version)| 
+|Don't Keep Me Wondering| 
+|Johnny Winter's fourth song| 
+|Your Revolution Is A Joke| 
+total songs: 49
+|Funeral For A Friend| duplicates a record already in the Artist database.
+|Your Revolution Is A Joke| duplicates a record already in the Song database.
+The KVPair (|Funeral For A Friend|,|Your Revolution Is A Joke|),(1917,1940) duplicates a record already in the tree.
+The KVPair (|Your Revolution Is A Joke|,|Funeral For A Friend|),(1940,1917) duplicates a record already in the tree.
+|Y&T| duplicates a record already in the Artist database.
+|Black Tiger| duplicates a record already in the Song database.
+The KVPair (|Y&T|,|Black Tiger|),(1477,1483) duplicates a record already in the tree.
+The KVPair (|Black Tiger|,|Y&T|),(1483,1477) duplicates a record already in the tree.
+|Dons| is added to the Artist database.
+|American Lovebite| is added to the Song database.
+The KVPair (|Dons|,|American Lovebite|),(2942,2949) is added to the tree.
+The KVPair (|American Lovebite|,|Dons|),(2949,2942) is added to the tree.
+|Hot Chip| duplicates a record already in the Artist database.
+|No| duplicates a record already in the Song database.
+The KVPair (|Hot Chip|,|No|),(1995,2006) duplicates a record already in the tree.
+The KVPair (|No|,|Hot Chip|),(2006,1995) duplicates a record already in the tree.
+|Sister Hazel| is added to the Artist database.
+|Cerilene| is added to the Song database.
+The KVPair (|Sister Hazel|,|Cerilene|),(2969,2984) is added to the tree.
+The KVPair (|Cerilene|,|Sister Hazel|),(2984,2969) is added to the tree.
+|Delirious| is added to the Artist database.
+|God You Are My God| is added to the Song database.
+The KVPair (|Delirious|,|God You Are My God|),(2995,3007) is added to the tree.
+The KVPair (|God You Are My God|,|Delirious|),(3007,2995) is added to the tree.
+|Winston McAnuff_ The Bazbaz Orchestra| is added to the Artist database.
+|Common sense| is added to the Song database.
+The KVPair (|Winston McAnuff_ The Bazbaz Orchestra|,|Common sense|),(3028,3068) is added to the tree.
+The KVPair (|Common sense|,|Winston McAnuff_ The Bazbaz Orchestra|),(3068,3028) is added to the tree.
+|Teenage Fanclub| is added to the Artist database.
+|The World'll Be OK| is added to the Song database.
+The KVPair (|Teenage Fanclub|,|The World'll Be OK|),(3083,3101) is added to the tree.
+The KVPair (|The World'll Be OK|,|Teenage Fanclub|),(3101,3083) is added to the tree.
+Artist hash table size doubled.
+|Samy Deluxe| is added to the Artist database.
+|Die Meisten| is added to the Song database.
+The KVPair (|Samy Deluxe|,|Die Meisten|),(3122,3136) is added to the tree.
+The KVPair (|Die Meisten|,|Samy Deluxe|),(3136,3122) is added to the tree.
+|James Horner| is added to the Artist database.
+|Good Friend| is added to the Song database.
+The KVPair (|James Horner|,|Good Friend|),(3150,3165) is added to the tree.
+The KVPair (|Good Friend|,|James Horner|),(3165,3150) is added to the tree.
+|Jennifer Lopez featuring Ja Rule| is added to the Artist database.
+|I'm Real| is added to the Song database.
+The KVPair (|Jennifer Lopez featuring Ja Rule|,|I'm Real|),(3179,3214) is added to the tree.
+The KVPair (|I'm Real|,|Jennifer Lopez featuring Ja Rule|),(3214,3179) is added to the tree.
+|The Presets| is added to the Artist database.
+|If I Know You| is added to the Song database.
+The KVPair (|The Presets|,|If I Know You|),(3225,3239) is added to the tree.
+The KVPair (|If I Know You|,|The Presets|),(3239,3225) is added to the tree.
+|Arturo Sandoval| is added to the Artist database.
+|Waheera| is added to the Song database.
+The KVPair (|Arturo Sandoval|,|Waheera|),(3255,3273) is added to the tree.
+The KVPair (|Waheera|,|Arturo Sandoval|),(3273,3255) is added to the tree.
+|Drowning Pool| is added to the Artist database.
+|Reborn (Explicit)| is added to the Song database.
+The KVPair (|Drowning Pool|,|Reborn (Explicit)|),(3283,3299) is added to the tree.
+The KVPair (|Reborn (Explicit)|,|Drowning Pool|),(3299,3283) is added to the tree.
+|Faith Hill & Tim McGraw| is added to the Artist database.
+|Let's Make Love (Album Version)| is added to the Song database.
+The KVPair (|Faith Hill & Tim McGraw|,|Let's Make Love (Album Version)|),(3319,3345) is added to the tree.
+The KVPair (|Let's Make Love (Album Version)|,|Faith Hill & Tim McGraw|),(3345,3319) is added to the tree.
+|Gene Autry| is added to the Artist database.
+|Frankie And Johnny| is added to the Song database.
+The KVPair (|Gene Autry|,|Frankie And Johnny|),(3379,3392) is added to the tree.
+The KVPair (|Frankie And Johnny|,|Gene Autry|),(3392,3379) is added to the tree.
+|Sergio Mendes / Black Eyed Peas| is added to the Artist database.
+|Mas Que Nada| is added to the Song database.
+The KVPair (|Sergio Mendes / Black Eyed Peas|,|Mas Que Nada|),(3413,3447) is added to the tree.
+The KVPair (|Mas Que Nada|,|Sergio Mendes / Black Eyed Peas|),(3447,3413) is added to the tree.
+|Kassav'| is added to the Artist database.
+|Loko| is added to the Song database.
+The KVPair (|Kassav'|,|Loko|),(3462,3472) is added to the tree.
+The KVPair (|Loko|,|Kassav'|),(3472,3462) is added to the tree.
+|Liam O'Flynn| duplicates a record already in the Artist database.
+|Romeo's Exile| duplicates a record already in the Song database.
+The KVPair (|Liam O'Flynn|,|Romeo's Exile|),(2011,2026) duplicates a record already in the tree.
+The KVPair (|Romeo's Exile|,|Liam O'Flynn|),(2026,2011) duplicates a record already in the tree.
+|Open Hand| duplicates a record already in the Artist database.
+|11th Street| duplicates a record already in the Song database.
+The KVPair (|Open Hand|,|11th Street|),(2042,2054) duplicates a record already in the tree.
+The KVPair (|11th Street|,|Open Hand|),(2054,2042) duplicates a record already in the tree.
+|Tilman Sillescu| is added to the Artist database.
+|Escape From The Underrealm| is added to the Song database.
+The KVPair (|Tilman Sillescu|,|Escape From The Underrealm|),(3479,3497) is added to the tree.
+The KVPair (|Escape From The Underrealm|,|Tilman Sillescu|),(3497,3479) is added to the tree.
+|Novaspace| duplicates a record already in the Artist database.
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| duplicates a record already in the Song database.
+The KVPair (|Novaspace|,|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))|),(2115,2127) duplicates a record already in the tree.
+The KVPair (|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))|,|Novaspace|),(2127,2115) duplicates a record already in the tree.
+|The Ruby Suns| duplicates a record already in the Artist database.
+|Function Of The Sun| duplicates a record already in the Song database.
+The KVPair (|The Ruby Suns|,|Function Of The Sun|),(2190,2206) duplicates a record already in the tree.
+The KVPair (|Function Of The Sun|,|The Ruby Suns|),(2206,2190) duplicates a record already in the tree.
+|Buddy Miles| duplicates a record already in the Artist database.
+|Don't Keep Me Wondering| duplicates a record already in the Song database.
+The KVPair (|Buddy Miles|,|Don't Keep Me Wondering|),(2228,2242) duplicates a record already in the tree.
+The KVPair (|Don't Keep Me Wondering|,|Buddy Miles|),(2242,2228) duplicates a record already in the tree.
+|Esperanza Spalding / Leo Genovese| duplicates a record already in the Artist database.
+|If That's True| duplicates a record already in the Song database.
+The KVPair (|Esperanza Spalding / Leo Genovese|,|If That's True|),(2268,2304) duplicates a record already in the tree.
+The KVPair (|If That's True|,|Esperanza Spalding / Leo Genovese|),(2304,2268) duplicates a record already in the tree.
+|Dave Eggar| duplicates a record already in the Artist database.
+|Deep Blue| duplicates a record already in the Song database.
+The KVPair (|Dave Eggar|,|Deep Blue|),(2321,2334) duplicates a record already in the tree.
+The KVPair (|Deep Blue|,|Dave Eggar|),(2334,2321) duplicates a record already in the tree.
+|Michael Gettel| duplicates a record already in the Artist database.
+|Safe Passage| duplicates a record already in the Song database.
+The KVPair (|Michael Gettel|,|Safe Passage|),(2346,2363) duplicates a record already in the tree.
+The KVPair (|Safe Passage|,|Michael Gettel|),(2363,2346) duplicates a record already in the tree.
+|John Cale| duplicates a record already in the Artist database.
+|Movement 4 [from Kiss] (Album Version)| duplicates a record already in the Song database.
+The KVPair (|John Cale|,|Movement 4 [from Kiss] (Album Version)|),(2378,2390) duplicates a record already in the tree.
+The KVPair (|Movement 4 [from Kiss] (Album Version)|,|John Cale|),(2390,2378) duplicates a record already in the tree.
+|Jean Corti| is added to the Artist database.
+|C'Etait Bien| is added to the Song database.
+The KVPair (|Jean Corti|,|C'Etait Bien|),(3526,3539) is added to the tree.
+The KVPair (|C'Etait Bien|,|Jean Corti|),(3539,3526) is added to the tree.
+|L7| is added to the Artist database.
+|Baggage| is added to the Song database.
+The KVPair (|L7|,|Baggage|),(3554,3559) is added to the tree.
+The KVPair (|Baggage|,|L7|),(3559,3554) is added to the tree.
+The KVPair (|Jean Corti|,|C'Etait Bien|) is deleted from the tree.
+The KVPair (|C'Etait Bien|,|Jean Corti|) is deleted from the tree.
+|Jean Corti| is deleted from the Artist database.
+|C'Etait Bien| is deleted from the Song database.
+|Jean Corti| does not exist in the artist database.
+|Richard Galliano| does not exist in the artist database.
+The KVPair (|Movement 4 [from Kiss] (Album Version)|,|John Cale|) is deleted from the tree.
+The KVPair (|John Cale|,|Movement 4 [from Kiss] (Album Version)|) is deleted from the tree.
+|Movement 4 [from Kiss] (Album Version)| is deleted from the Song database.
+|John Cale| is deleted from the Artist database.
+The KVPair (|If That's True|,|Esperanza Spalding / Leo Genovese|) is deleted from the tree.
+The KVPair (|Esperanza Spalding / Leo Genovese|,|If That's True|) is deleted from the tree.
+|If That's True| is deleted from the Song database.
+|Esperanza Spalding / Leo Genovese| is deleted from the Artist database.
+|Richard Galliano| is added to the Artist database.
+|Honey Fingers| is added to the Song database.
+The KVPair (|Richard Galliano|,|Honey Fingers|),(3569,3588) is added to the tree.
+The KVPair (|Honey Fingers|,|Richard Galliano|),(3588,3569) is added to the tree.
+|4Him| is added to the Artist database.
+|Strange Way To Save The World| is added to the Song database.
+The KVPair (|4Him|,|Strange Way To Save The World|),(3604,3611) is added to the tree.
+The KVPair (|Strange Way To Save The World|,|4Him|),(3611,3604) is added to the tree.
+|Winifred Phillips| is added to the Artist database.
+|Sporable| is added to the Song database.
+The KVPair (|Winifred Phillips|,|Sporable|),(3643,3663) is added to the tree.
+The KVPair (|Sporable|,|Winifred Phillips|),(3663,3643) is added to the tree.
+|kkkkk| does not exist in the song database.
+|kkkkk| does not exist in the song database.
+|kkkkk| does not exist in the song database.
+The KVPair (|Strange Way To Save The World|,|4Him|) is deleted from the tree.
+The KVPair (|4Him|,|Strange Way To Save The World|) is deleted from the tree.
+|Strange Way To Save The World| is deleted from the Song database.
+|4Him| is deleted from the Artist database.
+|Otis Spann| is added to the Artist database.
+|Can't Do Me No Good| is added to the Song database.
+The KVPair (|Otis Spann|,|Can't Do Me No Good|),(3674,3687) is added to the tree.
+The KVPair (|Can't Do Me No Good|,|Otis Spann|),(3687,3674) is added to the tree.
+|Dokken| is added to the Artist database.
+|Disease| is added to the Song database.
+The KVPair (|Dokken|,|Disease|),(3709,3718) is added to the tree.
+The KVPair (|Disease|,|Dokken|),(3718,3709) is added to the tree.
+|David Summers| is added to the Artist database.
+|2.000 Kilometros| is added to the Song database.
+The KVPair (|David Summers|,|2.000 Kilometros|),(3728,3744) is added to the tree.
+The KVPair (|2.000 Kilometros|,|David Summers|),(3744,3728) is added to the tree.
+|Love Jones| is added to the Artist database.
+|Matter Of Fact| is added to the Song database.
+The KVPair (|Love Jones|,|Matter Of Fact|),(3763,3776) is added to the tree.
+The KVPair (|Matter Of Fact|,|Love Jones|),(3776,3763) is added to the tree.
+|The Motors| is added to the Artist database.
+|Dancing The Night Away| is added to the Song database.
+The KVPair (|The Motors|,|Dancing The Night Away|),(3793,3806) is added to the tree.
+The KVPair (|Dancing The Night Away|,|The Motors|),(3806,3793) is added to the tree.
+|Junior Reid| is added to the Artist database.
+|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)| is added to the Song database.
+The KVPair (|Junior Reid|,|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)|),(3831,3845) is added to the tree.
+The KVPair (|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)|,|Junior Reid|),(3845,3831) is added to the tree.
+|Alexandre Desplat| is added to the Artist database.
+|Hidden Documents| is added to the Song database.
+The KVPair (|Alexandre Desplat|,|Hidden Documents|),(3887,3907) is added to the tree.
+The KVPair (|Hidden Documents|,|Alexandre Desplat|),(3907,3887) is added to the tree.
+The KVPair (|Love Jones|,|Matter Of Fact|) is deleted from the tree.
+The KVPair (|Matter Of Fact|,|Love Jones|) is deleted from the tree.
+|Love Jones| is deleted from the Artist database.
+|Matter Of Fact| is deleted from the Song database.
+The KVPair (|The Motors|,|Dancing The Night Away|) is deleted from the tree.
+The KVPair (|Dancing The Night Away|,|The Motors|) is deleted from the tree.
+|The Motors| is deleted from the Artist database.
+|Dancing The Night Away| is deleted from the Song database.
+The KVPair (|Hidden Documents|,|Alexandre Desplat|) is deleted from the tree.
+The KVPair (|Alexandre Desplat|,|Hidden Documents|) is deleted from the tree.
+|Hidden Documents| is deleted from the Song database.
+|Alexandre Desplat| is deleted from the Artist database.
+|Dancing The Night Away| does not exist in the song database.
+The KVPair (|Sergio Mendes / Black Eyed Peas|,|Mas Que Nada|) is deleted from the tree.
+The KVPair (|Mas Que Nada|,|Sergio Mendes / Black Eyed Peas|) is deleted from the tree.
+|Sergio Mendes / Black Eyed Peas| is deleted from the Artist database.
+|Mas Que Nada| is deleted from the Song database.
+The KVPair (|Dokken|,|Disease|) is deleted from the tree.
+The KVPair (|Disease|,|Dokken|) is deleted from the tree.
+|Dokken| is deleted from the Artist database.
+|Disease| is deleted from the Song database.
+The KVPair (|Liam O'Flynn|,|Romeo's Exile|) is deleted from the tree.
+The KVPair (|Romeo's Exile|,|Liam O'Flynn|) is deleted from the tree.
+|Liam O'Flynn| is deleted from the Artist database.
+|Romeo's Exile| is deleted from the Song database.
+The KVPair (|Teenage Fanclub|,|The World'll Be OK|) is deleted from the tree.
+The KVPair (|The World'll Be OK|,|Teenage Fanclub|) is deleted from the tree.
+|Teenage Fanclub| is deleted from the Artist database.
+|The World'll Be OK| is deleted from the Song database.
+|Groupa| is added to the Artist database.
+|Bliv Du Till Gran (If You Became A Spruce)| is added to the Song database.
+The KVPair (|Groupa|,|Bliv Du Till Gran (If You Became A Spruce)|),(3926,3935) is added to the tree.
+The KVPair (|Bliv Du Till Gran (If You Became A Spruce)|,|Groupa|),(3935,3926) is added to the tree.
+|Regina Belle| is added to the Artist database.
+|Quiet Time| is added to the Song database.
+The KVPair (|Regina Belle|,|Quiet Time|),(3980,3995) is added to the tree.
+The KVPair (|Quiet Time|,|Regina Belle|),(3995,3980) is added to the tree.
+|Ricardo Lemvo| is added to the Artist database.
+|Yiri Yiri Bon| is added to the Song database.
+The KVPair (|Ricardo Lemvo|,|Yiri Yiri Bon|),(4008,4024) is added to the tree.
+The KVPair (|Yiri Yiri Bon|,|Ricardo Lemvo|),(4024,4008) is added to the tree.
+|Andreas Dorau| is added to the Artist database.
+|So ist das nun mal| is added to the Song database.
+The KVPair (|Andreas Dorau|,|So ist das nun mal|),(4040,4056) is added to the tree.
+The KVPair (|So ist das nun mal|,|Andreas Dorau|),(4056,4040) is added to the tree.
+|Enslavement Of Beauty| is added to the Artist database.
+|Ye That Tempteth_ Ye That Bequeth| is added to the Song database.
+The KVPair (|Enslavement Of Beauty|,|Ye That Tempteth_ Ye That Bequeth|),(4077,4101) is added to the tree.
+The KVPair (|Ye That Tempteth_ Ye That Bequeth|,|Enslavement Of Beauty|),(4101,4077) is added to the tree.
+|Little Milton| is added to the Artist database.
+|Walking The Back Streets And Crying| is added to the Song database.
+The KVPair (|Little Milton|,|Walking The Back Streets And Crying|),(4137,4153) is added to the tree.
+The KVPair (|Walking The Back Streets And Crying|,|Little Milton|),(4153,4137) is added to the tree.
+|Les Ogres De Barback| is added to the Artist database.
+|De rien| is added to the Song database.
+The KVPair (|Les Ogres De Barback|,|De rien|),(4191,4214) is added to the tree.
+The KVPair (|De rien|,|Les Ogres De Barback|),(4214,4191) is added to the tree.
+|KRS-One| is added to the Artist database.
+|Getaway| is added to the Song database.
+The KVPair (|KRS-One|,|Getaway|),(4224,4234) is added to the tree.
+The KVPair (|Getaway|,|KRS-One|),(4234,4224) is added to the tree.
+|Slim Whitman| is added to the Artist database.
+|Indian Love Call| is added to the Song database.
+The KVPair (|Slim Whitman|,|Indian Love Call|),(4244,4259) is added to the tree.
+The KVPair (|Indian Love Call|,|Slim Whitman|),(4259,4244) is added to the tree.
+|Simply Red| is added to the Artist database.
+|So Not Over You (Motivo-Pop Lectro Mix)| is added to the Song database.
+The KVPair (|Simply Red|,|So Not Over You (Motivo-Pop Lectro Mix)|),(4278,4291) is added to the tree.
+The KVPair (|So Not Over You (Motivo-Pop Lectro Mix)|,|Simply Red|),(4291,4278) is added to the tree.
+|Seguridad Social| is added to the Artist database.
+|Soc Mediterrani| is added to the Song database.
+The KVPair (|Seguridad Social|,|Soc Mediterrani|),(4333,4352) is added to the tree.
+The KVPair (|Soc Mediterrani|,|Seguridad Social|),(4352,4333) is added to the tree.
+|Chroma Key| is added to the Artist database.
+|Salvation| is added to the Song database.
+The KVPair (|Chroma Key|,|Salvation|),(4370,4383) is added to the tree.
+The KVPair (|Salvation|,|Chroma Key|),(4383,4370) is added to the tree.
+|The Paul Butterfield Blues Band| is added to the Artist database.
+|Pretty Woman (LP Version)| is added to the Song database.
+The KVPair (|The Paul Butterfield Blues Band|,|Pretty Woman (LP Version)|),(4395,4429) is added to the tree.
+The KVPair (|Pretty Woman (LP Version)|,|The Paul Butterfield Blues Band|),(4429,4395) is added to the tree.
+|The Sugarhill Gang| is added to the Artist database.
+|8th Wonder| is added to the Song database.
+The KVPair (|The Sugarhill Gang|,|8th Wonder|),(4457,4478) is added to the tree.
+The KVPair (|8th Wonder|,|The Sugarhill Gang|),(4478,4457) is added to the tree.
+|Symphony in Peril| is added to the Artist database.
+|Inherent Scars| is added to the Song database.
+The KVPair (|Symphony in Peril|,|Inherent Scars|),(4491,4511) is added to the tree.
+The KVPair (|Inherent Scars|,|Symphony in Peril|),(4511,4491) is added to the tree.
+|Helmet| is added to the Artist database.
+|Tic| is added to the Song database.
+The KVPair (|Helmet|,|Tic|),(4528,4537) is added to the tree.
+The KVPair (|Tic|,|Helmet|),(4537,4528) is added to the tree.
+|Behemoth| is added to the Artist database.
+|No Sympathy For Fools| is added to the Song database.
+The KVPair (|Behemoth|,|No Sympathy For Fools|),(4543,4554) is added to the tree.
+The KVPair (|No Sympathy For Fools|,|Behemoth|),(4554,4543) is added to the tree.
+|Alice Cooper| is added to the Artist database.
+|Make That Money (Scrooge's Song) (Album Version)| is added to the Song database.
+The KVPair (|Alice Cooper|,|Make That Money (Scrooge's Song) (Album Version)|),(4578,4593) is added to the tree.
+The KVPair (|Make That Money (Scrooge's Song) (Album Version)|,|Alice Cooper|),(4593,4578) is added to the tree.
+|Fat Joe| is added to the Artist database.
+|Prove Something (explicit album version)| is added to the Song database.
+The KVPair (|Fat Joe|,|Prove Something (explicit album version)|),(4644,4654) is added to the tree.
+The KVPair (|Prove Something (explicit album version)|,|Fat Joe|),(4654,4644) is added to the tree.
+|Francis Lai| is added to the Artist database.
+|13 jours en France| is added to the Song database.
+The KVPair (|Francis Lai|,|13 jours en France|),(4697,4711) is added to the tree.
+The KVPair (|13 jours en France|,|Francis Lai|),(4711,4697) is added to the tree.
+|RUN-DMC| is added to the Artist database.
+|King Of Rock| is added to the Song database.
+The KVPair (|RUN-DMC|,|King Of Rock|),(4732,4742) is added to the tree.
+The KVPair (|King Of Rock|,|RUN-DMC|),(4742,4732) is added to the tree.
+|Spongebob Squarepants| is added to the Artist database.
+|Ripped Pants| is added to the Song database.
+The KVPair (|Spongebob Squarepants|,|Ripped Pants|),(4757,4781) is added to the tree.
+The KVPair (|Ripped Pants|,|Spongebob Squarepants|),(4781,4757) is added to the tree.
+|Red Stick Ramblers| is added to the Artist database.
+|Why_ Now Baby?| is added to the Song database.
+The KVPair (|Red Stick Ramblers|,|Why_ Now Baby?|),(4796,4817) is added to the tree.
+The KVPair (|Why_ Now Baby?|,|Red Stick Ramblers|),(4817,4796) is added to the tree.
+|Obie Bermudez| is added to the Artist database.
+|Antes (Salsa Version)| is added to the Song database.
+The KVPair (|Obie Bermudez|,|Antes (Salsa Version)|),(4834,4850) is added to the tree.
+The KVPair (|Antes (Salsa Version)|,|Obie Bermudez|),(4850,4834) is added to the tree.
+|V V Brown| is added to the Artist database.
+|LEAVE!| is added to the Song database.
+The KVPair (|V V Brown|,|LEAVE!|),(4874,4886) is added to the tree.
+The KVPair (|LEAVE!|,|V V Brown|),(4886,4874) is added to the tree.
+|Bravehearts| is added to the Artist database.
+|Sensations| is added to the Song database.
+The KVPair (|Bravehearts|,|Sensations|),(4895,4909) is added to the tree.
+The KVPair (|Sensations|,|Bravehearts|),(4909,4895) is added to the tree.
+|Evanescence| is added to the Artist database.
+|Good Enough| is added to the Song database.
+The KVPair (|Evanescence|,|Good Enough|),(4922,4936) is added to the tree.
+The KVPair (|Good Enough|,|Evanescence|),(4936,4922) is added to the tree.
+|Everyday Sunday| is added to the Artist database.
+|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)| is added to the Song database.
+The KVPair (|Everyday Sunday|,|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)|),(4950,4968) is added to the tree.
+The KVPair (|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)|,|Everyday Sunday|),(4968,4950) is added to the tree.
+|Robben Ford| is added to the Artist database.
+|Talk To Your Daughter (Album Version)| is added to the Song database.
+The KVPair (|Robben Ford|,|Talk To Your Daughter (Album Version)|),(5022,5036) is added to the tree.
+The KVPair (|Talk To Your Daughter (Album Version)|,|Robben Ford|),(5036,5022) is added to the tree.
+|High Strung_ The| is added to the Artist database.
+|Show a Sign of Life| is added to the Song database.
+The KVPair (|High Strung_ The|,|Show a Sign of Life|),(5076,5095) is added to the tree.
+The KVPair (|Show a Sign of Life|,|High Strung_ The|),(5095,5076) is added to the tree.
+|Maroon 5| is added to the Artist database.
+|Sweetest Goodbye| is added to the Song database.
+The KVPair (|Maroon 5|,|Sweetest Goodbye|),(5117,5128) is added to the tree.
+The KVPair (|Sweetest Goodbye|,|Maroon 5|),(5128,5117) is added to the tree.
+|Hem| is added to the Artist database.
+|Redwing| is added to the Song database.
+The KVPair (|Hem|,|Redwing|),(5147,5153) is added to the tree.
+The KVPair (|Redwing|,|Hem|),(5153,5147) is added to the tree.
+|Bikini Machine| is added to the Artist database.
+|The Race| is added to the Song database.
+The KVPair (|Bikini Machine|,|The Race|),(5163,5180) is added to the tree.
+The KVPair (|The Race|,|Bikini Machine|),(5180,5163) is added to the tree.
+|Jackson United| is added to the Artist database.
+|Undertow| is added to the Song database.
+The KVPair (|Jackson United|,|Undertow|),(5191,5208) is added to the tree.
+The KVPair (|Undertow|,|Jackson United|),(5208,5191) is added to the tree.
+|White Willow| is added to the Artist database.
+Song hash table size doubled.
+|The Dark Road| is added to the Song database.
+The KVPair (|White Willow|,|The Dark Road|),(5219,5234) is added to the tree.
+The KVPair (|The Dark Road|,|White Willow|),(5234,5219) is added to the tree.
+|Guns N' Roses| is added to the Artist database.
+|Patience| is added to the Song database.
+The KVPair (|Guns N' Roses|,|Patience|),(5250,5266) is added to the tree.
+The KVPair (|Patience|,|Guns N' Roses|),(5266,5250) is added to the tree.
+|Kitaro| is added to the Artist database.
+|Harmony Of The Forest| is added to the Song database.
+The KVPair (|Kitaro|,|Harmony Of The Forest|),(5277,5286) is added to the tree.
+The KVPair (|Harmony Of The Forest|,|Kitaro|),(5286,5277) is added to the tree.
+|Talib Kweli| is added to the Artist database.
+|Everything Man (Album Version)| is added to the Song database.
+The KVPair (|Talib Kweli|,|Everything Man (Album Version)|),(5310,5324) is added to the tree.
+The KVPair (|Everything Man (Album Version)|,|Talib Kweli|),(5324,5310) is added to the tree.
+Artist hash table size doubled.
+|Zeromancer| is added to the Artist database.
+|Send Me An Angel| is added to the Song database.
+The KVPair (|Zeromancer|,|Send Me An Angel|),(5357,5370) is added to the tree.
+The KVPair (|Send Me An Angel|,|Zeromancer|),(5370,5357) is added to the tree.
+|Baby Bash / Grimm| is added to the Artist database.
+|Changed My Life| is added to the Song database.
+The KVPair (|Baby Bash / Grimm|,|Changed My Life|),(5389,5409) is added to the tree.
+The KVPair (|Changed My Life|,|Baby Bash / Grimm|),(5409,5389) is added to the tree.
+|Rickie Lee Jones| is added to the Artist database.
+|Danny's All-Star Joint (LP Version)| is added to the Song database.
+The KVPair (|Rickie Lee Jones|,|Danny's All-Star Joint (LP Version)|),(5427,5446) is added to the tree.
+The KVPair (|Danny's All-Star Joint (LP Version)|,|Rickie Lee Jones|),(5446,5427) is added to the tree.
+|Beastie Boys| is added to the Artist database.
+|Get It Together| is added to the Song database.
+The KVPair (|Beastie Boys|,|Get It Together|),(5484,5499) is added to the tree.
+The KVPair (|Get It Together|,|Beastie Boys|),(5499,5484) is added to the tree.
+|Nightwish| is added to the Artist database.
+|Beauty And The Beast| is added to the Song database.
+The KVPair (|Nightwish|,|Beauty And The Beast|),(5517,5529) is added to the tree.
+The KVPair (|Beauty And The Beast|,|Nightwish|),(5529,5517) is added to the tree.
+|Teenage Fanclub| is added to the Artist database.
+|It's All In My Mind| is added to the Song database.
+The KVPair (|Teenage Fanclub|,|It's All In My Mind|),(5552,5570) is added to the tree.
+The KVPair (|It's All In My Mind|,|Teenage Fanclub|),(5570,5552) is added to the tree.
+|Commander Cody And His Lost Planet Airmen| is added to the Artist database.
+|Riot In Cell Block #9| is added to the Song database.
+The KVPair (|Commander Cody And His Lost Planet Airmen|,|Riot In Cell Block #9|),(5592,5636) is added to the tree.
+The KVPair (|Riot In Cell Block #9|,|Commander Cody And His Lost Planet Airmen|),(5636,5592) is added to the tree.
+|Jeremy Spencer| is added to the Artist database.
+|Maria De Santiago| is added to the Song database.
+The KVPair (|Jeremy Spencer|,|Maria De Santiago|),(5660,5677) is added to the tree.
+The KVPair (|Maria De Santiago|,|Jeremy Spencer|),(5677,5660) is added to the tree.
+|Memphis Minnie| is added to the Artist database.
+|Nothing In Rambling| is added to the Song database.
+The KVPair (|Memphis Minnie|,|Nothing In Rambling|),(5697,5714) is added to the tree.
+The KVPair (|Nothing In Rambling|,|Memphis Minnie|),(5714,5697) is added to the tree.
+|BoDeans| is added to the Artist database.
+|Lookin' For Me Somewhere| is added to the Song database.
+The KVPair (|BoDeans|,|Lookin' For Me Somewhere|),(5736,5746) is added to the tree.
+The KVPair (|Lookin' For Me Somewhere|,|BoDeans|),(5746,5736) is added to the tree.
+|Wesley Tuttle| is added to the Artist database.
+|With Tears In My Eyes| is added to the Song database.
+The KVPair (|Wesley Tuttle|,|With Tears In My Eyes|),(5773,5789) is added to the tree.
+The KVPair (|With Tears In My Eyes|,|Wesley Tuttle|),(5789,5773) is added to the tree.
+|The Plimsouls| is added to the Artist database.
+|Women| is added to the Song database.
+The KVPair (|The Plimsouls|,|Women|),(5813,5829) is added to the tree.
+The KVPair (|Women|,|The Plimsouls|),(5829,5813) is added to the tree.
+|The Killers| is added to the Artist database.
+|A Dustland Fairytale| is added to the Song database.
+The KVPair (|The Killers|,|A Dustland Fairytale|),(5837,5851) is added to the tree.
+The KVPair (|A Dustland Fairytale|,|The Killers|),(5851,5837) is added to the tree.
+|Juana Molina| is added to the Artist database.
+|Micael| is added to the Song database.
+The KVPair (|Juana Molina|,|Micael|),(5874,5889) is added to the tree.
+The KVPair (|Micael|,|Juana Molina|),(5889,5874) is added to the tree.
+|The Chap| is added to the Artist database.
+|Volumatic Spacer Device| is added to the Song database.
+The KVPair (|The Chap|,|Volumatic Spacer Device|),(5898,5909) is added to the tree.
+The KVPair (|Volumatic Spacer Device|,|The Chap|),(5909,5898) is added to the tree.
+|Aisha Duo| is added to the Artist database.
+|Sea_ Subsurface| is added to the Song database.
+The KVPair (|Aisha Duo|,|Sea_ Subsurface|),(5935,5947) is added to the tree.
+The KVPair (|Sea_ Subsurface|,|Aisha Duo|),(5947,5935) is added to the tree.
+|Sonora Carruseles| is added to the Artist database.
+|Chela| is added to the Song database.
+The KVPair (|Sonora Carruseles|,|Chela|),(5965,5985) is added to the tree.
+The KVPair (|Chela|,|Sonora Carruseles|),(5985,5965) is added to the tree.
+|Ensiferum| is added to the Artist database.
+|Into Battle| is added to the Song database.
+The KVPair (|Ensiferum|,|Into Battle|),(5993,6005) is added to the tree.
+The KVPair (|Into Battle|,|Ensiferum|),(6005,5993) is added to the tree.
+|Young-Holt Unlimited| is added to the Artist database.
+|We've Only Just Begun (LP Version)| is added to the Song database.
+The KVPair (|Young-Holt Unlimited|,|We've Only Just Begun (LP Version)|),(6019,6042) is added to the tree.
+The KVPair (|We've Only Just Begun (LP Version)|,|Young-Holt Unlimited|),(6042,6019) is added to the tree.
+|Oztara| is added to the Artist database.
+|La Route Est Belle| is added to the Song database.
+The KVPair (|Oztara|,|La Route Est Belle|),(6079,6088) is added to the tree.
+The KVPair (|La Route Est Belle|,|Oztara|),(6088,6079) is added to the tree.
+|Mithotyn| is added to the Artist database.
+|On Misty Pathways| is added to the Song database.
+The KVPair (|Mithotyn|,|On Misty Pathways|),(6109,6120) is added to the tree.
+The KVPair (|On Misty Pathways|,|Mithotyn|),(6120,6109) is added to the tree.
+|Albert Collins| is added to the Artist database.
+|Same Old Thing| is added to the Song database.
+The KVPair (|Albert Collins|,|Same Old Thing|),(6140,6157) is added to the tree.
+The KVPair (|Same Old Thing|,|Albert Collins|),(6157,6140) is added to the tree.
+|Bad Company| is added to the Artist database.
+|Crazy Circles| is added to the Song database.
+The KVPair (|Bad Company|,|Crazy Circles|),(6174,6188) is added to the tree.
+The KVPair (|Crazy Circles|,|Bad Company|),(6188,6174) is added to the tree.
+|John Frizzell| is added to the Artist database.
+|No Unexpected Guests| is added to the Song database.
+The KVPair (|John Frizzell|,|No Unexpected Guests|),(6204,6220) is added to the tree.
+The KVPair (|No Unexpected Guests|,|John Frizzell|),(6220,6204) is added to the tree.
+|Wyclef Jean| is added to the Artist database.
+|Heaven's In New York| is added to the Song database.
+The KVPair (|Wyclef Jean|,|Heaven's In New York|),(6243,6257) is added to the tree.
+The KVPair (|Heaven's In New York|,|Wyclef Jean|),(6257,6243) is added to the tree.
+|Agnostic Front| is added to the Artist database.
+|No One Hears You| is added to the Song database.
+The KVPair (|Agnostic Front|,|No One Hears You|),(6280,6297) is added to the tree.
+The KVPair (|No One Hears You|,|Agnostic Front|),(6297,6280) is added to the tree.
+|Orbital| is added to the Artist database.
+|Chime (edit)| is added to the Song database.
+The KVPair (|Orbital|,|Chime (edit)|),(6316,6326) is added to the tree.
+The KVPair (|Chime (edit)|,|Orbital|),(6326,6316) is added to the tree.
+|Butthole Surfers| is added to the Artist database.
+|22 Going On 23| is added to the Song database.
+The KVPair (|Butthole Surfers|,|22 Going On 23|),(6341,6360) is added to the tree.
+The KVPair (|22 Going On 23|,|Butthole Surfers|),(6360,6341) is added to the tree.
+|Torcuato Mariano| is added to the Artist database.
+|Black and Blue| is added to the Song database.
+The KVPair (|Torcuato Mariano|,|Black and Blue|),(6377,6396) is added to the tree.
+The KVPair (|Black and Blue|,|Torcuato Mariano|),(6396,6377) is added to the tree.
+|Bad Religion| is added to the Artist database.
+|The Lie| is added to the Song database.
+The KVPair (|Bad Religion|,|The Lie|),(6413,6428) is added to the tree.
+The KVPair (|The Lie|,|Bad Religion|),(6428,6413) is added to the tree.
+|The Chap| duplicates a record already in the Artist database.
+|They Have a Name| is added to the Song database.
+The KVPair (|The Chap|,|They Have a Name|),(5898,6438) is added to the tree.
+The KVPair (|They Have a Name|,|The Chap|),(6438,5898) is added to the tree.
+|Natalie Cole| is added to the Artist database.
+|Busted| is added to the Song database.
+The KVPair (|Natalie Cole|,|Busted|),(6457,6472) is added to the tree.
+The KVPair (|Busted|,|Natalie Cole|),(6472,6457) is added to the tree.
+|Britney Spears| is added to the Artist database.
+|My Prerogative| is added to the Song database.
+The KVPair (|Britney Spears|,|My Prerogative|),(6481,6498) is added to the tree.
+The KVPair (|My Prerogative|,|Britney Spears|),(6498,6481) is added to the tree.
+|Freddie King| is added to the Artist database.
+|Five Long Years| is added to the Song database.
+The KVPair (|Freddie King|,|Five Long Years|),(6515,6530) is added to the tree.
+The KVPair (|Five Long Years|,|Freddie King|),(6530,6515) is added to the tree.
+|Eagles| is added to the Artist database.
+|You Never Cry Like A Lover (LP Version)| is added to the Song database.
+The KVPair (|Eagles|,|You Never Cry Like A Lover (LP Version)|),(6548,6557) is added to the tree.
+The KVPair (|You Never Cry Like A Lover (LP Version)|,|Eagles|),(6557,6548) is added to the tree.
+|Carlos Vives| is added to the Artist database.
+|Si Es Que Te Vas| is added to the Song database.
+The KVPair (|Carlos Vives|,|Si Es Que Te Vas|),(6599,6614) is added to the tree.
+The KVPair (|Si Es Que Te Vas|,|Carlos Vives|),(6614,6599) is added to the tree.
+|Manjul| is added to the Artist database.
+|Any Wich Way (Freedom Must Come)| is added to the Song database.
+The KVPair (|Manjul|,|Any Wich Way (Freedom Must Come)|),(6633,6642) is added to the tree.
+The KVPair (|Any Wich Way (Freedom Must Come)|,|Manjul|),(6642,6633) is added to the tree.
+|Donny Hathaway| is added to the Artist database.
+|I Love You More Than You'll Ever Know (LP Version)| is added to the Song database.
+The KVPair (|Donny Hathaway|,|I Love You More Than You'll Ever Know (LP Version)|),(6677,6694) is added to the tree.
+The KVPair (|I Love You More Than You'll Ever Know (LP Version)|,|Donny Hathaway|),(6694,6677) is added to the tree.
+|Zeromancer| duplicates a record already in the Artist database.
+|Ammonite| is added to the Song database.
+The KVPair (|Zeromancer|,|Ammonite|),(5357,6747) is added to the tree.
+The KVPair (|Ammonite|,|Zeromancer|),(6747,5357) is added to the tree.
+|Adam Ant| is added to the Artist database.
+|Something Girls| is added to the Song database.
+The KVPair (|Adam Ant|,|Something Girls|),(6758,6769) is added to the tree.
+The KVPair (|Something Girls|,|Adam Ant|),(6769,6758) is added to the tree.
+|Sick Of It All| is added to the Artist database.
+|Burn 'Em Down (LP Version)| is added to the Song database.
+The KVPair (|Sick Of It All|,|Burn 'Em Down (LP Version)|),(6787,6804) is added to the tree.
+The KVPair (|Burn 'Em Down (LP Version)|,|Sick Of It All|),(6804,6787) is added to the tree.
+|Plump DJs| is added to the Artist database.
+|Contact 00| is added to the Song database.
+The KVPair (|Plump DJs|,|Contact 00|),(6833,6845) is added to the tree.
+The KVPair (|Contact 00|,|Plump DJs|),(6845,6833) is added to the tree.
+|Rihanna| is added to the Artist database.
+|Breakin' Dishes| is added to the Song database.
+The KVPair (|Rihanna|,|Breakin' Dishes|),(6858,6868) is added to the tree.
+The KVPair (|Breakin' Dishes|,|Rihanna|),(6868,6858) is added to the tree.
+|Cinder| is added to the Artist database.
+|The Ride (Album)| is added to the Song database.
+The KVPair (|Cinder|,|The Ride (Album)|),(6886,6895) is added to the tree.
+The KVPair (|The Ride (Album)|,|Cinder|),(6895,6886) is added to the tree.
+|Jah Cure| is added to the Artist database.
+|Freedom| is added to the Song database.
+The KVPair (|Jah Cure|,|Freedom|),(6914,6925) is added to the tree.
+The KVPair (|Freedom|,|Jah Cure|),(6925,6914) is added to the tree.
+|Foals| is added to the Artist database.
+|Red Socks Pugie| is added to the Song database.
+The KVPair (|Foals|,|Red Socks Pugie|),(6935,6943) is added to the tree.
+The KVPair (|Red Socks Pugie|,|Foals|),(6943,6935) is added to the tree.
+|Neil Diamond| is added to the Artist database.
+|Reminisce For A While (Sung With Raul Malo)| is added to the Song database.
+The KVPair (|Neil Diamond|,|Reminisce For A While (Sung With Raul Malo)|),(6961,6976) is added to the tree.
+The KVPair (|Reminisce For A While (Sung With Raul Malo)|,|Neil Diamond|),(6976,6961) is added to the tree.
+|Ten Years After| is added to the Artist database.
+|Year 3_000 Blues (2002 Digital Remaster)| is added to the Song database.
+The KVPair (|Ten Years After|,|Year 3_000 Blues (2002 Digital Remaster)|),(7022,7040) is added to the tree.
+The KVPair (|Year 3_000 Blues (2002 Digital Remaster)|,|Ten Years After|),(7040,7022) is added to the tree.
+|Lara & Reyes| is added to the Artist database.
+|Away In A Manger| is added to the Song database.
+The KVPair (|Lara & Reyes|,|Away In A Manger|),(7083,7098) is added to the tree.
+The KVPair (|Away In A Manger|,|Lara & Reyes|),(7098,7083) is added to the tree.
+|Eagles| duplicates a record already in the Artist database.
+|Last Good Time In Town| is added to the Song database.
+The KVPair (|Eagles|,|Last Good Time In Town|),(6548,7117) is added to the tree.
+The KVPair (|Last Good Time In Town|,|Eagles|),(7117,6548) is added to the tree.
+|RUN-DMC| duplicates a record already in the Artist database.
+|Hard Times| is added to the Song database.
+The KVPair (|RUN-DMC|,|Hard Times|),(4732,7142) is added to the tree.
+The KVPair (|Hard Times|,|RUN-DMC|),(7142,4732) is added to the tree.
+|Phantom Planet| is added to the Artist database.
+|After Hours| is added to the Song database.
+The KVPair (|Phantom Planet|,|After Hours|),(7155,7172) is added to the tree.
+The KVPair (|After Hours|,|Phantom Planet|),(7172,7155) is added to the tree.
+|Natasha Bedingfield| is added to the Artist database.
+|These Words| is added to the Song database.
+The KVPair (|Natasha Bedingfield|,|These Words|),(7186,7208) is added to the tree.
+The KVPair (|These Words|,|Natasha Bedingfield|),(7208,7186) is added to the tree.
+|KALIMBA| is added to the Artist database.
+|Al Final| is added to the Song database.
+The KVPair (|KALIMBA|,|Al Final|),(7222,7232) is added to the tree.
+The KVPair (|Al Final|,|KALIMBA|),(7232,7222) is added to the tree.
+|Basic Channel| is added to the Artist database.
+|Q Loop| is added to the Song database.
+The KVPair (|Basic Channel|,|Q Loop|),(7243,7259) is added to the tree.
+The KVPair (|Q Loop|,|Basic Channel|),(7259,7243) is added to the tree.
+|Phil Collins| is added to the Artist database.
+|Everyday| is added to the Song database.
+The KVPair (|Phil Collins|,|Everyday|),(7268,7283) is added to the tree.
+The KVPair (|Everyday|,|Phil Collins|),(7283,7268) is added to the tree.
+|Robert Palmer| is added to the Artist database.
+|Love Can Run Faster| is added to the Song database.
+The KVPair (|Robert Palmer|,|Love Can Run Faster|),(7294,7310) is added to the tree.
+The KVPair (|Love Can Run Faster|,|Robert Palmer|),(7310,7294) is added to the tree.
+|The Rolling Stones| is added to the Artist database.
+|Around And Around| is added to the Song database.
+The KVPair (|The Rolling Stones|,|Around And Around|),(7332,7353) is added to the tree.
+The KVPair (|Around And Around|,|The Rolling Stones|),(7353,7332) is added to the tree.
+|Stanley Clarke & George Duke| is added to the Artist database.
+|Finding My Way| is added to the Song database.
+The KVPair (|Stanley Clarke & George Duke|,|Finding My Way|),(7373,7404) is added to the tree.
+The KVPair (|Finding My Way|,|Stanley Clarke & George Duke|),(7404,7373) is added to the tree.
+|Ma Rainey| is added to the Artist database.
+|Ma Rainey's Black Bottom| is added to the Song database.
+The KVPair (|Ma Rainey|,|Ma Rainey's Black Bottom|),(7421,7433) is added to the tree.
+The KVPair (|Ma Rainey's Black Bottom|,|Ma Rainey|),(7433,7421) is added to the tree.
+|Iggy Pop| is added to the Artist database.
+|Main Street Eyes| is added to the Song database.
+The KVPair (|Iggy Pop|,|Main Street Eyes|),(7460,7471) is added to the tree.
+The KVPair (|Main Street Eyes|,|Iggy Pop|),(7471,7460) is added to the tree.
+|Casiotone For The Painfully Alone| is added to the Artist database.
+|Dying Batteries| is added to the Song database.
+The KVPair (|Casiotone For The Painfully Alone|,|Dying Batteries|),(7490,7526) is added to the tree.
+The KVPair (|Dying Batteries|,|Casiotone For The Painfully Alone|),(7526,7490) is added to the tree.
+|Jean-Jacques Goldman| is added to the Artist database.
+|Comme Toi (Live)| is added to the Song database.
+The KVPair (|Jean-Jacques Goldman|,|Comme Toi (Live)|),(7544,7567) is added to the tree.
+The KVPair (|Comme Toi (Live)|,|Jean-Jacques Goldman|),(7567,7544) is added to the tree.
+|T-Bone| is added to the Artist database.
+|Ride Wit Me| is added to the Song database.
+The KVPair (|T-Bone|,|Ride Wit Me|),(7586,7595) is added to the tree.
+The KVPair (|Ride Wit Me|,|T-Bone|),(7595,7586) is added to the tree.
+|Les Ogres De Barback| duplicates a record already in the Artist database.
+|Printemps| is added to the Song database.
+The KVPair (|Les Ogres De Barback|,|Printemps|),(4191,7609) is added to the tree.
+The KVPair (|Printemps|,|Les Ogres De Barback|),(7609,4191) is added to the tree.
+|Spinal Tap| is added to the Artist database.
+|The Majesty Of Rock| is added to the Song database.
+The KVPair (|Spinal Tap|,|The Majesty Of Rock|),(7621,7634) is added to the tree.
+The KVPair (|The Majesty Of Rock|,|Spinal Tap|),(7634,7621) is added to the tree.
+|My Chemical Romance| is added to the Artist database.
+|House Of Wolves (Album Version)| is added to the Song database.
+The KVPair (|My Chemical Romance|,|House Of Wolves (Album Version)|),(7656,7678) is added to the tree.
+The KVPair (|House Of Wolves (Album Version)|,|My Chemical Romance|),(7678,7656) is added to the tree.
+|Lightnin' Slim| is added to the Artist database.
+|My Babe| is added to the Song database.
+The KVPair (|Lightnin' Slim|,|My Babe|),(7712,7729) is added to the tree.
+The KVPair (|My Babe|,|Lightnin' Slim|),(7729,7712) is added to the tree.
+|Janis Joplin| is added to the Artist database.
+|Down On Me| is added to the Song database.
+The KVPair (|Janis Joplin|,|Down On Me|),(7739,7754) is added to the tree.
+The KVPair (|Down On Me|,|Janis Joplin|),(7754,7739) is added to the tree.
+|Elakelaiset| is added to the Artist database.
+|Pottajenkka| is added to the Song database.
+The KVPair (|Elakelaiset|,|Pottajenkka|),(7767,7781) is added to the tree.
+The KVPair (|Pottajenkka|,|Elakelaiset|),(7781,7767) is added to the tree.
+|Asleep At The Wheel| is added to the Artist database.
+|The Letter That Johnny Walker Read| is added to the Song database.
+The KVPair (|Asleep At The Wheel|,|The Letter That Johnny Walker Read|),(7795,7817) is added to the tree.
+The KVPair (|The Letter That Johnny Walker Read|,|Asleep At The Wheel|),(7817,7795) is added to the tree.
+|Jonny Lang| is added to the Artist database.
+|The One I Got| is added to the Song database.
+The KVPair (|Jonny Lang|,|The One I Got|),(7854,7867) is added to the tree.
+The KVPair (|The One I Got|,|Jonny Lang|),(7867,7854) is added to the tree.
+|Arthur Brown| is added to the Artist database.
+|Time / Confusion| is added to the Song database.
+The KVPair (|Arthur Brown|,|Time / Confusion|),(7883,7898) is added to the tree.
+The KVPair (|Time / Confusion|,|Arthur Brown|),(7898,7883) is added to the tree.
+|Less Than Jake| is added to the Artist database.
+|Short On Ideas / One Last Cigarette| is added to the Song database.
+The KVPair (|Less Than Jake|,|Short On Ideas / One Last Cigarette|),(7917,7934) is added to the tree.
+The KVPair (|Short On Ideas / One Last Cigarette|,|Less Than Jake|),(7934,7917) is added to the tree.
+|Toni Braxton| is added to the Artist database.
+|Let Me Show You The Way (Out)| is added to the Song database.
+The KVPair (|Toni Braxton|,|Let Me Show You The Way (Out)|),(7972,7987) is added to the tree.
+The KVPair (|Let Me Show You The Way (Out)|,|Toni Braxton|),(7987,7972) is added to the tree.
+|45 Grave| is added to the Artist database.
+|Party Time| is added to the Song database.
+The KVPair (|45 Grave|,|Party Time|),(8019,8030) is added to the tree.
+The KVPair (|Party Time|,|45 Grave|),(8030,8019) is added to the tree.
+|The Birds| is added to the Artist database.
+|No Good Without You| is added to the Song database.
+The KVPair (|The Birds|,|No Good Without You|),(8043,8055) is added to the tree.
+The KVPair (|No Good Without You|,|The Birds|),(8055,8043) is added to the tree.
+|Astarte| is added to the Artist database.
+|Risen From Within| is added to the Song database.
+The KVPair (|Astarte|,|Risen From Within|),(8077,8087) is added to the tree.
+The KVPair (|Risen From Within|,|Astarte|),(8087,8077) is added to the tree.
+|Descendents| is added to the Artist database.
+|I'm Not A Loser| is added to the Song database.
+The KVPair (|Descendents|,|I'm Not A Loser|),(8107,8121) is added to the tree.
+The KVPair (|I'm Not A Loser|,|Descendents|),(8121,8107) is added to the tree.
+|Rance Allen Group| is added to the Artist database.
+|The Painter| is added to the Song database.
+The KVPair (|Rance Allen Group|,|The Painter|),(8139,8159) is added to the tree.
+The KVPair (|The Painter|,|Rance Allen Group|),(8159,8139) is added to the tree.
+|Bad Azz| is added to the Artist database.
+|Ghetto| is added to the Song database.
+The KVPair (|Bad Azz|,|Ghetto|),(8173,8183) is added to the tree.
+The KVPair (|Ghetto|,|Bad Azz|),(8183,8173) is added to the tree.
+|Kings Of Leon| duplicates a record already in the Artist database.
+|Woo Hoo| is added to the Song database.
+The KVPair (|Kings Of Leon|,|Woo Hoo|),(610,8192) is added to the tree.
+The KVPair (|Woo Hoo|,|Kings Of Leon|),(8192,610) is added to the tree.
+|Home Town Hero| is added to the Artist database.
+|Bleeds In Blue (Album Version)| is added to the Song database.
+The KVPair (|Home Town Hero|,|Bleeds In Blue (Album Version)|),(8202,8219) is added to the tree.
+The KVPair (|Bleeds In Blue (Album Version)|,|Home Town Hero|),(8219,8202) is added to the tree.
+|FFH| is added to the Artist database.
+|Listen| is added to the Song database.
+The KVPair (|FFH|,|Listen|),(8252,8258) is added to the tree.
+The KVPair (|Listen|,|FFH|),(8258,8252) is added to the tree.
+|Paul Carrack| is added to the Artist database.
+|I'm On Your Tail| is added to the Song database.
+The KVPair (|Paul Carrack|,|I'm On Your Tail|),(8267,8282) is added to the tree.
+The KVPair (|I'm On Your Tail|,|Paul Carrack|),(8282,8267) is added to the tree.
+|Faith Hill| is added to the Artist database.
+|Better Days (Album Version)| is added to the Song database.
+The KVPair (|Faith Hill|,|Better Days (Album Version)|),(8301,8314) is added to the tree.
+The KVPair (|Better Days (Album Version)|,|Faith Hill|),(8314,8301) is added to the tree.
+|Eko Fresh feat. Ado| is added to the Artist database.
+|Ich bleib so wie ich bin| is added to the Song database.
+The KVPair (|Eko Fresh feat. Ado|,|Ich bleib so wie ich bin|),(8344,8366) is added to the tree.
+The KVPair (|Ich bleib so wie ich bin|,|Eko Fresh feat. Ado|),(8366,8344) is added to the tree.
+|Kitty Wells| is added to the Artist database.
+|Makin' Believe| is added to the Song database.
+The KVPair (|Kitty Wells|,|Makin' Believe|),(8393,8407) is added to the tree.
+The KVPair (|Makin' Believe|,|Kitty Wells|),(8407,8393) is added to the tree.
+|Don Francisco| is added to the Artist database.
+|Give Your Heart a Home| is added to the Song database.
+The KVPair (|Don Francisco|,|Give Your Heart a Home|),(8424,8440) is added to the tree.
+The KVPair (|Give Your Heart a Home|,|Don Francisco|),(8440,8424) is added to the tree.
+|Dream Warriors| duplicates a record already in the Artist database.
+|Sound Clash| is added to the Song database.
+The KVPair (|Dream Warriors|,|Sound Clash|),(1718,8465) is added to the tree.
+The KVPair (|Sound Clash|,|Dream Warriors|),(8465,1718) is added to the tree.
+|Swami| is added to the Artist database.
+|Tonight| is added to the Song database.
+The KVPair (|Swami|,|Tonight|),(8479,8487) is added to the tree.
+The KVPair (|Tonight|,|Swami|),(8487,8479) is added to the tree.
+|Pyranja| is added to the Artist database.
+|Anfang Vom Ende| is added to the Song database.
+The KVPair (|Pyranja|,|Anfang Vom Ende|),(8497,8507) is added to the tree.
+The KVPair (|Anfang Vom Ende|,|Pyranja|),(8507,8497) is added to the tree.
+|The Cliks| is added to the Artist database.
+|Career Suicide (CD)| is added to the Song database.
+The KVPair (|The Cliks|,|Career Suicide (CD)|),(8525,8537) is added to the tree.
+The KVPair (|Career Suicide (CD)|,|The Cliks|),(8537,8525) is added to the tree.
+|Robben Ford| duplicates a record already in the Artist database.
+|Spoonful| is added to the Song database.
+The KVPair (|Robben Ford|,|Spoonful|),(5022,8559) is added to the tree.
+The KVPair (|Spoonful|,|Robben Ford|),(8559,5022) is added to the tree.
+|Percy Mayfield| is added to the Artist database.
+|Please Send Me Someone To Love| is added to the Song database.
+The KVPair (|Percy Mayfield|,|Please Send Me Someone To Love|),(8570,8587) is added to the tree.
+The KVPair (|Please Send Me Someone To Love|,|Percy Mayfield|),(8587,8570) is added to the tree.
+|Human Disease| is added to the Artist database.
+|Gold Flames Of Angels| is added to the Song database.
+The KVPair (|Human Disease|,|Gold Flames Of Angels|),(8620,8636) is added to the tree.
+The KVPair (|Gold Flames Of Angels|,|Human Disease|),(8636,8620) is added to the tree.
+|Kelly Clarkson| is added to the Artist database.
+Song hash table size doubled.
+|Cry| is added to the Song database.
+The KVPair (|Kelly Clarkson|,|Cry|),(8660,8677) is added to the tree.
+The KVPair (|Cry|,|Kelly Clarkson|),(8677,8660) is added to the tree.
+|Inspiral Carpets| is added to the Artist database.
+|Commercial Reign| is added to the Song database.
+The KVPair (|Inspiral Carpets|,|Commercial Reign|),(8683,8702) is added to the tree.
+The KVPair (|Commercial Reign|,|Inspiral Carpets|),(8702,8683) is added to the tree.
+|Mastodon| is added to the Artist database.
+|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)| is added to the Song database.
+The KVPair (|Mastodon|,|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)|),(8721,8732) is added to the tree.
+The KVPair (|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)|,|Mastodon|),(8732,8721) is added to the tree.
+|Bury Your Dead| is added to the Artist database.
+|A Devil's Ransom (Album Version)| is added to the Song database.
+The KVPair (|Bury Your Dead|,|A Devil's Ransom (Album Version)|),(8789,8806) is added to the tree.
+The KVPair (|A Devil's Ransom (Album Version)|,|Bury Your Dead|),(8806,8789) is added to the tree.
+|Rainbow| is added to the Artist database.
+|Can't Happen Here| is added to the Song database.
+The KVPair (|Rainbow|,|Can't Happen Here|),(8841,8851) is added to the tree.
+The KVPair (|Can't Happen Here|,|Rainbow|),(8851,8841) is added to the tree.
+|U2| is added to the Artist database.
+|Kite Live from Sydney| is added to the Song database.
+The KVPair (|U2|,|Kite Live from Sydney|),(8871,8876) is added to the tree.
+The KVPair (|Kite Live from Sydney|,|U2|),(8876,8871) is added to the tree.
+|Shamen| is added to the Artist database.
+|Scientas| is added to the Song database.
+The KVPair (|Shamen|,|Scientas|),(8900,8909) is added to the tree.
+The KVPair (|Scientas|,|Shamen|),(8909,8900) is added to the tree.
+|Guns N' Roses| duplicates a record already in the Artist database.
+|Mama Kin| is added to the Song database.
+The KVPair (|Guns N' Roses|,|Mama Kin|),(5250,8920) is added to the tree.
+The KVPair (|Mama Kin|,|Guns N' Roses|),(8920,5250) is added to the tree.
+|The Field Mice| is added to the Artist database.
+|When Morning Comes To Town| is added to the Song database.
+The KVPair (|The Field Mice|,|When Morning Comes To Town|),(8931,8948) is added to the tree.
+The KVPair (|When Morning Comes To Town|,|The Field Mice|),(8948,8931) is added to the tree.
+|D:Fuse| is added to the Artist database.
+|Living The Dream| is added to the Song database.
+The KVPair (|D:Fuse|,|Living The Dream|),(8977,8986) is added to the tree.
+The KVPair (|Living The Dream|,|D:Fuse|),(8986,8977) is added to the tree.
+|Bad Company| duplicates a record already in the Artist database.
+|Valerie (LP Version)| is added to the Song database.
+The KVPair (|Bad Company|,|Valerie (LP Version)|),(6174,9005) is added to the tree.
+The KVPair (|Valerie (LP Version)|,|Bad Company|),(9005,6174) is added to the tree.
+|Seventh Star| is added to the Artist database.
+|I Versus I| is added to the Song database.
+The KVPair (|Seventh Star|,|I Versus I|),(9028,9043) is added to the tree.
+The KVPair (|I Versus I|,|Seventh Star|),(9043,9028) is added to the tree.
+|James Taylor Quartet| is added to the Artist database.
+|Got To Give It Up| is added to the Song database.
+The KVPair (|James Taylor Quartet|,|Got To Give It Up|),(9056,9079) is added to the tree.
+The KVPair (|Got To Give It Up|,|James Taylor Quartet|),(9079,9056) is added to the tree.
+|Keb' Mo'| is added to the Artist database.
+|I Am Your Mother Too| is added to the Song database.
+The KVPair (|Keb' Mo'|,|I Am Your Mother Too|),(9099,9110) is added to the tree.
+The KVPair (|I Am Your Mother Too|,|Keb' Mo'|),(9110,9099) is added to the tree.
+Artist hash table size doubled.
+|Dilated Peoples| is added to the Artist database.
+|Big Business| is added to the Song database.
+The KVPair (|Dilated Peoples|,|Big Business|),(9133,9151) is added to the tree.
+The KVPair (|Big Business|,|Dilated Peoples|),(9151,9133) is added to the tree.
+|Leona Naess| is added to the Artist database.
+|Heavy Like Sunday| is added to the Song database.
+The KVPair (|Leona Naess|,|Heavy Like Sunday|),(9166,9180) is added to the tree.
+The KVPair (|Heavy Like Sunday|,|Leona Naess|),(9180,9166) is added to the tree.
+|MIMS| is added to the Artist database.
+|Cop It| is added to the Song database.
+The KVPair (|MIMS|,|Cop It|),(9200,9207) is added to the tree.
+The KVPair (|Cop It|,|MIMS|),(9207,9200) is added to the tree.
+|Sister Hazel| duplicates a record already in the Artist database.
+|Come Around (LP Version)| is added to the Song database.
+The KVPair (|Sister Hazel|,|Come Around (LP Version)|),(2969,9216) is added to the tree.
+The KVPair (|Come Around (LP Version)|,|Sister Hazel|),(9216,2969) is added to the tree.
+|Bert Kaempfert| is added to the Artist database.
+|Happy Safari| is added to the Song database.
+The KVPair (|Bert Kaempfert|,|Happy Safari|),(9243,9260) is added to the tree.
+The KVPair (|Happy Safari|,|Bert Kaempfert|),(9260,9243) is added to the tree.
+|Sleepy John Estes| is added to the Artist database.
+|Down South Blues| is added to the Song database.
+The KVPair (|Sleepy John Estes|,|Down South Blues|),(9275,9295) is added to the tree.
+The KVPair (|Down South Blues|,|Sleepy John Estes|),(9295,9275) is added to the tree.
+|Big Jay Oakerson| is added to the Artist database.
+|It's All In How You Look At It| is added to the Song database.
+The KVPair (|Big Jay Oakerson|,|It's All In How You Look At It|),(9314,9333) is added to the tree.
+The KVPair (|It's All In How You Look At It|,|Big Jay Oakerson|),(9333,9314) is added to the tree.
+|Stephen Pearcy| is added to the Artist database.
+|Freak| is added to the Song database.
+The KVPair (|Stephen Pearcy|,|Freak|),(9366,9383) is added to the tree.
+The KVPair (|Freak|,|Stephen Pearcy|),(9383,9366) is added to the tree.
+|Four Tet| is added to the Artist database.
+|Plastic People| is added to the Song database.
+The KVPair (|Four Tet|,|Plastic People|),(9391,9402) is added to the tree.
+The KVPair (|Plastic People|,|Four Tet|),(9402,9391) is added to the tree.
+|Simon & Garfunkel| is added to the Artist database.
+|Old Friends| is added to the Song database.
+The KVPair (|Simon & Garfunkel|,|Old Friends|),(9419,9439) is added to the tree.
+The KVPair (|Old Friends|,|Simon & Garfunkel|),(9439,9419) is added to the tree.
+|Lightnin' Hopkins| is added to the Artist database.
+|Everyday I Have The Blues| is added to the Song database.
+The KVPair (|Lightnin' Hopkins|,|Everyday I Have The Blues|),(9453,9473) is added to the tree.
+The KVPair (|Everyday I Have The Blues|,|Lightnin' Hopkins|),(9473,9453) is added to the tree.
+|Lost Boyz| is added to the Artist database.
+|Certain Things We Do| is added to the Song database.
+The KVPair (|Lost Boyz|,|Certain Things We Do|),(9501,9513) is added to the tree.
+The KVPair (|Certain Things We Do|,|Lost Boyz|),(9513,9501) is added to the tree.
+|Unwritten Law| is added to the Artist database.
+|Up All Night (Acoustic Live Album Version)| is added to the Song database.
+The KVPair (|Unwritten Law|,|Up All Night (Acoustic Live Album Version)|),(9536,9552) is added to the tree.
+The KVPair (|Up All Night (Acoustic Live Album Version)|,|Unwritten Law|),(9552,9536) is added to the tree.
+|Erick Sermon| is added to the Artist database.
+|Erick Sermon| is added to the Song database.
+The KVPair (|Erick Sermon|,|Erick Sermon|),(9597,9612) is added to the tree.
+The KVPair (|Erick Sermon|,|Erick Sermon|),(9612,9597) is added to the tree.
+|Super Cat| is added to the Artist database.
+|Oh It's You| is added to the Song database.
+The KVPair (|Super Cat|,|Oh It's You|),(9627,9639) is added to the tree.
+The KVPair (|Oh It's You|,|Super Cat|),(9639,9627) is added to the tree.
+|Alice Cooper| duplicates a record already in the Artist database.
+|Be My Lover| is added to the Song database.
+The KVPair (|Alice Cooper|,|Be My Lover|),(4578,9653) is added to the tree.
+The KVPair (|Be My Lover|,|Alice Cooper|),(9653,4578) is added to the tree.
+|Danny Barnes| is added to the Artist database.
+|Big Girl Blues| is added to the Song database.
+The KVPair (|Danny Barnes|,|Big Girl Blues|),(9667,9682) is added to the tree.
+The KVPair (|Big Girl Blues|,|Danny Barnes|),(9682,9667) is added to the tree.
+|Jessica Simpson| is added to the Artist database.
+|Be| is added to the Song database.
+The KVPair (|Jessica Simpson|,|Be|),(9699,9717) is added to the tree.
+The KVPair (|Be|,|Jessica Simpson|),(9717,9699) is added to the tree.
+|Primordial| is added to the Artist database.
+|Journey's End| is added to the Song database.
+The KVPair (|Primordial|,|Journey's End|),(9722,9735) is added to the tree.
+The KVPair (|Journey's End|,|Primordial|),(9735,9722) is added to the tree.
+|Bone Thugs-N-Harmony| is added to the Artist database.
+|Murder One| is added to the Song database.
+The KVPair (|Bone Thugs-N-Harmony|,|Murder One|),(9751,9774) is added to the tree.
+The KVPair (|Murder One|,|Bone Thugs-N-Harmony|),(9774,9751) is added to the tree.
+|Fontella Bass| is added to the Artist database.
+|Rescue Me| is added to the Song database.
+The KVPair (|Fontella Bass|,|Rescue Me|),(9787,9803) is added to the tree.
+The KVPair (|Rescue Me|,|Fontella Bass|),(9803,9787) is added to the tree.
+|Love and Rockets| is added to the Artist database.
+|Sweet Lover Hangover| is added to the Song database.
+The KVPair (|Love and Rockets|,|Sweet Lover Hangover|),(9815,9834) is added to the tree.
+The KVPair (|Sweet Lover Hangover|,|Love and Rockets|),(9834,9815) is added to the tree.
+|Belle and Sebastian| is added to the Artist database.
+|Like Dylan In The Movies| is added to the Song database.
+The KVPair (|Belle and Sebastian|,|Like Dylan In The Movies|),(9857,9879) is added to the tree.
+The KVPair (|Like Dylan In The Movies|,|Belle and Sebastian|),(9879,9857) is added to the tree.
+|DMX| is added to the Artist database.
+|Damien| is added to the Song database.
+The KVPair (|DMX|,|Damien|),(9906,9912) is added to the tree.
+The KVPair (|Damien|,|DMX|),(9912,9906) is added to the tree.
+|Jimmy McCracklin| is added to the Artist database.
+|Gotta Cut Out| is added to the Song database.
+The KVPair (|Jimmy McCracklin|,|Gotta Cut Out|),(9921,9940) is added to the tree.
+The KVPair (|Gotta Cut Out|,|Jimmy McCracklin|),(9940,9921) is added to the tree.
+|NG3| is added to the Artist database.
+|Tainted Love feat. Tatz| is added to the Song database.
+The KVPair (|NG3|,|Tainted Love feat. Tatz|),(9956,9962) is added to the tree.
+The KVPair (|Tainted Love feat. Tatz|,|NG3|),(9962,9956) is added to the tree.
+|Tech N9ne| is added to the Artist database.
+|Caribou Lou| is added to the Song database.
+The KVPair (|Tech N9ne|,|Caribou Lou|),(9988,10000) is added to the tree.
+The KVPair (|Caribou Lou|,|Tech N9ne|),(10000,9988) is added to the tree.
+|Kool Moe Dee| is added to the Artist database.
+|How Ya Like Me Now| is added to the Song database.
+The KVPair (|Kool Moe Dee|,|How Ya Like Me Now|),(10014,10029) is added to the tree.
+The KVPair (|How Ya Like Me Now|,|Kool Moe Dee|),(10029,10014) is added to the tree.
+|Joe Rogan| is added to the Artist database.
+|Voodoo Punnany (Album Version)| is added to the Song database.
+The KVPair (|Joe Rogan|,|Voodoo Punnany (Album Version)|),(10050,10062) is added to the tree.
+The KVPair (|Voodoo Punnany (Album Version)|,|Joe Rogan|),(10062,10050) is added to the tree.
+|Helen Love| is added to the Artist database.
+|Bigbigkiss| is added to the Song database.
+The KVPair (|Helen Love|,|Bigbigkiss|),(10095,10108) is added to the tree.
+The KVPair (|Bigbigkiss|,|Helen Love|),(10108,10095) is added to the tree.
+|Mouth Of The Architect| is added to the Artist database.
+|Harboring An Apparition| is added to the Song database.
+The KVPair (|Mouth Of The Architect|,|Harboring An Apparition|),(10121,10146) is added to the tree.
+The KVPair (|Harboring An Apparition|,|Mouth Of The Architect|),(10146,10121) is added to the tree.
+|Neil Diamond| duplicates a record already in the Artist database.
+|Song Sung Blue| is added to the Song database.
+The KVPair (|Neil Diamond|,|Song Sung Blue|),(6961,10172) is added to the tree.
+The KVPair (|Song Sung Blue|,|Neil Diamond|),(10172,6961) is added to the tree.
+|Otis Spann| duplicates a record already in the Artist database.
+|No More Doggin'| is added to the Song database.
+The KVPair (|Otis Spann|,|No More Doggin'|),(3674,10189) is added to the tree.
+The KVPair (|No More Doggin'|,|Otis Spann|),(10189,3674) is added to the tree.
+|Winifred Phillips| duplicates a record already in the Artist database.
+|Misty Bog| is added to the Song database.
+The KVPair (|Winifred Phillips|,|Misty Bog|),(3643,10207) is added to the tree.
+The KVPair (|Misty Bog|,|Winifred Phillips|),(10207,3643) is added to the tree.
+|The Gone Jackals| is added to the Artist database.
+|Not Buried Deep Enough| is added to the Song database.
+The KVPair (|The Gone Jackals|,|Not Buried Deep Enough|),(10219,10238) is added to the tree.
+The KVPair (|Not Buried Deep Enough|,|The Gone Jackals|),(10238,10219) is added to the tree.
+|Los Del Rio| is added to the Artist database.
+|Macarena| is added to the Song database.
+The KVPair (|Los Del Rio|,|Macarena|),(10263,10277) is added to the tree.
+The KVPair (|Macarena|,|Los Del Rio|),(10277,10263) is added to the tree.
+|Flowin Immo et Les Freaqz| is added to the Artist database.
+|Immonumental| is added to the Song database.
+The KVPair (|Flowin Immo et Les Freaqz|,|Immonumental|),(10288,10316) is added to the tree.
+The KVPair (|Immonumental|,|Flowin Immo et Les Freaqz|),(10316,10288) is added to the tree.
+|Atreyu| is added to the Artist database.
+|Gallows (Album Version)| is added to the Song database.
+The KVPair (|Atreyu|,|Gallows (Album Version)|),(10331,10340) is added to the tree.
+The KVPair (|Gallows (Album Version)|,|Atreyu|),(10340,10331) is added to the tree.
+|Dave Brockie Experience| is added to the Artist database.
+|Too Much Stuff| is added to the Song database.
+The KVPair (|Dave Brockie Experience|,|Too Much Stuff|),(10366,10392) is added to the tree.
+The KVPair (|Too Much Stuff|,|Dave Brockie Experience|),(10392,10366) is added to the tree.
+|Bersuit Vergarabat| is added to the Artist database.
+|De Onda| is added to the Song database.
+The KVPair (|Bersuit Vergarabat|,|De Onda|),(10409,10430) is added to the tree.
+The KVPair (|De Onda|,|Bersuit Vergarabat|),(10430,10409) is added to the tree.
+|Jim Breuer| is added to the Artist database.
+|Party In The Stomach (LP Version)| is added to the Song database.
+The KVPair (|Jim Breuer|,|Party In The Stomach (LP Version)|),(10440,10453) is added to the tree.
+The KVPair (|Party In The Stomach (LP Version)|,|Jim Breuer|),(10453,10440) is added to the tree.
+|BT feat. JES| is added to the Artist database.
+|Every Other Way| is added to the Song database.
+The KVPair (|BT feat. JES|,|Every Other Way|),(10489,10504) is added to the tree.
+The KVPair (|Every Other Way|,|BT feat. JES|),(10504,10489) is added to the tree.
+|Leigh Jones| is added to the Artist database.
+|Same Game| is added to the Song database.
+The KVPair (|Leigh Jones|,|Same Game|),(10522,10536) is added to the tree.
+The KVPair (|Same Game|,|Leigh Jones|),(10536,10522) is added to the tree.
+|One Block Radius| is added to the Artist database.
+|All On Our Own| is added to the Song database.
+The KVPair (|One Block Radius|,|All On Our Own|),(10548,10567) is added to the tree.
+The KVPair (|All On Our Own|,|One Block Radius|),(10567,10548) is added to the tree.
+|David Bowie| is added to the Artist database.
+|Moss Garden (1999 Digital Remaster)| is added to the Song database.
+The KVPair (|David Bowie|,|Moss Garden (1999 Digital Remaster)|),(10584,10598) is added to the tree.
+The KVPair (|Moss Garden (1999 Digital Remaster)|,|David Bowie|),(10598,10584) is added to the tree.
+|Irma Thomas| is added to the Artist database.
+|River Is Waiting| is added to the Song database.
+The KVPair (|Irma Thomas|,|River Is Waiting|),(10636,10650) is added to the tree.
+The KVPair (|River Is Waiting|,|Irma Thomas|),(10650,10636) is added to the tree.
+|Rooney| is added to the Artist database.
+|Jump In My Bed| is added to the Song database.
+The KVPair (|Rooney|,|Jump In My Bed|),(10669,10678) is added to the tree.
+The KVPair (|Jump In My Bed|,|Rooney|),(10678,10669) is added to the tree.
+|Chase & Status| is added to the Artist database.
+|Trapdoor| is added to the Song database.
+The KVPair (|Chase & Status|,|Trapdoor|),(10695,10712) is added to the tree.
+The KVPair (|Trapdoor|,|Chase & Status|),(10712,10695) is added to the tree.
+|Liars| is added to the Artist database.
+|Leather Prowler| is added to the Song database.
+The KVPair (|Liars|,|Leather Prowler|),(10723,10731) is added to the tree.
+The KVPair (|Leather Prowler|,|Liars|),(10731,10723) is added to the tree.
+|Lady Saw| is added to the Artist database.
+|To Sir With Love| is added to the Song database.
+The KVPair (|Lady Saw|,|To Sir With Love|),(10749,10760) is added to the tree.
+The KVPair (|To Sir With Love|,|Lady Saw|),(10760,10749) is added to the tree.
+|Casiotone For The Painfully Alone| duplicates a record already in the Artist database.
+|Attic Room| is added to the Song database.
+The KVPair (|Casiotone For The Painfully Alone|,|Attic Room|),(7490,10779) is added to the tree.
+The KVPair (|Attic Room|,|Casiotone For The Painfully Alone|),(10779,7490) is added to the tree.
+|Agnostic Front| duplicates a record already in the Artist database.
+|Come Alive| is added to the Song database.
+The KVPair (|Agnostic Front|,|Come Alive|),(6280,10792) is added to the tree.
+The KVPair (|Come Alive|,|Agnostic Front|),(10792,6280) is added to the tree.
+|Cradle Of Filth| is added to the Artist database.
+|Summer Dying Fast| is added to the Song database.
+The KVPair (|Cradle Of Filth|,|Summer Dying Fast|),(10805,10823) is added to the tree.
+The KVPair (|Summer Dying Fast|,|Cradle Of Filth|),(10823,10805) is added to the tree.
+|Alan Silvestri| is added to the Artist database.
+|The Joes Mobilize| is added to the Song database.
+The KVPair (|Alan Silvestri|,|The Joes Mobilize|),(10843,10860) is added to the tree.
+The KVPair (|The Joes Mobilize|,|Alan Silvestri|),(10860,10843) is added to the tree.
+|Johnny Winter| duplicates a record already in the Artist database.
+|Shed So Many Tears| is added to the Song database.
+The KVPair (|Johnny Winter|,|Shed So Many Tears|),(293,10880) is added to the tree.
+The KVPair (|Shed So Many Tears|,|Johnny Winter|),(10880,293) is added to the tree.
+|Patton Oswalt| is added to the Artist database.
+|A Brief History of Shitty Comedy| is added to the Song database.
+The KVPair (|Patton Oswalt|,|A Brief History of Shitty Comedy|),(10901,10917) is added to the tree.
+The KVPair (|A Brief History of Shitty Comedy|,|Patton Oswalt|),(10917,10901) is added to the tree.
+|Shy FX & T Power| is added to the Artist database.
+|Feelings| is added to the Song database.
+The KVPair (|Shy FX & T Power|,|Feelings|),(10952,10971) is added to the tree.
+The KVPair (|Feelings|,|Shy FX & T Power|),(10971,10952) is added to the tree.
+|The Token| is added to the Artist database.
+|Come Dance With Me| is added to the Song database.
+The KVPair (|The Token|,|Come Dance With Me|),(10982,10994) is added to the tree.
+The KVPair (|Come Dance With Me|,|The Token|),(10994,10982) is added to the tree.
+|The Black Crowes| is added to the Artist database.
+|Nonfiction| is added to the Song database.
+The KVPair (|The Black Crowes|,|Nonfiction|),(11015,11034) is added to the tree.
+The KVPair (|Nonfiction|,|The Black Crowes|),(11034,11015) is added to the tree.
+|Del Tha Funkee Homosapien| is added to the Artist database.
+|Mistadobalina| is added to the Song database.
+The KVPair (|Del Tha Funkee Homosapien|,|Mistadobalina|),(11047,11075) is added to the tree.
+The KVPair (|Mistadobalina|,|Del Tha Funkee Homosapien|),(11075,11047) is added to the tree.
+|Arctic Monkeys| is added to the Artist database.
+|From The Ritz To The Rubble| is added to the Song database.
+The KVPair (|Arctic Monkeys|,|From The Ritz To The Rubble|),(11091,11108) is added to the tree.
+The KVPair (|From The Ritz To The Rubble|,|Arctic Monkeys|),(11108,11091) is added to the tree.
+|Sick Of It All| duplicates a record already in the Artist database.
+|Consume (LP Version)| is added to the Song database.
+The KVPair (|Sick Of It All|,|Consume (LP Version)|),(6787,11138) is added to the tree.
+The KVPair (|Consume (LP Version)|,|Sick Of It All|),(11138,6787) is added to the tree.
+|Sugar Minott| is added to the Artist database.
+|A True| is added to the Song database.
+The KVPair (|Sugar Minott|,|A True|),(11161,11176) is added to the tree.
+The KVPair (|A True|,|Sugar Minott|),(11176,11161) is added to the tree.
+|Aerosmith| is added to the Artist database.
+|Angel| is added to the Song database.
+The KVPair (|Aerosmith|,|Angel|),(11185,11197) is added to the tree.
+The KVPair (|Angel|,|Aerosmith|),(11197,11185) is added to the tree.
+|themselves| duplicates a record already in the Artist database.
+|Crayon Sharpener| is added to the Song database.
+The KVPair (|themselves|,|Crayon Sharpener|),(1052,11205) is added to the tree.
+The KVPair (|Crayon Sharpener|,|themselves|),(11205,1052) is added to the tree.
+|TAKARU| is added to the Artist database.
+|Idnnitkhtr| is added to the Song database.
+The KVPair (|TAKARU|,|Idnnitkhtr|),(11224,11233) is added to the tree.
+The KVPair (|Idnnitkhtr|,|TAKARU|),(11233,11224) is added to the tree.
+|Love Jones| is added to the Artist database.
+|I Like Young Girls| is added to the Song database.
+The KVPair (|Love Jones|,|I Like Young Girls|),(11246,11259) is added to the tree.
+The KVPair (|I Like Young Girls|,|Love Jones|),(11259,11246) is added to the tree.
+|Mikey Dread| is added to the Artist database.
+|Two Track Dub (Dub / Instrumental Reggae Music)| is added to the Song database.
+The KVPair (|Mikey Dread|,|Two Track Dub (Dub / Instrumental Reggae Music)|),(11280,11294) is added to the tree.
+The KVPair (|Two Track Dub (Dub / Instrumental Reggae Music)|,|Mikey Dread|),(11294,11280) is added to the tree.
+|Perrey And Kingsley| is added to the Artist database.
+|The Unidentified Flying Object| is added to the Song database.
+The KVPair (|Perrey And Kingsley|,|The Unidentified Flying Object|),(11344,11366) is added to the tree.
+The KVPair (|The Unidentified Flying Object|,|Perrey And Kingsley|),(11366,11344) is added to the tree.
+|99 Posse| is added to the Artist database.
+|Salario Garantito (Versione Strumentale)| is added to the Song database.
+The KVPair (|99 Posse|,|Salario Garantito (Versione Strumentale)|),(11399,11410) is added to the tree.
+The KVPair (|Salario Garantito (Versione Strumentale)|,|99 Posse|),(11410,11399) is added to the tree.
+|Martin Denny| is added to the Artist database.
+|Manila| is added to the Song database.
+The KVPair (|Martin Denny|,|Manila|),(11453,11468) is added to the tree.
+The KVPair (|Manila|,|Martin Denny|),(11468,11453) is added to the tree.
+The KVPair (|99 Posse|,|Salario Garantito (Versione Strumentale)|) is deleted from the tree.
+The KVPair (|Salario Garantito (Versione Strumentale)|,|99 Posse|) is deleted from the tree.
+|99 Posse| is deleted from the Artist database.
+|Salario Garantito (Versione Strumentale)| is deleted from the Song database.
+The KVPair (|A True|,|Sugar Minott|) is deleted from the tree.
+The KVPair (|Sugar Minott|,|A True|) is deleted from the tree.
+|A True| is deleted from the Song database.
+|Sugar Minott| is deleted from the Artist database.
+The KVPair (|themselves|,|Oversleeping|) is deleted from the tree.
+The KVPair (|Oversleeping|,|themselves|) is deleted from the tree.
+|Oversleeping| is deleted from the Song database.
+The KVPair (|themselves|,|Crayon Sharpener|) is deleted from the tree.
+The KVPair (|Crayon Sharpener|,|themselves|) is deleted from the tree.
+|themselves| is deleted from the Artist database.
+|Crayon Sharpener| is deleted from the Song database.
+|Crayon Sharpener| does not exist in the song database.
+|Murder One| 
+|Immonumental| 
+|Too Much Stuff| 
+|Jump In My Bed| 
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 
+|Lookin' For Me Somewhere| 
+|Summer Dying Fast| 
+|If You Should Walk Away| 
+|Deep Blue| 
+|This Is Where It Ends (Album Version)| 
+|Escape From The Underrealm| 
+|Cerilene| 
+|Pretty Woman (LP Version)| 
+|Freak| 
+|Big Business| 
+|On Misty Pathways| 
+|Attic Room| 
+|Party Time| 
+|Johnny Winter's first song| 
+|So ist das nun mal| 
+|Getaway| 
+|Consume (LP Version)| 
+|Into Battle| 
+|Undertow| 
+|They Have a Name| 
+|Chime (edit)| 
+|Big Girl Blues| 
+|Volumatic Spacer Device| 
+|Six| 
+|Bliv Du Till Gran (If You Became A Spruce)| 
+|Trapdoor| 
+|Manila| 
+|Oh It's You| 
+|It's All In My Mind| 
+|Woo Hoo| 
+|Down in the Lowlands| 
+|The Ride (Album)| 
+|Give Your Heart a Home| 
+|Sweetest Goodbye| 
+|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)| 
+|Hard Times| 
+|When Morning Comes To Town| 
+|Listen| 
+|Shed So Many Tears| 
+|Can't Do Me No Good| 
+|Honey Fingers| 
+|The Forgotten Lands| 
+|These Words| 
+|Can't Happen Here| 
+|Sympathy| 
+|Up All Night (Acoustic Live Album Version)| 
+|Waheera| 
+|We've Only Just Begun (LP Version)| 
+|Scientas| 
+|Al Final| 
+|Anfang Vom Ende| 
+|Valerie (LP Version)| 
+|If I Know You| 
+|The Painter| 
+|Sound Clash| 
+|Pretty Girl (Amended Version)| 
+|Erick Sermon| 
+|Happy Safari| 
+|Harboring An Apparition| 
+|Tainted Love feat. Tatz| 
+|Be My Lover| 
+|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)| 
+|No Sympathy For Fools| 
+|Ghetto| 
+|Indian Love Call| 
+|What Are We Here For| 
+|Burn 'Em Down (LP Version)| 
+|Year 3_000 Blues (2002 Digital Remaster)| 
+|Commercial Reign| 
+|Juguete| 
+|De Onda| 
+|11th Street| 
+|I'm Real| 
+|The One I Got| 
+|Down South Blues| 
+|Nonfiction| 
+|Damien| 
+|The Unidentified Flying Object| 
+|Be Careful With A Fool| 
+|LEAVE!| 
+|Beauty And The Beast| 
+|A Dustland Fairytale| 
+|River Is Waiting| 
+|So Not Over You (Motivo-Pop Lectro Mix)| 
+|A Devil's Ransom (Album Version)| 
+|Reborn (Explicit)| 
+|Everyday| 
+|Changed My Life| 
+|Spoonful| 
+|Wicker Chair| 
+|Let's Make Love (Album Version)| 
+|With Tears In My Eyes| 
+|No Unexpected Guests| 
+|Feelings| 
+|Kite Live from Sydney| 
+|Quiet Time| 
+|Patience| 
+|Bukka White's third song| 
+|Redwing| 
+|Got To Give It Up| 
+|For You| 
+|Plastic People| 
+|Be| 
+|Johnny Winter's second song| 
+|Career Suicide (CD)| 
+|Gold Flames Of Angels| 
+|How Ya Like Me Now| 
+|No More Doggin'| 
+|Ich bleib so wie ich bin| 
+|The Majesty Of Rock| 
+|Show a Sign of Life| 
+|Doggin' Around| 
+|Pottajenkka| 
+|Something Girls| 
+|Baggage| 
+|Risen From Within| 
+|Away In A Manger| 
+|22 Going On 23| 
+|Born and Raised In Compton| 
+|Bigbigkiss| 
+|Sea_ Subsurface| 
+|Cop It| 
+|Prove Something (explicit album version)| 
+|Printemps| 
+|Doesn't Get Much Better| 
+|I'm On Your Tail| 
+|I Love You More Than You'll Ever Know (LP Version)| 
+|Decide| 
+|Si Es Que Te Vas| 
+|Inherent Scars| 
+|Well Oh Well| 
+|Johnny Winter's fifth song| 
+|Yiri Yiri Bon| 
+|Gotta Cut Out| 
+|Always And Never (Album Version)| 
+|Song Sung Blue| 
+|Bleeds In Blue (Album Version)| 
+|Better Days (Album Version)| 
+|Tonight| 
+|Good Enough| 
+|The Dark Road| 
+|The Lie| 
+|Love Can Run Faster| 
+|Salvation| 
+|Send Me An Angel| 
+|Chela| 
+|Women| 
+|Frankie And Johnny| 
+|I Think My Wife Is Running Around On Me (Taco Hell)| 
+|Talk To Your Daughter (Album Version)| 
+|Breakin' Dishes| 
+|Short On Ideas / One Last Cigarette| 
+|God You Are My God| 
+|King Of Rock| 
+|Danny's All-Star Joint (LP Version)| 
+|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)| 
+|Two Track Dub (Dub / Instrumental Reggae Music)| 
+|Certain Things We Do| 
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 
+|No| 
+|Five Long Years| 
+|I Am Your Mother Too| 
+|Harmony Of The Forest| 
+|Riot In Cell Block #9| 
+|Ride Wit Me| 
+|Wrote For Luck (12 - Remastered version)| 
+|House Of Wolves (Album Version)| 
+|Sweet Lover Hangover| 
+|Mistadobalina| 
+|Walking The Back Streets And Crying| 
+|Safe Passage| 
+|Antes (Salsa Version)| 
+|Ye That Tempteth_ Ye That Bequeth| 
+|Come Alive| 
+|Last Good Time In Town| 
+|From The Ritz To The Rubble| 
+|The Race| 
+|Not Buried Deep Enough| 
+|Any Wich Way (Freedom Must Come)| 
+|Mama Kin| 
+|Angel| 
+|Sporable| 
+|Contact 00| 
+|Voodoo Punnany (Album Version)| 
+|Living The Dream| 
+|Sporco Ma Distinto| 
+|Come Around (LP Version)| 
+|Crazy Circles| 
+|Die Meisten| 
+|Gallows (Album Version)| 
+|After Hours| 
+|Reminisce For A While (Sung With Raul Malo)| 
+|Same Game| 
+|Comme Toi (Live)| 
+|I Versus I| 
+|Come Dance With Me| 
+|For Your Passion My Love| 
+|Macarena| 
+|Function Of The Sun| 
+|Get It Together| 
+|Busted| 
+|I'm Not A Loser| 
+|Loko| 
+|De rien| 
+|Sarah Yellin'| 
+|Journey's End| 
+|Why_ Now Baby?| 
+|She Blinded Me With Science| 
+|Maria De Santiago| 
+|To Sir With Love| 
+|American Lovebite| 
+|Tic| 
+|Like Dylan In The Movies| 
+|Common sense| 
+|Please Send Me Someone To Love| 
+|The Letter That Johnny Walker Read| 
+|Caribou Lou| 
+|Rescue Me| 
+|Misty Bog| 
+|No One Hears You| 
+|2.000 Kilometros| 
+|Party In The Stomach (LP Version)| 
+|My God (Audio Adrenaline Album Version)| 
+|Makin' Believe| 
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 
+|Make That Money (Scrooge's Song) (Album Version)| 
+|Dying Batteries| 
+|13 jours en France| 
+|Soldats Ne Tirez Pas| 
+|Shameless| 
+|Leather Prowler| 
+|Down On Me| 
+|Let Me Show You The Way (Out)| 
+|Main Street Eyes| 
+|My Prerogative| 
+|Every Other Way| 
+|Red Socks Pugie| 
+|Cry| 
+|Black and Blue| 
+|Idnnitkhtr| 
+|The Joes Mobilize| 
+|Micael| 
+|Around And Around| 
+|Soc Mediterrani| 
+|Moss Garden (1999 Digital Remaster)| 
+|Heavy Like Sunday| 
+|Everything Man (Album Version)| 
+|A Brief History of Shitty Comedy| 
+|It's All In How You Look At It| 
+|Same Old Thing| 
+|Sensations| 
+|You Never Cry Like A Lover (LP Version)| 
+|Old Friends| 
+|Nothing In Rambling| 
+|Freedom| 
+|Ammonite| 
+|I Like Young Girls| 
+|Black Tiger| 
+|8th Wonder| 
+|Time / Confusion| 
+|Heaven's In New York| 
+|Johnny Winter's third song| 
+|All On Our Own| 
+|Finding My Way| 
+|Q Loop| 
+|La Route Est Belle| 
+|Ma Rainey's Black Bottom| 
+|Everyday I Have The Blues| 
+|Good Friend| 
+|My Babe| 
+|Ripped Pants| 
+|Don't Keep Me Wondering| 
+|Johnny Winter's fourth song| 
+|No Good Without You| 
+|Your Revolution Is A Joke| 
+total songs: 281
+|Bert Kaempfert| 
+|Leigh Jones| 
+|Young-Holt Unlimited| 
+|Asleep At The Wheel| 
+|TAKARU| 
+|White Willow| 
+|Jeremy Spencer| 
+|Fat Joe| 
+|Leona Naess| 
+|Cheo Feliciano| 
+|Otis Spann| 
+|Rita Chiarelli| 
+|Bone Thugs-N-Harmony| 
+|The Gone Jackals| 
+|Mikey Dread| 
+|Behemoth| 
+|Rainbow| 
+|Chris Clark| 
+|Mr. Lif| 
+|Maroon 5| 
+|Silverstein| 
+|Natalie Cole| 
+|Aerosmith| 
+|Cradle Of Filth| 
+|Lost Boyz| 
+|Arthur Brown| 
+|Jean-Jacques Goldman| 
+|Bersuit Vergarabat| 
+|Chase & Status| 
+|The Sugarhill Gang| 
+|U2| 
+|Rance Allen Group| 
+|Wyclef Jean| 
+|Bad Azz| 
+|Home Town Hero| 
+|Joe Rogan| 
+|Guns N' Roses| 
+|Danny Barnes| 
+|Jimmy McCracklin| 
+|Britney Spears| 
+|Chelsea| 
+|Sylver| 
+|The Ruby Suns| 
+|Foals| 
+|Manjul| 
+|Shy FX & T Power| 
+|Simon & Garfunkel| 
+|Hot Chip| 
+|Kitty Wells| 
+|Obie Bermudez| 
+|Enslavement Of Beauty| 
+|Atreyu| 
+|Bad Religion| 
+|Mouth Of The Architect| 
+|Funeral For A Friend| 
+|Delirious| 
+|David Summers| 
+|Astarte| 
+|Freddie King| 
+|Robert Palmer| 
+|Swami| 
+|Elakelaiset| 
+|Andreas Dorau| 
+|Erick Sermon| 
+|Dave Eggar| 
+|Lightnin' Hopkins| 
+|Rickie Lee Jones| 
+|Juana Molina| 
+|Mithotyn| 
+|Everyday Sunday| 
+|Los Del Rio| 
+|Simply Red| 
+|Regina Belle| 
+|The Rolling Stones| 
+|The Presets| 
+|Nightwish| 
+|Lara & Reyes| 
+|Kelly Clarkson| 
+|KRS-One| 
+|Ricardo Lemvo| 
+|Inspiral Carpets| 
+|No Address| 
+|Les Ogres De Barback| 
+|D:Fuse| 
+|Tech N9ne| 
+|Liars| 
+|Adam Ant| 
+|Sick Of It All| 
+|Jah Cure| 
+|Bury Your Dead| 
+|Rihanna| 
+|Jennifer Lopez featuring Ja Rule| 
+|T-Bone| 
+|Less Than Jake| 
+|Sleepy John Estes| 
+|Human Disease| 
+|Chroma Key| 
+|Michael Gettel| 
+|Another Johnny Winter| 
+|Pyranja| 
+|Stanley Clarke & George Duke| 
+|Unwritten Law| 
+|Novaspace| 
+|Kool Moe Dee| 
+|MIMS| 
+|Stephen Pearcy| 
+|Albert Collins| 
+|Aisha Duo| 
+|Donny Hathaway| 
+|Beastie Boys| 
+|Bikini Machine| 
+|Oztara| 
+|Cinder| 
+|Casiotone For The Painfully Alone| 
+|The Plimsouls| 
+|Zeromancer| 
+|Toni Braxton| 
+|Kyle Riabko| 
+|Percy Mayfield| 
+|Lightnin' Slim| 
+|Arctic Monkeys| 
+|Tiny Bradshaw| 
+|Spongebob Squarepants| 
+|All Time Low| 
+|Spinal Tap| 
+|DJ Quik| 
+|Kassav'| 
+|Kitaro| 
+|Eko Fresh feat. Ado| 
+|One Block Radius| 
+|Del Tha Funkee Homosapien| 
+|Robben Ford| 
+|Bad Company| 
+|Aeoliah| 
+|Big Jay Oakerson| 
+|Green Day| 
+|The Black Crowes| 
+|Jim Breuer| 
+|Plump DJs| 
+|Evanescence| 
+|Sister Hazel| 
+|Y&T| 
+|The Killers| 
+|David Arkenstone| 
+|Slim Whitman| 
+|The Paul Butterfield Blues Band| 
+|Commander Cody And His Lost Planet Airmen| 
+|Charlie Peacock| 
+|Irma Thomas| 
+|Descendents| 
+|Don Francisco| 
+|Faithless| 
+|Agnostic Front| 
+|Dons| 
+|Buddy Miles| 
+|BT feat. JES| 
+|Janis Joplin| 
+|Dilated Peoples| 
+|Alice Cooper| 
+|Wesley Tuttle| 
+|Symphony in Peril| 
+|Shamen| 
+|Belle and Sebastian| 
+|Talib Kweli| 
+|Winifred Phillips| 
+|Phil Collins| 
+|Baby Bash / Grimm| 
+|45 Grave| 
+|The Birds| 
+|Memphis Minnie| 
+|8Ball & MJG| 
+|Love Jones| 
+|Dream Warriors| 
+|The Token| 
+|My Chemical Romance| 
+|Dave Brockie Experience| 
+|Drowning Pool| 
+|Thomas Dolby| 
+|DMX| 
+|Four Tet| 
+|Samy Deluxe| 
+|Hem| 
+|Kings Of Leon| 
+|Faith Hill & Tim McGraw| 
+|Helmet| 
+|L7| 
+|Tilman Sillescu| 
+|Open Hand| 
+|Groupa| 
+|Jackson United| 
+|Super Cat| 
+|Mastodon| 
+|James Taylor Quartet| 
+|FFH| 
+|Teenage Fanclub| 
+|Iggy Pop| 
+|NG3| 
+|Butthole Surfers| 
+|Flowin Immo et Les Freaqz| 
+|Johnny Winter| 
+|Phantom Planet| 
+|High Strung_ The| 
+|Junior Reid| 
+|David Bowie| 
+|Primordial| 
+|Alan Silvestri| 
+|Seguridad Social| 
+|Helen Love| 
+|Lady Saw| 
+|Basic Channel| 
+|Ten Years After| 
+|The Chap| 
+|KALIMBA| 
+|Gene Autry| 
+|Jessica Simpson| 
+|Rooney| 
+|Happy Mondays| 
+|BoDeans| 
+|Winston McAnuff_ The Bazbaz Orchestra| 
+|V V Brown| 
+|Ma Rainey| 
+|Patton Oswalt| 
+|Sonora Carruseles| 
+|James Horner| 
+|John Frizzell| 
+|Seventh Star| 
+|RUN-DMC| 
+|Natasha Bedingfield| 
+|Barenaked Ladies| 
+|Tim Wilson| 
+|Love and Rockets| 
+|Paul Carrack| 
+|Richard Galliano| 
+|Audio Adrenaline| 
+|Jonny Lang| 
+|Carlos Vives| 
+|Neil Diamond| 
+|Orbital| 
+|Torcuato Mariano| 
+|Francis Lai| 
+|Perrey And Kingsley| 
+|Gary Moore| 
+|Martin Denny| 
+|3 Doors Down| 
+|Gerard Lenorman| 
+|Keb' Mo'| 
+|Little Milton| 
+|Red Stick Ramblers| 
+|Another Bukka White| 
+|Faith Hill| 
+|Fontella Bass| 
+|The Field Mice| 
+|Arturo Sandoval| 
+|Eagles| 
+|The Cliks| 
+|Ennio Morricone| 
+|Ensiferum| 
+|Bravehearts| 
+total artists: 258

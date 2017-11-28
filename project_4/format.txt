@@ -1,0 +1,83 @@
+insert a<SEP>b
+|a| is added to the Artist database.
+|b| is added to the Song database.
+The KVPair (|a|,|b|),(0,4) is added to the tree.
+The KVPair (|b|,|a|),(4,0) is added to the tree.
+
+if(there are duplicates)
+|a| duplicates a record already in the Artist database.
+|b| duplicates a record already in the Song database.
+The KVPair (|a|,|b|),(0,4) duplicates a record already in the tree.
+The KVPair (|a|,|b|),(4,0) duplicates a record already in the tree.
+
+
+
+
+remove artist a
+
+|a| does not exist in the artist database.
+
+If |a| exsists remove from appropriate hash table, 2-3+ tree and remove corresponding song from DB if no other artist points to it
+The KVPair (|a|,|b|) is deleted from the tree.
+The KVPair (|b|,|a|) is deleted from the tree.
+|a| is deleted from the Artist database.
+|b| is deleted from the Song database.
+
+print artist
+|e| 
+|c| 
+total artists: 2
+
+list artist a
+|a| does not exist in the artist database.
+
+list artist a
+|b|
+|d|
+Print all songs by a
+
+delete a<SEP>b
+The KVPair (|a|,|b|) is deleted from the tree.
+The KVPair (|b|,|a|) is deleted from the tree.
+|b| is deleted from the song database. (if b no longer exists in the database)
+
+
+if(artist does not exitst)
+|a| does not exist in the artist database.
+
+if (artist exists but the song does not)
+|b| does not exist in the song database.
+
+remove song b
+
+|b| does not exist in the song database.
+
+If |b| exsists remove from appropriate hash table, 2-3+ tree and remove corresponding artist from DB if no other song points to it
+The KVPair (|b|,|a|) is deleted from the tree.
+The KVPair (|a|,|b|) is deleted from the tree.
+|b| is deleted from the Song database.
+|a| is deleted from the Artist database.
+
+print song
+
+total songs: 0
+
+|b| 
+|c| 
+total songs: 2
+
+list song b
+
+|b| does not exist in the song database.
+
+If exsists list all the artist who sung this
+|a|
+
+
+print tree
+
+Printing 2-3 tree:
+0 8 4 0
+  0 4
+  0 8
+  4 0 8 0

@@ -165,27 +165,23 @@ public class BST <Key extends Comparable<? super Key>, E> {
      * @param name the string identifier of the rectangle
      * @return boolean true if the rectangle was found and removed
      */
-    public boolean remove(Key k) {
+    public boolean remove(Key k, E elem, boolean removeKey) {
         removeSuccess = false;
-        setRootNode(removeByKey(root, k));
-        if (root != null && root.getKey() == null) {
-            root = null;
+        if(removeKey) {
+            setRootNode(removeByKey(root, k));
+            if (root != null && root.getKey() == null) {
+                root = null;
+            }
+            return removeSuccess;
         }
-        return removeSuccess;
-    }
-
-    /**
-     * removes the BST node with the provided key value
-     * @param k the key to remove
-     * @return true if it was 
-     */
-    public boolean remove(E elem) {
-        removeSuccess = false;
-        setRootNode(removeValue(root, elem));
-        if (root != null && root.getKey() == null) {
-            root = null;
+        else {
+            removeSuccess = false;
+            setRootNode(removeValue(root, elem));
+            if (root != null && root.getKey() == null) {
+                root = null;
+            }
+            return removeSuccess;            
         }
-        return removeSuccess;
     }
 
     /**
