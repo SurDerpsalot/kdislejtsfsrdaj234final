@@ -13,7 +13,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
     private TreeNode temp; //a TreeNode instance accessible from the outside
     private TreeNode[] tempArray; //an externally accessible array of TreeNodes
     private boolean removeSuccess; //global to indicate 'node removal success'
-    private ArrayList<E> removedArray;
+   // private ArrayList<E> removedArray;
     /**
      * default constructor
      */
@@ -72,7 +72,14 @@ public class BST <Key extends Comparable<? super Key>, E> {
      * @param t   is the existing TreeNode to copy
      */
     public void setRootNode(TreeNode t) {
-        root = new TreeNode(t);
+    	if(t != null){
+    		root = new TreeNode(t);
+    	}
+    	else
+    	{
+    		root = null;
+    	}
+    	       
     };
 
     /**
@@ -175,6 +182,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
             return removeSuccess;
         }
         else {
+        	//THIS DOES NOT WORK PROPERLY
             removeSuccess = false;
             setRootNode(removeValue(root, elem));
             if (root != null && root.getKey() == null) {
@@ -236,7 +244,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
         } 
         else { // Found it
             removeSuccess = true;
-            removedArray = rt.kv.getValueHandles();
+           // removedArray = rt.kv.getValueHandles();
             if (rt.getLeft() == null) {
                 return rt.getRight();
             } 
@@ -358,7 +366,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
      * @param rt  the root node searched
      * @return the array of TreeNodes
      */
-    private ArrayList<TreeNode> inorderList(TreeNode rt) {
+ /*   private ArrayList<TreeNode> inorderList(TreeNode rt) {
         if (rt == null) {
             return null;
         }
@@ -390,7 +398,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
 
         return all;
     }
-
+*/
     //////////////////////////////
     //////////////////////////////
     // the binary tree node class
@@ -451,11 +459,11 @@ public class BST <Key extends Comparable<? super Key>, E> {
          * @param k the key
          * @param elem the value
          */
-
+/*
         public void setLeft(Key k, E elem) {
             left = new TreeNode(k, elem);
         }
-
+*/
         /**
          * copy construct the right child
          * 
@@ -471,11 +479,11 @@ public class BST <Key extends Comparable<? super Key>, E> {
          * @param k the key
          * @param elem the value
          */
-
+/*
         public void setRight(Key k, E elem) {
             right = new TreeNode(k, elem);
         }
-
+*/
         /**
          * sets a TreeNode's values to those of another TreeNode.
          * 
@@ -487,14 +495,15 @@ public class BST <Key extends Comparable<? super Key>, E> {
             }
             kv = t.getKVPair();
         }
+       
         /**
          * set the values
          * @param k the key
          * @param elem the first value associated with this key
          */
-        public void setValues(Key k, E elem) {
+        /*public void setValues(Key k, E elem) {
             kv = new KVPair<Key, E>(k, elem);
-        }
+        }*/
 
         /**
          * checks that all boxes are constrained within the designated square
@@ -502,21 +511,23 @@ public class BST <Key extends Comparable<? super Key>, E> {
          * 
          * @return true if the rectangle meets project specifications.
          */
+        /*
         public boolean isValid() {
             return (kv.getKeyHandle() != null && 
                     kv.getValueHandles().size() != 0);
         };
-
+*/
         /**
          * this determines if there is an intersect between two KVPairs
          * @param t2
          *            is the TreeNode to be compared against
          * @return true if the nodes intersect.
          */
+        /*
         public boolean isNodeInterect(TreeNode t2) {
            return (t2.getKey() == kv.getKeyHandle());
         }
-
+*/
         // get each component's value in TreeNode
         /**
          * get the base of the left child

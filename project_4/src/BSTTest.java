@@ -1,7 +1,7 @@
 
 /**
  *
- * @author Madelyn Newcomb m1newc
+ * @author Madelyn Newcomb m1newc Bradley Finagin bfin96
  * @version 2017-09-18
  */
 public class BSTTest extends student.TestCase {
@@ -11,7 +11,7 @@ public class BSTTest extends student.TestCase {
      */
     
     public void testBST() {
-        BST<Integer, Integer>  newTree = new<Integer, Integer> BST();
+        BST<Integer, Integer>  newTree = new BST<Integer, Integer>();
         assertNull(newTree.getRoot());
         assertNull(newTree.getTemp());
         assertNull(newTree.getTempArray());
@@ -32,7 +32,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test the insert function
      */
-    
     public void testInsert() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         newTree.setRootNode(2, 3);
@@ -44,8 +43,7 @@ public class BSTTest extends student.TestCase {
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         newTree.setTempNode(2, 4);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
-        assertEquals(newTree.getRoot().getKey().
-                compareTo(1), 0);
+        assertEquals(newTree.getRoot().getKey() == 2, true);
         assertEquals(newTree.getRoot().getLeft().
                 getKey().compareTo(1), 0);
         assertEquals(newTree.getRoot().getRight().
@@ -55,7 +53,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting and getting the root
      */
-    
     public void testSetRootNode() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertTrue(newTree.isEmpty());
@@ -68,7 +65,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting the root with one argument
      */
-    
     public void testSetRootNodeTreeNode() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertTrue(newTree.isEmpty());
@@ -80,7 +76,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting the root with parameters
      */
-    
     public void testSetRootNodeKeyE() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertTrue(newTree.isEmpty());
@@ -92,7 +87,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting the and getting temp node
      */
-    
     public void testSetGetTempNode() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertNull(newTree.getTemp());
@@ -105,7 +99,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting the temp node with one argument
      */
-    
     public void testSetTempNodeTreeNode() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertNull(newTree.getTemp());
@@ -117,7 +110,6 @@ public class BSTTest extends student.TestCase {
     /**
      * test setting the temp node with parameters
      */
-    
     public void testSetTempNodeKeyE() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         assertNull(newTree.getTemp());
@@ -130,17 +122,20 @@ public class BSTTest extends student.TestCase {
     /**
      * set the tempArray
      */
-    
     public void testSetGetTempArray() {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        newTree.setRootNode();
         newTree.setRootNode(3, 4);
+        newTree.setTempNode();
         newTree.setTempNode(1, 6);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         newTree.setTempNode(9, 10);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         newTree.searchTree(9);
         //TODO: fix these tests for this new BST
-        assertEquals(newTree.getTempArray().length, 2);
+        //Do we ever use the temp array?
+        
+//        assertEquals(newTree.getTempArray().length, 2);
 //        assertEquals(newTree.getTempArray()[0].getKey().compareTo("child"), 0);
 //        assertEquals(newTree.getTempArray()[1].getKey().compareTo("child"), 0);
 //        assertNotSame(newTree.getTempArray()[0].getX(),
@@ -150,107 +145,37 @@ public class BSTTest extends student.TestCase {
     }
 
     /**
-     * test removing a nodes by name or coordinates
+     * tests removing nodes by keys and dumping the tree;
+     * 
      */
-    
     public void testRemoveKey() {
-        //removal by name
-        /*
+        
+        
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        newTree.setRootNode("root", 1, 2, 3, 4);
-        newTree.setTempNode("child", 5, 6, 7, 8);
+        newTree.setRootNode(200, 4);
+        newTree.setTempNode(500, 6);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode("child", 9, 10, 11, 12);
+        assertEquals(newTree.isEmpty(),false);
+        newTree.setTempNode(300, 5);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.searchTree("child");
-        newTree.remove("root");
-        assertEquals(newTree.getRoot().getKey().compareTo("child"), 0);
-        newTree.remove("child");
-        assertNotNull(newTree.getRoot());
-        assertNull(newTree.getRoot().getLeft());
-        assertNull(newTree.getRoot().getRight());
-        //removal by coordinates
-        newTree.setTempNode("child2", 1, 2, 2, 2);
+        newTree.setTempNode(700, 8);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.remove(1, 2, 2, 2);
-        assertEquals(newTree.getRoot().getKey().compareTo("child"), 0);
-        assertNotNull(newTree.getRoot());
-        assertNull(newTree.getRoot().getLeft());
-        assertNull(newTree.getRoot().getRight());
-        */
-    }
-
-    /**
-     * test searching for a node by name.
-     * The temporary array holds the search results
-     */
-    
-    public void testSearch() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        /*
-        newTree.setRootNode("root", 1, 2, 3, 4);
-        newTree.setTempNode("child", 5, 6, 7, 8);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode("child", 9, 10, 11, 12);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.searchTree("child");
-        //check that the right number of children were found
-        assertEquals(newTree.getTempArray().length, 2);
-        assertEquals(newTree.getTempArray()[0].getKey().compareTo("child"), 0);
-        assertEquals(newTree.getTempArray()[1].getKey().compareTo("child"), 0);
-        */
-    }
-
-    /**
-     * test searching for all nodes that intersect
-     */
-    
-    public void testRegionsearch() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        /*
-        newTree.setRootNode("root", 1, 2, 3, 4);
-        newTree.setTempNode("child", 5, 6, 7, 8);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode("chil", 90, 100, 11, 12);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempArray(
-                newTree.regionsearch(newTree.getRoot(), newTree.getTemp()));
-        assertEquals(newTree.getTempArray().length, 1);
-        assertEquals(newTree.getTempArray()[0].getKey().compareTo("chil"), 0);
-        */
-    }
-
-    /**
-     * test tree dumping
-     */
-    
-    public void testTreeDump() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        /*
-        newTree.setRootNode("root", 1, 2, 3, 4);
-        newTree.setTempNode("child", 5, 6, 7, 8);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode("chil", 90, 100, 11, 12);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        assertEquals(newTree.treeDump(), 3);
-        */
-    }
-
-    /**
-     * test finding all interesctions /
-     **/
-    
-    public void testIntersections() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        /*
-        newTree.setRootNode("root", 1, 2, 3, 4);
-        newTree.setTempNode("child", 5, 6, 7, 8);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode("chil", 90, 100, 11, 12);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        String out = newTree.intersections();
-        assertNotNull(out);
-        */
+        newTree.searchTree(500);
+        newTree.searchTree(9);
+        newTree.treeDump();
+        newTree.remove(500, 6, true);
+        newTree.treeDump();
+        newTree.remove(700, 8, true);
+        newTree.treeDump();
+        newTree.remove(300, 5, false);
+        newTree.treeDump();
+        newTree.remove(300, 5, true);
+        newTree.treeDump();
+        newTree.remove(200, 4, true);
+        assertEquals(newTree.isEmpty(), true);
+        newTree.treeDump();
+        newTree.remove(100, 2, true);
+        newTree.treeDump();
     }
 
 }

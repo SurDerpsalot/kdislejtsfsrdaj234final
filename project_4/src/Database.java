@@ -8,7 +8,7 @@ public class Database {
     private Scanner sc; //the scanner for the input file
     BST<Integer, Integer> tree;
 //    BST<Integer, Integer> songTree;
-    mainMemory mem;
+    MainMemory mem;
     Hash artistHash;
     Hash songHash;    
     /**
@@ -17,7 +17,7 @@ public class Database {
     public Database(String filename, int sizeMem, int sizeHash) {
         try {
             sc = new Scanner(new File(filename));
-            mem = new mainMemory(sizeMem);
+            mem = new MainMemory(sizeMem);
             tree = null;
             artistHash = new Hash(sizeHash);
             songHash = new Hash(sizeHash);
@@ -128,14 +128,14 @@ public class Database {
         int handle = artistHash.get(name);
         tree.remove(handle, 0, true);                
         tree.remove(0, handle, false);
-        mem.buff[handle] = 0; //turns off the flag
+        mem.getBuff()[handle] = 0; //turns off the flag
     }
     
     public void removeSong(String name) {
         int handle = songHash.get(name);
         tree.remove(handle, 0, true);                
         tree.remove(0, handle, false);        
-        mem.buff[handle] = 0; //turns off the flag
+        mem.getBuff()[handle] = 0; //turns off the flag
     }
     /**
      * print the artist tree followed by the song tree

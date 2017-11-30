@@ -1,11 +1,3 @@
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-/**
- * 
- */
-
 /**
  * @author maden
  *
@@ -58,6 +50,7 @@ public class KVPairTest extends student.TestCase {
         assertFalse(kv.deleteSecondaryHandle(24));
         assertTrue(kv.deleteSecondaryHandle(25));
         assertEquals(kv.getValueHandles().size(), 0);
+        //adding duplicate values
         assertEquals(kv.addValue(27), 1);
         assertEquals(kv.addValue(27), 2);
         assertTrue(kv.deleteSecondaryHandle(27));
