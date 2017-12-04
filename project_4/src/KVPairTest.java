@@ -1,11 +1,12 @@
 /**
  * @author maden
- *
+ * @version 1
  */
 public class KVPairTest extends student.TestCase {
 
     /**
-     * Test method for {@link KVPair#KVPair(java.lang.Object, java.lang.Object)}.
+     * Test method for 
+     * {@link KVPair#KVPair(java.lang.Object, java.lang.Object)}.
      */
     public void testKVPair() {
         KVPair<String, Integer> kv = new KVPair<String, Integer>("key", 23);
@@ -21,7 +22,8 @@ public class KVPairTest extends student.TestCase {
     public void testGetArtistHandle() {
         KVPair<String, Integer> kv = new KVPair<String, Integer>("key", 23);
         assertEquals(kv.getKeyHandle().compareTo("key"), 0);
-        KVPair<Float, Integer> kv2 = new KVPair<Float, Integer>((float)3.14159, 23);
+        KVPair<Float, Integer> kv2 = 
+                new KVPair<Float, Integer>((float)3.14159, 23);
         assertEquals(kv2.getKeyHandle(), 3.14159, 0.00001);
         
     }

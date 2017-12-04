@@ -6,8 +6,10 @@ import java.util.ArrayList;
  * @version 2017-09-18 This is the base class for my implementation of a binary
  *          search tree. Several elements of this class was based on OpenDSA
  *          code. There is one subclass, the TreeNode.
+ * @param <E> the value type
+ * @param <Key> the key type 
  */
-public class BST <Key extends Comparable<? super Key>, E> {
+public class BST<Key extends Comparable<? super Key>, E> {
 
     private TreeNode root; //the root of the BST
     private TreeNode temp; //a TreeNode instance accessible from the outside
@@ -72,14 +74,14 @@ public class BST <Key extends Comparable<? super Key>, E> {
      * @param t   is the existing TreeNode to copy
      */
     public void setRootNode(TreeNode t) {
-    	if(t != null){
-    		root = new TreeNode(t);
-    	}
-    	else
-    	{
-    		root = null;
-    	}
-    	       
+        if (t != null) {
+            root = new TreeNode(t);
+        }
+        else
+        {
+            root = null;
+        }
+               
     };
 
     /**
@@ -169,12 +171,14 @@ public class BST <Key extends Comparable<? super Key>, E> {
     /**
      * removes a single node that contains the name parameter from the BST.
      * 
-     * @param name the string identifier of the rectangle
+     * @param k is the key name
+     * @param elem is the value name
+     * @param removeKey is which value to remove
      * @return boolean true if the rectangle was found and removed
      */
     public boolean remove(Key k, E elem, boolean removeKey) {
         removeSuccess = false;
-        if(removeKey) {
+        if (removeKey) {
             setRootNode(removeByKey(root, k));
             if (root != null && root.getKey() == null) {
                 root = null;
@@ -182,7 +186,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
             return removeSuccess;
         }
         else {
-        	//THIS DOES NOT WORK PROPERLY
+            //THIS DOES NOT WORK PROPERLY
             removeSuccess = false;
             setRootNode(removeValue(root, elem));
             if (root != null && root.getKey() == null) {
@@ -299,8 +303,8 @@ public class BST <Key extends Comparable<? super Key>, E> {
      * 
      * @param rt
      *            is the name of the base node
-     * @param name
-     *            is the name of the TreeNode we are looking for
+     * @param k
+     *            is the name of the node we are looking for
      * @return an array of all TreeNodes with the specified name.
      */
     private KVPair<Key, E> search(TreeNode rt, Key k) {
@@ -314,49 +318,44 @@ public class BST <Key extends Comparable<? super Key>, E> {
             return search(rt.getRight(), k);
         }
         // too big
-            return search(rt.getLeft(), k);
+        return search(rt.getLeft(), k);
     }
 
 
     /**
-     * Runs an in-Order traversal of the BST starting at the root.
-     * @return is the number of nodes in the BST
+     * Runs an in-Order traversal of the BST starting at the 
+     * root and returns an arrayList of the handle values.
+     * @return the handles in the BST tree
      */
-    public int treeDump() { // (PrintWriter pw) {
-        int count = inorderDump(root, 0);
-        System.out.printf("BST size is %d\n", count);
-        return count;
+    public ArrayList<Key> treeDump() { // (PrintWriter pw) {
+        ArrayList<Key> handleList = new ArrayList<Key>();
+        handleList = inorderDump(root, handleList);
+        System.out.printf("BST size is %d\n", handleList.size());
+        return handleList;
     }
 
     /**
      * performs an in-order traversal starting at the given rt, and prints
      * them.
-     * 
+     * @param list is the array of keys to return
      * @param rt  is the base of the traversal.
-     * @param height is the level the node is at
+     * @return is the in-order list of handles in this tree
      */
-    private int inorderDump(TreeNode rt, int height) {
+    private ArrayList<Key> inorderDump(TreeNode rt, ArrayList<Key> list) {
         if (rt != null) {
-            int count = 0;
-            count = inorderDump(rt.getLeft(), height + 1);
             if (rt.getKey() == null) {
                 System.out.printf("Node has depth %d, Value (null)\n",
-                        height);
-                return 0;
+                        list.size());
+                return list;
             } 
-            else {
-//                System.out.printf(
- //                       "Node has depth %d, Value (%s,%.0f,%.0f,%.0f,%.0f)\n",
-  //                      height, rt.getKey().toString(),
-   //                     rt.getX(), rt.getY(), rt.getW(), rt.getH());
-            }
-            count = count + inorderDump(rt.getRight(), height + 1);
-            return count + 1;
+            list = inorderDump(rt.getLeft(), list);
+            list.add(rt.getKey());
+            list = inorderDump(rt.getRight(), list);
         }
         else if (rt == getRoot()) {
             System.out.println("Node has depth 0, Value (null)");            
         }
-        return 0;
+        return list;
     }
 
     
@@ -383,7 +382,8 @@ public class BST <Key extends Comparable<? super Key>, E> {
         }
         ArrayList<TreeNode> all = new ArrayList<TreeNode>();
         if (leftChildValue != null) {
-            System.arraycopy(leftChildValue, 0, all.toArray(), 0, leftChildValue.size());
+            System.arraycopy(leftChildValue, 0, all.toArray(), 0, 
+            leftChildValue.size());
             if (thisValue != null) {
                 all.toArray()[leftChildValue.size()] = thisValue;
             }
@@ -437,7 +437,8 @@ public class BST <Key extends Comparable<? super Key>, E> {
 
         /**
          * constructor
-         * @param pair an existing key-value pair
+         * @param k is an existing key
+         * @param elem is an existing value
          */
         public TreeNode(Key k, E elem) {
             left = null;
@@ -474,16 +475,6 @@ public class BST <Key extends Comparable<? super Key>, E> {
             right = t;
         };
 
-        /**
-         * construct the right child
-         * @param k the key
-         * @param elem the value
-         */
-/*
-        public void setRight(Key k, E elem) {
-            right = new TreeNode(k, elem);
-        }
-*/
         /**
          * sets a TreeNode's values to those of another TreeNode.
          * 
@@ -552,7 +543,7 @@ public class BST <Key extends Comparable<? super Key>, E> {
          * 
          * @return the (String) name
          */
-        public KVPair<Key,E> getKVPair() {
+        public KVPair<Key, E> getKVPair() {
             return kv;
         }
         /**

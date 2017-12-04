@@ -1,179 +1,194 @@
 import java.nio.ByteBuffer;
-
-//import java.io.PrintWriter;
-
+/**
+ * 
+ * @author maden
+ * @version 1
+ */
 public class MainMemory {
-	//private array of blocks to act as memory
-    //private long lastExecTime;   
+    //private array of blocks to act as memory
+//    private long lastExecTime;   
     private int blockSize;
     private int blockFillSize;
     private byte[] buff;   
     private ByteBuffer inBuff;
     /**
      * constructor
+     * @param size is the initial size of the main memory block
      */
     public MainMemory(int size) {
         blockSize = size; //size in bytes of a block, and the buffer
         blockFillSize = 0;
-    	buff = new byte[size];
+        buff = new byte[size];
         inBuff = ByteBuffer.wrap(buff);
   //      lastExecTime = -1;
     }
     /**
-     * This retrieves the blockSize
-     * @return the blockSize
-     */
-    public int getBlockSize() {
-    	return blockSize;
-    }
-    /**
-     * This sets the blockSize
-     * @param i the integer that is replacing the current blockSize
-     */
-    public void setBlockSize(int i) {
-    	blockSize = i;
-    }
-    /**
-     * This retrieves the blockFillSize
-     * @return the blockFillSize
-     */
-    public int getBlockFillSize() {
-    	return blockFillSize;
-    }
-    /**
-     * This sets the blockFillSize
-     * @param i the integer that is replacing the current blockFillSize
-     */
-    public void setBlockFillSize(int i) {
-    	blockFillSize = i;
-    }
-    /**
-     * This retrieves the buff
-     * @return the buff
-     */
-    public byte[] getBuff() {
-    	return buff;
-    }
-    /**
-     * This sets the buff
-     * @param b the Byte Array that is replacing the current buff
-     */
-    public void setBuff(byte[] b) {
-    	buff = b;
-    }
-    /**
-     * This retrieves the inBuff
-     * @return the inBuff
-     */
-    public ByteBuffer getInBuff() {
-    	return inBuff;
-    }
-    /**
-     * This sets the inBuff
-     * @param b the ByteBuffer that is replacing the current inBuff
-     */
-    public void setInBuff(ByteBuffer b) {
-    	inBuff = b;
-    }
-    
-    
-    /**
      * increments the filled space based by a block
-     * @param fill is the number of characters added to main memory
+     * @param fillvalue is the number of characters added to main memory
      * @return the size in byte of the number of characters in mainmemory
      */
-     public int addToTheFill(byte[] fillvalue) {
-        if (blockFillSize + fillvalue.length > buff.length) { 
-            //if the number of bytes will exceed the main memory's size, it will grow
+    public int addToTheFill(byte[] fillvalue) {
+        if (blockFillSize + fillvalue.length > inBuff.capacity()) { 
+            //if the number of bytes will exceed the main memory's size,
+            //it will grow
             byte[] newbuff = new byte[buff.length + blockSize];  
             ByteBuffer newInBuff = ByteBuffer.wrap(newbuff);
-            newInBuff.put(buff);
-            
-            //commented out lines beneath here killed.
-            //inBuff.get(newInBuff.array(), 0, inBuff.capacity());
+            newInBuff.limit(newInBuff.capacity());
+            newInBuff.put(inBuff);
             buff = newbuff;
-            inBuff = ByteBuffer.wrap(buff);
-            //inBuff.limit(buff.length + blockSize);
-            inBuff.position(newInBuff.position());
-            inBuff.position(blockFillSize);
+            inBuff = newInBuff;
         }
-      //inBuff.put(fillvalue, blockFillSize, fillvalue.length);
         inBuff.put(fillvalue);
         blockFillSize += fillvalue.length;
         return (blockFillSize - fillvalue.length); 
-    }    
-    /**
-     * pushes a block of data into this buffer space
-     * @param block the input data
-     * @return true if the block was pushed correctly
-     */
-    /*public boolean pushBlock(byte[] block) {
-        if(block.length != blockSize) {
-            return false;
-        }
-        blockFillSize += blockSize;
-        inBuff.clear();
-        inBuff.put(block);
-        return true;
     }
-    */
-    /**
-     * pops an entire block of data
-     * @return
-     */
-    /*public byte[] popBlock() {
-        blockFillSize -= blockSize;
-        return inBuff.array();
-    }
-    */
+//    /**
+//     * pushes a block of data into this buffer space
+//     * @param block the input data
+//     * @return true if the block was pushed correctly
+//     */
+//    public boolean pushBlock(byte[] block) {
+//        if (block.length != blockSize) {
+//            return false;
+//        }
+//        blockFillSize += blockSize;
+//        inBuff.clear();
+//        inBuff.put(block);
+//        return true;
+//    }
+//    /**
+//     * pops an entire block of data
+//     * @return
+//     */
+//    public byte[] popBlock() {
+//        blockFillSize -= blockSize;
+//        return inBuff.array();
+//    }
     /**
      * given a position in the buffer, returns a record
-     * @param record
-     * @return
+     * @param record is therecord to read
+     * @return is the record value
      */
-  /*  public long getRecord(int record) {
-    	//records aren't always 8 bytes long
+    public long getRecord(int record) {
         return inBuff.asLongBuffer().get(record);
     }
-    */
-    public byte getRecordFlag(int recordIndex) {
-        if (recordIndex >= 0 && recordIndex < blockFillSize) {
-            return inBuff.get(recordIndex);
+    /**
+     * returns the record flag
+     * @param record is the record number
+     * @return the status bit
+     */
+    public byte getRecordFlag(int record) {
+        if (record >= 0 && record < blockFillSize) {
+            return inBuff.get(record);
         }
         return (byte)-1;
     }
-    
+    /**
+     * reads the size of a record at a given index
+     * @param record is the index for the start of the record
+     * @return the size of the record
+     */
     public int getRecordSize(int record) {
         if (record >= 0 && record < blockFillSize) {
-            return (int)(inBuff.get(record + 1) << 4 | inBuff.get(record + 2));
+            return (int)(inBuff.get(record + 1) << 4 
+                    | inBuff.get(record + 2));
         }        
         return (int)-1;        
     }
-    
-    public String getRecordValue(int recordIndex) {
-        int size = getRecordSize(recordIndex);
-        if (recordIndex >= 0 && recordIndex < blockFillSize) {
-        	byte[] b = new byte[size];
-        	inBuff.position(recordIndex + 3);
-            inBuff.get(b, 0, size);
-            String out = new String(b);
-            return out;
+    /**
+     * gets the record's value
+     * @param record the record's starting index
+     * @return the string name of this record
+     */
+    public String getRecordValue(int record) {
+        byte[] b = new byte[getRecordSize(record)];
+        if (record >= 0 && record < blockFillSize) {
+            b = inBuff.get(buff, record + 3, 
+                    getRecordSize(record)).array();
+            return b.toString();
         }
         return "";
     }
+    /**
+     * gets the record's value from a given handle
+     * @param handle the index to read
+     * @return the string for the record
+     */
     public String readEntry(int handle) {
-        if(inBuff.get(handle) == 0) {
+        if (inBuff.get(handle) == 0) {
             return "";
         }
         else {
             int size = inBuff.get(handle + 1) << 4;
             size += inBuff.get(handle + 2);
             byte[] ret = new byte[size];
-            inBuff.position(handle + 3);
-            inBuff.get(ret, 0, ret.length);
-            String out = new String(ret);
-            return out;
+            inBuff.get(ret, handle + 3, ret.length);
+            return ret.toString();
         }
+    }
+    /**
+     * returns the byte array
+     * @return is the byte[]
+     */
+    public byte[] getBuff() {
+        // TODO Auto-generated method stub
+        return buff;
+    }
+    /**
+     * gets the bytebuffer
+     * @return the bytebuffer
+     */
+    public ByteBuffer getInBuff() {
+        // TODO Auto-generated method stub
+        return inBuff;
+    }
+    /**
+     * sets the size of the memory block
+     * @param i is the size to assert
+     */
+    public void setBlockSize(int i) {
+        // TODO Auto-generated method stub
+        blockSize = i;
+    }
+    /**
+     * sets the initial size of the fill
+     * @param i is the value to input
+     */
+    public void setBlockFillSize(int i) {
+        // TODO Auto-generated method stub
+        blockFillSize = i;
+    }
+    /**
+     *  resets the byte array to a new value
+     * @param b the byte array to input
+     */
+    public void setBuff(byte[] b) {
+        // TODO Auto-generated method stub
+        buff = b;
+    }
+    /**
+     * resets the inBuff bytebuffer
+     * @param c the input
+     */
+    public void setInBuff(ByteBuffer c) {
+        // TODO Auto-generated method stub
+        inBuff = c;
+    }
+    /**
+     * gets the current block size
+     * @return the integer for the block size
+     */
+    public int getBlockSize() {
+        // TODO Auto-generated method stub
+        return blockSize;
+    }
+    /**
+     * gets the size of the memory's filled area
+     * @return the size of the block
+     */
+    public int getBlockFillSize() {
+        // TODO Auto-generated method stub
+        return blockFillSize;
     }
 
 }

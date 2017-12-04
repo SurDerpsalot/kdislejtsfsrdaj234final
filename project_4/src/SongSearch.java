@@ -1,4 +1,4 @@
-import sun.reflect.generics.tree.TypeTree;
+//import sun.reflect.generics.tree.TypeTree;
 
 // On my honor:
 //
@@ -27,30 +27,25 @@ import sun.reflect.generics.tree.TypeTree;
  *
  */
 public class SongSearch {
-    /**
+    /*
      * constructor
-     */
+     *
     public SongSearch() {}
-        
+      */  
     /**
      * main for the project
      * @param <twoThreeTree>
      * @param args the commandline arguments
      */
     public static void main(String[] args) {
-        twoThreeTree<Integer, KVPair<Integer, Integer>> ttt = 
-                new twoThreeTree<Integer, KVPair<Integer, Integer>>();
-        KVPair<Integer, Integer> kV = new KVPair<Integer, Integer>(22, 222);
-        ttt.insert(2, kV);
-        kV = new KVPair<Integer, Integer>(33, 333);
-        ttt.insert(3, kV);
-        ttt.insert(4, new KVPair<Integer, Integer>(44, 444));
-        KVPair<Integer, Integer> out = ttt.find(2);
-        KVPair<Integer, Integer> out2 = ttt.find(4);
-        System.out.println("Artist key: " + out.getKeyHandle().toString());
-        System.out.println("Song key: " + out.getValueHandles().toString());
-//        int outbad = ttt.find(2);
-        
-     }
+        if (args.length >= 4) {
+            Database db = new Database(args[2], 
+                    Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+            db.beginParsing(args[0]);
+        }
+        else {
+            System.out.println("Error: invalid input number of arguments");
+        }
+    }
 
 }

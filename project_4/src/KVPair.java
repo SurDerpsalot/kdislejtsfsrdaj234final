@@ -4,24 +4,25 @@ import java.util.ArrayList;
  * 
  * @author Madelyn Newcomb m1newc
  * @version 11/11/2017
- *
+ * @param <F> the key's type
+ * @param <S> the value's type
  */
-public class KVPair <F, S> {
+public class KVPair<F, S> {
     private F firstHandle;
     private ArrayList<S> secondaryHandles;
     /**
      * constructor
-     * @param aK the Key name's key
-     * @param sK the Value name's key
+     * @param fH the Key name's key
+     * @param sH the Value name's key
      */
-    public KVPair (F fH, S sH) {
+    public KVPair(F fH, S sH) {
         firstHandle = fH;
         secondaryHandles = new ArrayList<S>();
         secondaryHandles.add(sH);
     }
     /**
      * get the Key name's key
-     * @return A: Key
+     * @return F: Key
      */
     protected F getKeyHandle() {
         return firstHandle;
@@ -35,6 +36,7 @@ public class KVPair <F, S> {
     }
     /**
      * add a value to the secondary handle array given the KVPair
+     * @param newValue is the value to add
      * @return the size of the secondary array
      */
     protected int addValue(S newValue) {
@@ -49,11 +51,11 @@ public class KVPair <F, S> {
     
     /**
      * deletes a secondary handle from the linked list
-     * @param secondKey
+     * @param secondKey is the value to delete
      * @return true if the value was deleted
      */
     protected boolean deleteSecondaryHandle(S secondKey) {
-        if(secondaryHandles == null || secondaryHandles.size() == 0) {
+        if (secondaryHandles == null || secondaryHandles.size() == 0) {
             return false;
             //this is an error because we shouldn't have any blank lists
         }
@@ -76,7 +78,7 @@ public class KVPair <F, S> {
      * @return true if it already exists
      */
     protected boolean isDuplicateValue(S secondKey) {
-        if(secondaryHandles == null || secondaryHandles.size() == 0) {
+        if (secondaryHandles == null || secondaryHandles.size() == 0) {
             return false;
             //this is an error because we shouldn't have any blank lists
         }

@@ -24,7 +24,7 @@ public class BSTTest extends student.TestCase {
         BST<Integer, Integer> newTree = new BST<Integer, Integer>();
         newTree.setRootNode(1, 2);
         BST<Integer, Integer> newTree2 = 
-                new BST<Integer, Integer> (newTree.getRoot());
+                new BST<Integer, Integer>(newTree.getRoot());
         assertNotNull(newTree.getRoot());
         assertNotNull(newTree2.getRoot());
     }
@@ -135,9 +135,11 @@ public class BSTTest extends student.TestCase {
         //TODO: fix these tests for this new BST
         //Do we ever use the temp array?
         
-//        assertEquals(newTree.getTempArray().length, 2);
-//        assertEquals(newTree.getTempArray()[0].getKey().compareTo("child"), 0);
-//        assertEquals(newTree.getTempArray()[1].getKey().compareTo("child"), 0);
+        assertEquals(newTree.getTempArray().length, 2);
+//        assertEquals(newTree.getTempArray()[0].getKey()
+//          .compareTo("child"), 0);
+        //        assertEquals(newTree.getTempArray()[1].getKey()
+//        .compareTo("child"), 0);
 //        assertNotSame(newTree.getTempArray()[0].getX(),
 //                newTree.getTempArray()[1].getX());
 //        BST<Integer, Integer>.TreeNode[] t = newTree.getTempArray();
@@ -155,7 +157,7 @@ public class BSTTest extends student.TestCase {
         newTree.setRootNode(200, 4);
         newTree.setTempNode(500, 6);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
-        assertEquals(newTree.isEmpty(),false);
+        assertEquals(newTree.isEmpty(), false);
         newTree.setTempNode(300, 5);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         newTree.setTempNode(700, 8);
