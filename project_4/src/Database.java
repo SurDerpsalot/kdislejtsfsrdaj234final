@@ -61,19 +61,39 @@ public class Database {
         String topic;
         switch(cmd) {
             case "insert" ://Found an insert command
-                String artistName = sc.nextLine();
+                String artistName = sc.nextLine().trim();
                 String songName = artistName.substring(
                         artistName.indexOf("<SEP>") + 5);
                 artistName = artistName.substring(
                         0, artistName.indexOf("<SEP>"));
-                int artistHandle = addEntryGetHandle(artistName);
-                int songHandle = addEntryGetHandle(songName);
-                artistHash.put(artistName, artistHandle);
-                songHash.put(songName, songHandle);
+                int artistHandle = 0;
+                int songHandle = 0;
+                if (artistHash.containsKey(artistName)) {
+                    System.out.println("|" + artistName + 
+                            "| duplicates a record already" 
+                            + " in the Artist database.");
+                }
+                else {
+                    artistHandle = addEntryGetHandle(artistName);
+                    artistHash.put(artistName, artistHandle);
+                    System.out.println("|" + artistName + 
+                            "| is added to the Artist database.");
+                }
+                if (songHash.containsKey(songName)) {
+                    System.out.println("|" + songName + 
+                            "| duplicates a record already" 
+                            + " in the Song database.");
+                }
+                else {
+                    songHandle = addEntryGetHandle(songName);
+                    songHash.put(songName, songHandle);
+                    System.out.println("|" + songName + 
+                            "| is added to the Song database.");
+                }
                 break;
             case "list" :
                 topic = sc.next();
-                name = sc.next();           
+                name = sc.nextLine().trim();           
                 if (topic.compareTo("artist") == 0) {
                     listSongsByArtist(name);
                 }
@@ -85,7 +105,7 @@ public class Database {
                 }
                 break;
             case "delete" ://Found an insert command
-                artistName = sc.nextLine();
+                artistName = sc.nextLine().trim();
                 songName = artistName.substring(
                         artistName.indexOf("<SEP>") + 5);
                 artistName = artistName.substring(0, 
@@ -94,7 +114,7 @@ public class Database {
                 break;
             case "remove" :
                 topic = sc.next();
-                name = sc.next();           
+                name = sc.nextLine().trim();
                 if (topic.compareTo("artist") == 0) {
                     removeArtist(name);
                 }
@@ -107,10 +127,10 @@ public class Database {
                 break;
             case "print" :
                 topic = sc.next();
-                if (topic.compareTo("artists") == 0) {
+                if (topic.compareTo("artist") == 0) {
                     viewArtists();
                 }
-                else if (topic.compareTo("songs") == 0) {
+                else if (topic.compareTo("song") == 0) {
                     viewSongs();
                 }
                 else if (topic.compareTo("tree") == 0) {
@@ -149,7 +169,7 @@ public class Database {
                 || !artistHash.containsKey(name) 
                 || artistTree == null || artistTree.isEmpty()) {
             System.out.println(
-                    "There are no artists to remove by that name.");
+                    "|" + name + "| does not exist in the artist database.");
             return;
         }
         int handle = artistHash.get(name);
@@ -165,7 +185,8 @@ public class Database {
         if (songHash == null || songHash.isEmpty() 
                 || !songHash.containsKey(name) 
                 || songTree == null || songTree.isEmpty()) {
-            System.out.println("There are no songs to remove by that name.");
+            System.out.println(
+                    "|" + name + "| does not exist in the song database.");
             return;
         }
         int handle = songHash.get(name);
@@ -177,27 +198,28 @@ public class Database {
      * print the artist tree followed by the song tree
      */
     public void viewTrees() {
-        viewArtists();
-        viewSongs();
+        System.out.println("Printing BST tree:");
+//        viewArtists();
+//        viewSongs();
     }
     /**
      * print the artists in order of their handles
      */
     public void viewArtists() {
+        int totalArtists = 0;
         ArrayList<Integer> artistHandles = null;
-        if (artistTree == null) {
-            System.out.println("There are no artists.");
-        }
-        else {
-            System.out.println("Artists:");
+        if (artistTree != null && artistTree.getRoot() != null) {
             artistHandles = artistTree.treeDump();
-            if (artistHandles == null ) { return; }
-            for (int pos = 0; pos < artistHandles.size(); pos++ ) {
-                int startPosInMem = artistHash.get(artistHandles.get(pos));
-                String artistName = mem.getRecordValue(startPosInMem);
-                System.out.println(artistName);
+            if (artistHandles != null ) {
+                for (int pos = 0; pos < artistHandles.size(); pos++ ) {
+                    int startPosInMem = artistHash.get(artistHandles.get(pos));
+                    String artistName = mem.getRecordValue(startPosInMem);
+                    System.out.println("|"  + artistName + "|");
+                }
+                totalArtists = artistHandles.size();
             }
         }
+        System.out.println("total artists: " + String.valueOf(totalArtists));
     }
     
     
@@ -205,19 +227,20 @@ public class Database {
      * print the songs
      */
     public void viewSongs() {
-        if (songTree == null) {
-            System.out.println("There are no songs.");
-        }
-        else {
-            System.out.println("Songs:");
-            ArrayList<Integer> songHandles = songTree.treeDump();
-            if (songHandles == null ) { return; }
-            for (int pos = 0; pos < songHandles.size(); pos++ ) {
-                int startPosInMem = songHash.get(songHandles.get(pos));
-                String songName = mem.getRecordValue(startPosInMem);
-                System.out.println(songName);
+        int totalSongs = 0;
+        ArrayList<Integer> songHandles = null;
+        if (songTree != null && songTree.getRoot() != null) {
+            songHandles = songTree.treeDump();
+            if (songHandles != null ) {
+                for (int pos = 0; pos < songHandles.size(); pos++ ) {
+                    int startPosInMem = songHash.get(songHandles.get(pos));
+                    String songName = mem.getRecordValue(startPosInMem);
+                    System.out.println("|" + songName + "|");
+                }
+                totalSongs = songHandles.size();
             }
         }
+        System.out.println("total songs: " + String.valueOf(totalSongs));
     }
     
     /**
@@ -228,13 +251,19 @@ public class Database {
         if (artistHash == null || artistHash.isEmpty() 
                 || !artistHash.containsKey(artist)) {
             System.out.println(
-                    "There are no artists to search by that name.");
+                    "|" + artist + "| does not exist in the artist database.");
             return;
         }
         int handle = artistHash.get(artist);
-        ArrayList<Integer> connectedHandles = artistTree.searchTree(handle);
-        for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
-            System.out.println(mem.readEntry(connectedHandles.get(entry)));
+        ArrayList<Integer> connectedHandles = null;
+        if (artistTree != null) {
+            connectedHandles = artistTree.searchTree(handle);
+            if (connectedHandles != null) {
+                for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
+                    System.out.println(
+                            mem.readEntry(connectedHandles.get(entry)));
+                }
+            }
         }
     }
     /**
@@ -244,15 +273,21 @@ public class Database {
     public void listArtistsBySong(String song) {
         if (songHash == null || songHash.isEmpty() 
                 || !songHash.containsKey(song)) {
-            System.out.println("There are no songs to search by that name.");
+            System.out.println(
+                    "|" + song + "| does not exist in the song database.");
             return;
         }
         int handle = songHash.get(song);
-        ArrayList<Integer> connectedHandles = songTree.searchTree(handle);
-        for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
-            System.out.println(mem.readEntry(connectedHandles.get(entry)));
+        if (artistTree != null) {
+            ArrayList<Integer> connectedHandles = null;
+            connectedHandles = artistTree.searchTree(handle);
+            if (connectedHandles != null) {
+                for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
+                    System.out.println(
+                            mem.readEntry(connectedHandles.get(entry)));
+                }
+            }        
         }
-        
     }
     /**
      * deletes an artist-song combination

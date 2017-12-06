@@ -38,14 +38,14 @@ public class SongSearch {
      * @param args the commandline arguments
      */
     public static void main(String[] args) {
-        if (args.length >= 4) {
-            Database db = new Database(args[2], 
-                    Integer.parseInt(args[0]), Integer.parseInt(args[1]));
-            db.beginParsing(args[0]);
-        }
-        else {
-            System.out.println("Error: invalid input number of arguments");
-        }
+        //if (args.length >= 3) {
+        Database db = new Database(args[2], 
+                Integer.parseInt(args[1]), Integer.parseInt(args[0]));
+        db.beginParsing(args[2]);
+        //}
+        //else {
+        //    System.out.println("Error: invalid input number of arguments");
+       // }
     }
 
 }
