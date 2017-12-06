@@ -65,9 +65,11 @@ public class MainMemoryTest extends student.TestCase {
         b[8] = 'l';
         b[9] = 'e';
         test1.addToTheFill(b);        
-        assertEquals(test1.getBlockFillSize() == 21 , true);
-        assertEquals(test1.getInBuff().remaining() == 1, true);
-        assertEquals(test1.getInBuff().capacity() == 22, true);
+        assertEquals(test1.getBlockFillSize(), 21);
+        assertEquals(test1.getInBuff().capacity(), 22);
+        assertEquals(test1.getBuff()[3], 't');
+        assertEquals(test1.getBuff()[15], 'p');
+        assertEquals(test1.getInBuff().remaining(), 1);
         assertEquals(test1.getBuff().length == 22, true);
         assertEquals(test1.getBuff()[0] == 1, true);
         assertEquals(test1.getBuff()[1] == 0, true);

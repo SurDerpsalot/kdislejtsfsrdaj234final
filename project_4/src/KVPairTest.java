@@ -12,8 +12,8 @@ public class KVPairTest extends student.TestCase {
         KVPair<String, Integer> kv = new KVPair<String, Integer>("key", 23);
         assertNotNull(kv);
         assertEquals(kv.getKeyHandle().compareTo("key"), 0);
-        assertEquals(kv.getValueHandles().size(), 1);
-        assertEquals(kv.getValueHandles().get(0).intValue(), 23);
+        assertEquals(kv.getValueList().size(), 1);
+        assertEquals(kv.getValueList().get(0).intValue(), 23);
     }
 
     /**
@@ -32,10 +32,14 @@ public class KVPairTest extends student.TestCase {
      * Test method for {@link KVPair#getSongHandles()}.
      */
     public void testGetSongHandles() {
-        KVPair<String, Integer> kv = new KVPair<String, Integer>("key", 26);
+        KVPair<Integer, Integer> kv = new KVPair<Integer, Integer>(12, 27);
         assertEquals(kv.addValue(24), 2);
         assertEquals(kv.addValue(25), 3);
-        assertEquals(kv.getValueHandles().get(1).intValue(), 24);
+        assertEquals(kv.getKeyHandle().intValue(), 12);
+        assertEquals(kv.getValueList().size(), 3);
+        assertEquals(kv.getValueList().get(0).intValue(), 24);
+        assertEquals(kv.getValueList().get(1).intValue(), 25);
+        assertEquals(kv.getValueList().get(2).intValue(), 27);
     }
 
     /**
@@ -45,18 +49,18 @@ public class KVPairTest extends student.TestCase {
         KVPair<String, Integer> kv = new KVPair<String, Integer>("key", 26);
         assertEquals(kv.addValue(24), 2);
         assertEquals(kv.addValue(25), 3);
-        assertEquals(kv.getValueHandles().get(1).intValue(), 24);
+        assertEquals(kv.getValueList().get(1).intValue(), 25);
         assertTrue(kv.deleteSecondaryHandle(24));
-        assertEquals(kv.getValueHandles().get(1).intValue(), 25);
+        assertEquals(kv.getValueList().get(1).intValue(), 26);
         assertTrue(kv.deleteSecondaryHandle(26));
         assertFalse(kv.deleteSecondaryHandle(24));
         assertTrue(kv.deleteSecondaryHandle(25));
-        assertEquals(kv.getValueHandles().size(), 0);
+        assertTrue(kv.getValueList().isEmpty());
         //adding duplicate values
         assertEquals(kv.addValue(27), 1);
-        assertEquals(kv.addValue(27), 2);
+        assertEquals(kv.addValue(27), 1);
         assertTrue(kv.deleteSecondaryHandle(27));
-        assertTrue(kv.getValueHandles().isEmpty());
+        assertTrue(kv.getValueList().isEmpty());
     }
 
 }

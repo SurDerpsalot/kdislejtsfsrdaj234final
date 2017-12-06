@@ -10,11 +10,11 @@ import java.util.Scanner;
 */
 public class Database {
     private Scanner sc; //the scanner for the input file
-    private BST<Integer, Integer> artistTree;
-    private BST<Integer, Integer> songTree;
-    private MainMemory mem;
-    private Hash artistHash;
-    private Hash songHash;    
+    protected BST<Integer, Integer> artistTree;
+    protected BST<Integer, Integer> songTree;
+    protected MainMemory mem;
+    protected Hash artistHash;
+    protected Hash songHash;    
     /**
      * constructor
      * @param filename the input file name
@@ -25,8 +25,8 @@ public class Database {
         try {
             sc = new Scanner(new File(filename));
             mem = new MainMemory(sizeMem);
-            artistTree = null;
-            songTree = null;
+            artistTree = new BST<Integer, Integer>();
+            songTree = new BST<Integer, Integer>();
             artistHash = new Hash(sizeHash);
             songHash = new Hash(sizeHash);
         } 
@@ -43,7 +43,7 @@ public class Database {
         try  {
            //Open our file with read/write access
             while (sc.hasNext()) { //While the scanner has information to read
-                String cmd = sc.next(); //Read the next term
+                String cmd = sc.nextLine(); //Read the next term
                 readCommand(cmd);
             } //end while loop
             sc.close();
@@ -59,22 +59,28 @@ public class Database {
     public void readCommand(String cmd) {
         String name;
         String topic;
-        switch(cmd) {
+        Scanner newSc = new Scanner(cmd);
+        String todo = newSc.next();
+        switch(todo) {
             case "insert" ://Found an insert command
-                String artistName = sc.nextLine().trim();
+                String artistName = newSc.nextLine().trim();
                 String songName = artistName.substring(
                         artistName.indexOf("<SEP>") + 5);
                 artistName = artistName.substring(
                         0, artistName.indexOf("<SEP>"));
                 int artistHandle = 0;
                 int songHandle = 0;
+                boolean artistDuplicate = false;
+                boolean songDuplicate = false;
                 if (artistHash.containsKey(artistName)) {
                     System.out.println("|" + artistName + 
                             "| duplicates a record already" 
                             + " in the Artist database.");
+                    artistDuplicate = true;
+                    artistHandle = artistHash.get(artistName);
                 }
                 else {
-                    artistHandle = addEntryGetHandle(artistName);
+                    artistHandle = mem.addEntryGetHandle(artistName);
                     artistHash.put(artistName, artistHandle);
                     System.out.println("|" + artistName + 
                             "| is added to the Artist database.");
@@ -83,17 +89,55 @@ public class Database {
                     System.out.println("|" + songName + 
                             "| duplicates a record already" 
                             + " in the Song database.");
+                    songDuplicate = true;
+                    songHandle = songHash.get(songName);
                 }
                 else {
-                    songHandle = addEntryGetHandle(songName);
+                    songHandle = mem.addEntryGetHandle(songName);
                     songHash.put(songName, songHandle);
                     System.out.println("|" + songName + 
                             "| is added to the Song database.");
                 }
+                if (!artistDuplicate) {
+                    System.out.println("The KVPair (|"
+                        + artistName + "|,|" 
+                        + songName + "|),(" 
+                        + artistHandle + "," 
+                        + songHandle + ") is added to the tree.");
+                }
+                else {
+                    System.out.println("The KVPair (|"
+                            + artistName + "|,|" 
+                            + songName + "|),(" 
+                            + artistHandle + "," 
+                            + songHandle 
+                            + ") duplicates a record already in the tree.");
+                }
+                if (!songDuplicate) {
+                    System.out.println("The KVPair (|"
+                        + songName + "|,|" 
+                        + artistName + "|),(" 
+                        + songHandle + "," 
+                        + artistHandle + ") is added to the tree.");
+                }
+                else {
+                    System.out.println("The KVPair (|"
+                            + songName + "|,|" 
+                            + artistName + "|),(" 
+                            + songHandle + "," 
+                            + artistHandle 
+                            + ") duplicates a record already in the tree.");
+                }
+                artistTree.setTempNode(artistHandle, songHandle);
+                artistTree.setRootNode(artistTree.insert(artistTree.getRoot(),
+                        artistTree.getTemp()));
+                songTree.setTempNode(songHandle, artistHandle);
+                songTree.setRootNode(songTree.insert(songTree.getRoot(),
+                        songTree.getTemp()));
                 break;
             case "list" :
-                topic = sc.next();
-                name = sc.nextLine().trim();           
+                topic = newSc.next();
+                name = newSc.nextLine().trim();           
                 if (topic.compareTo("artist") == 0) {
                     listSongsByArtist(name);
                 }
@@ -105,7 +149,7 @@ public class Database {
                 }
                 break;
             case "delete" ://Found an insert command
-                artistName = sc.nextLine().trim();
+                artistName = newSc.nextLine().trim();
                 songName = artistName.substring(
                         artistName.indexOf("<SEP>") + 5);
                 artistName = artistName.substring(0, 
@@ -113,8 +157,8 @@ public class Database {
                 delete(artistName, songName);
                 break;
             case "remove" :
-                topic = sc.next();
-                name = sc.nextLine().trim();
+                topic = newSc.next();
+                name = newSc.nextLine().trim();
                 if (topic.compareTo("artist") == 0) {
                     removeArtist(name);
                 }
@@ -126,7 +170,7 @@ public class Database {
                 }
                 break;
             case "print" :
-                topic = sc.next();
+                topic = newSc.next();
                 if (topic.compareTo("artist") == 0) {
                     viewArtists();
                 }
@@ -145,21 +189,7 @@ public class Database {
                 break;
         } //end switch
     }
-    /**
-     * adds an entry to the main memory and returns the corresponding handle
-     * @param text the string to add to memory
-     * @return the handle in memory
-     */
-    public int addEntryGetHandle(String text) {
-        byte[] recordlength = new byte[3  +  text.length()];
-        recordlength[0] = 1;
-        recordlength[1] = (byte)((3  +  text.length()) >> 4);
-        recordlength[2] = (byte)((3  +  text.length()) & 0xF);
-        for (int i = 0; i < text.length(); i++ ) {
-            recordlength[i  +  3] = (byte)text.charAt(i);
-        }
-        return mem.addToTheFill(recordlength);
-    }
+    
     /**
      * remove an artist from the tree
      * @param name the name of the artist
@@ -198,9 +228,10 @@ public class Database {
      * print the artist tree followed by the song tree
      */
     public void viewTrees() {
-        System.out.println("Printing BST tree:");
-//        viewArtists();
-//        viewSongs();
+        System.out.println("Printing artist tree:");
+        System.out.println("Printing song tree:");
+       // viewArtists();
+       // viewSongs();
     }
     /**
      * print the artists in order of their handles
@@ -212,7 +243,7 @@ public class Database {
             artistHandles = artistTree.treeDump();
             if (artistHandles != null ) {
                 for (int pos = 0; pos < artistHandles.size(); pos++ ) {
-                    int startPosInMem = artistHash.get(artistHandles.get(pos));
+                    int startPosInMem = artistHash.get(mem.getRecordValue(artistHandles.get(pos)));
                     String artistName = mem.getRecordValue(startPosInMem);
                     System.out.println("|"  + artistName + "|");
                 }
@@ -233,9 +264,12 @@ public class Database {
             songHandles = songTree.treeDump();
             if (songHandles != null ) {
                 for (int pos = 0; pos < songHandles.size(); pos++ ) {
-                    int startPosInMem = songHash.get(songHandles.get(pos));
-                    String songName = mem.getRecordValue(startPosInMem);
-                    System.out.println("|" + songName + "|");
+                    int startPosInMem = songHash.get(
+                            mem.getRecordValue(songHandles.get(pos)));
+                    if (startPosInMem >= 0) {
+                        String songName = mem.getRecordValue(startPosInMem);
+                        System.out.println("|" + songName + "|");
+                    }
                 }
                 totalSongs = songHandles.size();
             }
@@ -260,8 +294,10 @@ public class Database {
             connectedHandles = artistTree.searchTree(handle);
             if (connectedHandles != null) {
                 for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
-                    System.out.println(
+                    if (connectedHandles.get(entry) >= 0) {
+                        System.out.println(
                             mem.readEntry(connectedHandles.get(entry)));
+                    }
                 }
             }
         }
@@ -290,24 +326,42 @@ public class Database {
         }
     }
     /**
-     * deletes an artist-song combination
+     * deletes an artist-song combination from the trees 
+     * and the main memory when applicable
      * @param artistName the name of the artist
      * @param songName the name of the song
      */
     public void delete(String artistName, String songName) {
-        if (!artistHash.containsKey(artistName) || artistTree == null) {
+        boolean validEntry = true; // a good value to delete
+        int aHandle = artistHash.containsKey(artistName) ?
+                artistHash.get(artistName) : -1;
+        int sHandle = songHash.containsKey(songName) ?
+                songHash.get(songName) : -1;
+        if (aHandle == -1 || mem.getRecordFlag(aHandle) != 1 ) {
             System.out.println("|"  +  artistName  +  
                     "| does not exist in the artist database.");
+            validEntry = false;
         }
-        else if (!songHash.containsKey(songName) || songTree == null) {
+        if (sHandle == -1 || mem.getRecordFlag(sHandle) != 1) {
             System.out.println("|"  +  songName  +  
                     "| does not exist in the song database.");
+            validEntry = false;
         }
-        else {
-            deleteEntry(artistTree, artistHash, songHash, 
-                    artistName, songName);
-            deleteEntry(songTree, songHash, artistHash, 
+        if (validEntry) {
+            int artistDeleted = deleteEntry(artistTree, artistHash, songHash, 
+                    artistName, songName); 
+            int songDeleted = deleteEntry(songTree, songHash, artistHash, 
                     songName, artistName);
+            if (artistDeleted == 2) {
+                System.out.println("|"  +  artistName  +  
+                        "| is deleted from the artist database.");
+                mem.killRecord(artistHash.get(artistName));
+            }
+            if (songDeleted == 2) {
+                System.out.println("|"  +  songName  +  
+                        "| is deleted from the song database.");
+                mem.killRecord(songHash.get(songName));
+            }
         }
     }
     
@@ -318,88 +372,27 @@ public class Database {
      * @param valueHash is the value's hash table
      * @param keyName is the name of the key to delete an entry for
      * @param valueName is the value to delete
+     * @return true if the key will be deleted
      */
-    public void deleteEntry(BST<Integer, Integer> tree, Hash keyHash, 
+    public int deleteEntry(BST<Integer, Integer> tree, Hash keyHash, 
             Hash valueHash, String keyName, String valueName) {
-        ArrayList<Integer> values = tree.searchTree(
-                keyHash.get(keyName).intValue());
-        int handleToDelete = valueHash.get(valueName).intValue();
-        for (int pos = 0; pos < values.size(); pos++ ) {
-            if (values.get(pos) == handleToDelete) {
-                values.remove(pos);
-            }
-        
+        if (tree.delete(keyHash.get(keyName), 
+                valueHash.get(valueName))) {
+            System.out.println("The KVPair (|"
+                    + keyName + "|,|" 
+                    + valueName + "|) is deleted from the tree.");
+            return 2;
+        }
+        else if (tree.removeSuccess) {
+            System.out.println("The KVPair (|"
+                    + keyName + "|,|" 
+                    + valueName + "|) is deleted from the tree.");
+            return 1;
+        }
+        else {
+            return 0;
         }
     }
-    /**
-     * a class that wraps HashMap
-     * @author maden
-     *
-     */
-    public class Hash extends HashMap<String, Integer> {
-        private String name;
-        private int handle;
-        private HashMap<String, Integer> hm;
-        /**
-         * constructor
-         * @param sizeHash the initial hash table's size
-         */
-        public Hash(int sizeHash) {
-            name = null;
-            handle = -1;
-            hm = new HashMap<String, Integer>(sizeHash, (float)0.5);
-        }
-        /**
-         * the hashCode
-         * @return the index in the hash table
-         */
-        public int hashCode() {
-            return h(name, handle);
-        }
-        /**
-         * checks if the objects are equal
-         * @param o is the object to compare
-         * @return true if equals
-         */
-        public boolean equals(Object o) {
-            if (o instanceof KVPair<?, ?>) {
-                KVPair<?, ?> other = (KVPair<?, ?>) o;
-                return (other.getKeyHandle().toString()
-                      .compareTo(String.valueOf(handle)) == 0);
-            }
-            return false;
-        }
-        /**
-         * from openDSA, this is the hash function
-         * @param s the string
-         * @param m the location
-         * @return the handle
-         */
-        public int h(String s, int m)
-        {
-            int intLength = s.length() / 4;
-            long sum = 0;
-            for (int j = 0; j < intLength; j++)
-            {
-                char[] c = s.substring(j * 4, (j * 4) + 4).toCharArray();
-                long mult = 1;
-                for (int k = 0; k < c.length; k++)
-                {
-                    sum  += c[k] * mult;
-                    mult *= 256;
-                }
-            }
-            char[] c = s.substring(intLength * 4).toCharArray();
-            long mult = 1;
-            for (int k = 0; k < c.length; k++ )
-            {
-                sum  += c[k] * mult;
-                mult *= 256;
-            }
-            return (int)(Math.abs(sum) % m);
-        }
 
-        
-    }
     
 }

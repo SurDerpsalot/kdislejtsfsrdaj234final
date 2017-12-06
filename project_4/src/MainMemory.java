@@ -20,7 +20,21 @@ public class MainMemory {
         blockFillSize = 0;
         buff = new byte[size];
         inBuff = ByteBuffer.wrap(buff);
-  //      lastExecTime = -1;
+    }
+    /**
+     * adds an entry to the main memory and returns the corresponding handle
+     * @param text the string to add to memory
+     * @return the handle in memory
+     */
+    public int addEntryGetHandle(String text) {
+        byte[] recordlength = new byte[3  +  text.length()];
+        recordlength[0] = 1;
+        recordlength[1] = (byte)((3  +  text.length()) >> 4);
+        recordlength[2] = (byte)((3  +  text.length()) & 0xF);
+        for (int i = 0; i < text.length(); i++ ) {
+            recordlength[i  +  3] = (byte)text.charAt(i);
+        }
+        return addToTheFill(recordlength);
     }
     /**
      * increments the filled space based by a block
@@ -34,39 +48,20 @@ public class MainMemory {
             byte[] newbuff = new byte[buff.length + blockSize];  
             ByteBuffer newInBuff = ByteBuffer.wrap(newbuff);
             newInBuff.limit(newInBuff.capacity());
+            newInBuff.position(0);
+            inBuff.rewind();
             newInBuff.put(inBuff);
             buff = newbuff;
             inBuff = newInBuff;
         }
+        inBuff.position(blockFillSize);
         inBuff.put(fillvalue);
         blockFillSize += fillvalue.length;
         return (blockFillSize - fillvalue.length); 
     }
-//    /**
-//     * pushes a block of data into this buffer space
-//     * @param block the input data
-//     * @return true if the block was pushed correctly
-//     */
-//    public boolean pushBlock(byte[] block) {
-//        if (block.length != blockSize) {
-//            return false;
-//        }
-//        blockFillSize += blockSize;
-//        inBuff.clear();
-//        inBuff.put(block);
-//        return true;
-//    }
-//    /**
-//     * pops an entire block of data
-//     * @return
-//     */
-//    public byte[] popBlock() {
-//        blockFillSize -= blockSize;
-//        return inBuff.array();
-//    }
     /**
      * given a position in the buffer, returns a record
-     * @param record is therecord to read
+     * @param record is the record to read
      * @return is the record value
      */
     public long getRecord(int record) {
@@ -115,15 +110,15 @@ public class MainMemory {
      * @return the string for the record
      */
     public String readEntry(int handle) {
-        if (inBuff.get(handle) == 0) {
-            return "";
-        }
-        else {
+        if (getRecordFlag(handle) == 1) {
             int size = inBuff.get(handle + 1) << 4;
             size += inBuff.get(handle + 2);
             byte[] ret = new byte[size];
             inBuff.get(ret, handle + 3, ret.length);
             return ret.toString();
+        }
+        else {
+            return "";
         }
     }
     /**
@@ -189,6 +184,13 @@ public class MainMemory {
     public int getBlockFillSize() {
         // TODO Auto-generated method stub
         return blockFillSize;
+    }
+    /**
+     * turns the record's flag to false
+     * @param record is the index/handle
+     */
+    public void killRecord(int record) {
+        buff[record] = 0;
     }
 
 }

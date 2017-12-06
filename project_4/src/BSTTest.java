@@ -9,12 +9,10 @@ public class BSTTest extends student.TestCase {
     /**
      * test the BST tree's default implementation
      */
-    
     public void testBST() {
         BST<Integer, Integer>  newTree = new BST<Integer, Integer>();
         assertNull(newTree.getRoot());
         assertNull(newTree.getTemp());
-        assertNull(newTree.getTempArray());
     }
 
     /**
@@ -119,32 +117,22 @@ public class BSTTest extends student.TestCase {
         assertEquals((int)newTree.getTemp().getValues().get(0), 4);
     }
 
-    /**
-     * set the tempArray
-     */
-    public void testSetGetTempArray() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
-        newTree.setRootNode();
-        newTree.setRootNode(3, 4);
-        newTree.setTempNode();
-        newTree.setTempNode(1, 6);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.setTempNode(9, 10);
-        newTree.insert(newTree.getRoot(), newTree.getTemp());
-        newTree.searchTree(9);
-        //TODO: fix these tests for this new BST
-        //Do we ever use the temp array?
-        
-        assertEquals(newTree.getTempArray().length, 2);
-//        assertEquals(newTree.getTempArray()[0].getKey()
-//          .compareTo("child"), 0);
-        //        assertEquals(newTree.getTempArray()[1].getKey()
-//        .compareTo("child"), 0);
-//        assertNotSame(newTree.getTempArray()[0].getX(),
-//                newTree.getTempArray()[1].getX());
-//        BST<Integer, Integer>.TreeNode[] t = newTree.getTempArray();
-//        assertEquals(t.length, 2);
-    }
+//    /**
+//     * set the tempArray
+//     */
+//    public void testSetGetTempArray() {
+//        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+//        newTree.setRootNode();
+//        newTree.setRootNode(3, 4);
+//        newTree.setTempNode();
+//        newTree.setTempNode(1, 6);
+//        newTree.insert(newTree.getRoot(), newTree.getTemp());
+//        newTree.setTempNode(9, 10);
+//        newTree.insert(newTree.getRoot(), newTree.getTemp());
+//        newTree.searchTree(9);
+//        
+//
+//    }
 
     /**
      * tests removing nodes by keys and dumping the tree;
