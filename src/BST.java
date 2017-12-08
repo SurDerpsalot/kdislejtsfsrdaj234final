@@ -38,7 +38,16 @@ public class BST<Key extends Comparable<? super Key>,
     public BST(TreeNode rt) {
         root = rt;
     };
-
+    /**
+     * adds a key-value pair to the BST
+     * @param key the key/handle
+     * @param value the value/handle
+     */
+    public void add(Key key, E value) {
+        TreeNode t = new TreeNode(key, value);
+        insert(getRoot(), t);
+        
+    }
     /**
      * this function inserts a new TreeNode into the BST.
      * The sort key is the name field, and if the same key is given to 
@@ -304,6 +313,7 @@ public class BST<Key extends Comparable<? super Key>,
         rt.setRight(removeValue(rt.getRight(), elem));
         return rt;
     }
+    
     /**
      * searches the BST for a node with the given name
      * @param k is the key name of the node to find
@@ -312,7 +322,7 @@ public class BST<Key extends Comparable<? super Key>,
     public ArrayList<E> searchTree(Key k) {
         KVPair<Key, E> pair = (search(getRoot(), k));
         if (pair == null) {
-            System.out.printf("Key not found: %s\n", k.toString());
+            //System.out.printf("Key not found: %s\n", k.toString());
             return null;
         } 
         else {

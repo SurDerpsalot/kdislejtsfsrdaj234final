@@ -161,7 +161,9 @@ public class Database {
                     System.out.println("|" + songName + 
                             "| is added to the Song database.");
                 }
-                if (!artistDuplicate) {
+                if (artistTree.searchTree(artistHandle) == null ||
+                        !artistTree.searchTree(artistHandle).contains(songHandle)) {
+                    artistTree.add(artistHandle, songHandle);
                     System.out.println("The KVPair (|"
                         + artistName + "|,|" 
                         + songName + "|),(" 
@@ -174,9 +176,11 @@ public class Database {
                             + songName + "|),(" 
                             + artistHandle + "," 
                             + songHandle 
-                            + ") is added to the tree.");
+                            + ") duplicates a record already in the tree.");
                 }
-                if (!songDuplicate) {
+                if (songTree.searchTree(songHandle) == null ||
+                        !songTree.searchTree(songHandle).contains(artistHandle)) {
+                    songTree.add(songHandle, artistHandle);
                     System.out.println("The KVPair (|"
                         + songName + "|,|" 
                         + artistName + "|),(" 
@@ -189,7 +193,7 @@ public class Database {
                             + artistName + "|),(" 
                             + songHandle + "," 
                             + artistHandle 
-                            + ") is added to the tree.");
+                            + ") duplicates a record already in the tree.");
                 }
                 artistTree.setTempNode(artistHandle, songHandle);
                 artistTree.setRootNode(artistTree.insert(artistTree.getRoot(),
