@@ -1,0 +1,15 @@
+print song
+print artist
+print tree
+insert Blind Lemon Jefferson<SEP>Long Lonesome Blues
+insert Blind Lemon Jefferson<SEP>Long Lonesome Blues
+print song
+print artist
+print tree
+delete Bukka White<SEP>Bukka White's first song
+delete Blind Lemon Jefferson<SEP>Bukka White's first song
+print song
+delete Blind Lemon Jefferson<SEP>Long Lonesome Blues
+print song
+print artist
+print tree
