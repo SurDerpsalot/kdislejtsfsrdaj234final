@@ -27,8 +27,8 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("insert new new band<SEP>stuff of legends");
         assertEquals(d.getArtistHash().size(), 2);
         assertEquals(d.getSongHash().size(), 1);
-        assertEquals(d.getArtistTree().treeDump().size(), 2);
-        assertEquals(d.getSongTree().treeDump().size(), 1);
+        assertEquals(d.getArtistTree().treeDump(false).size(), 2);
+        assertEquals(d.getSongTree().treeDump(false).size(), 1);
         //TODO: test value tree values
         assertEquals(d.getArtistTree().searchTree(0).size(), 1);
         assertNull(d.getArtistTree().searchTree(11));
@@ -37,8 +37,8 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("delete new song<SEP>stuff of legends");
         assertEquals(d.getArtistHash().size(), 2);
         assertEquals(d.getSongHash().size(), 1);
-        assertEquals(d.getArtistTree().treeDump().size(), 1);
-        assertEquals(d.getSongTree().treeDump().size(), 1);
+        assertEquals(d.getArtistTree().treeDump(false).size(), 1);
+        assertEquals(d.getSongTree().treeDump(false).size(), 1);
     }
 
     /**
@@ -102,7 +102,14 @@ public class DatabaseTest extends student.TestCase {
      */
     
     public void testListSongsByArtist() {
-        fail("Not yet implemented"); // TODO
+        Database d = new Database("db_sample1.txt", 200, 100);
+        assertEquals(d.getArtistHash().size(), 0);
+        d.readCommand("insert new song<SEP>stuff of legends");
+        d.readCommand("insert new new band<SEP>stuff of legends");
+        d.listSongsByArtist("mickey");
+        d.listSongsByArtist("new song");
+        d.listArtistsBySong("missing");
+        d.listArtistsBySong("stuff of legends");
     }
 
     /**

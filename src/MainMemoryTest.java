@@ -127,7 +127,7 @@ public class MainMemoryTest extends student.TestCase {
      * This tests the retrieving the information from the memory
      * based on passing in the starting index of the record being
      * retrieved.
-     *
+     */
     public void testRecordGetting() {
         MainMemory test1 = new MainMemory(11);
         byte[] b = new byte[11];
@@ -175,5 +175,5 @@ public class MainMemoryTest extends student.TestCase {
     
     }
     
-    */
+    
 }

@@ -12,7 +12,7 @@ public class SongSearchTest extends student.TestCase {
         String[] testargs = new String[4];
         testargs[0] = "50";
         testargs[1] = "1024";
-        testargs[2] = "P4_Input1_Sample.txt";
+        testargs[2] = "test.txt";
         SongSearch test = new SongSearch();
         Hash j = new Hash(3);
         assertEquals(j.size(), 0);

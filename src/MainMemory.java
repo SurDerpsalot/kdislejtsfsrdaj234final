@@ -59,14 +59,14 @@ public class MainMemory {
         blockFillSize += fillvalue.length;
         return (blockFillSize - fillvalue.length); 
     }
-    /**
-     * given a position in the buffer, returns a record
-     * @param record is the record to read
-     * @return is the record value
-     */
-    public long getRecord(int record) {
-        return inBuff.asLongBuffer().get(record);
-    }
+//    /**
+//     * given a position in the buffer, returns a record
+//     * @param record is the record to read
+//     * @return is the record value
+//     */
+//    public long getRecord(int record) {
+//        return inBuff.asLongBuffer().get(record);
+//    }
     /**
      * returns the record flag
      * @param record is the record number
@@ -96,11 +96,13 @@ public class MainMemory {
      * @return the string name of this record
      */
     public String getRecordValue(int record) {
-        byte[] b = new byte[getRecordSize(record)];
+        int size = getRecordSize(record);
         if (record >= 0 && record < blockFillSize) {
-            b = inBuff.get(buff, record + 3, 
-                    getRecordSize(record)).array();
-            return b.toString();
+            byte[] b = new byte[size];
+            inBuff.position(record + 3);
+            inBuff.get(b, 0, size);
+            String out = new String(b);
+            return out;
         }
         return "";
     }
@@ -110,15 +112,17 @@ public class MainMemory {
      * @return the string for the record
      */
     public String readEntry(int handle) {
-        if (getRecordFlag(handle) == 1) {
+        if (inBuff.get(handle) == 0) {
+            return "";
+        }
+        else {
             int size = inBuff.get(handle + 1) << 4;
             size += inBuff.get(handle + 2);
             byte[] ret = new byte[size];
-            inBuff.get(ret, handle + 3, ret.length);
-            return ret.toString();
-        }
-        else {
-            return "";
+            inBuff.position(handle + 3);
+            inBuff.get(ret, 0, ret.length);
+            String out = new String(ret);
+            return out;
         }
     }
     /**
@@ -126,7 +130,7 @@ public class MainMemory {
      * @return is the byte[]
      */
     public byte[] getBuff() {
-        // TODO Auto-generated method stub
+       
         return buff;
     }
     /**
@@ -134,7 +138,7 @@ public class MainMemory {
      * @return the bytebuffer
      */
     public ByteBuffer getInBuff() {
-        // TODO Auto-generated method stub
+       
         return inBuff;
     }
     /**
@@ -142,7 +146,7 @@ public class MainMemory {
      * @param i is the size to assert
      */
     public void setBlockSize(int i) {
-        // TODO Auto-generated method stub
+       
         blockSize = i;
     }
     /**
@@ -150,7 +154,7 @@ public class MainMemory {
      * @param i is the value to input
      */
     public void setBlockFillSize(int i) {
-        // TODO Auto-generated method stub
+       
         blockFillSize = i;
     }
     /**
@@ -158,7 +162,7 @@ public class MainMemory {
      * @param b the byte array to input
      */
     public void setBuff(byte[] b) {
-        // TODO Auto-generated method stub
+       
         buff = b;
     }
     /**
@@ -166,7 +170,7 @@ public class MainMemory {
      * @param c the input
      */
     public void setInBuff(ByteBuffer c) {
-        // TODO Auto-generated method stub
+       
         inBuff = c;
     }
     /**
@@ -174,7 +178,7 @@ public class MainMemory {
      * @return the integer for the block size
      */
     public int getBlockSize() {
-        // TODO Auto-generated method stub
+       
         return blockSize;
     }
     /**
@@ -182,7 +186,7 @@ public class MainMemory {
      * @return the size of the block
      */
     public int getBlockFillSize() {
-        // TODO Auto-generated method stub
+       
         return blockFillSize;
     }
     /**

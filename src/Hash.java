@@ -286,6 +286,8 @@ public class Hash {
                     {
                         Pair dead = new Pair(hashTable.get(hIndex).key);
                         hashTable.set(hIndex, dead);
+                        //System.out.println(hashTable.get(hIndex).key.trim());
+                        //System.out.println(hashTable.get(hIndex).indexmem);
                         return true;  
                     }
                 }
@@ -310,6 +312,8 @@ public class Hash {
     public int getCapacity() {
         return hSize;
     }
+       
+    
     
     /**
      * from openDSA, hm is the hash function
