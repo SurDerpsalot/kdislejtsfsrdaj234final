@@ -42,14 +42,6 @@ public class DatabaseTest extends student.TestCase {
     }
 
     /**
-     * Test method for {@link Database#readCommand(java.lang.String)}.
-     */
-    
-    public void testReadCommand() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
      * Test method for {@link Database#addEntryGetHandle(java.lang.String)}.
      */
     
@@ -61,18 +53,21 @@ public class DatabaseTest extends student.TestCase {
      * Test method for {@link Database#removeArtist(java.lang.String)}.
      */
     
-    public void testRemoveArtist() {
-        fail("Not yet implemented"); // TODO
+    public void testRemove() {
+        Database d = new Database("db_sample1.txt", 200, 100);
+        assertEquals(d.getArtistHash().size(), 0);
+        d.readCommand("insert new song<SEP>stuff of legends");
+        d.readCommand("insert new new band<SEP>stuff of legends");
+        System.out.println("Removal test");        
+        d.readCommand("remove artist a");
+        d.readCommand("remove artist new song");
+        d.readCommand("print artist");
+        d.readCommand("remove song b");
+        d.readCommand("remove song stuff of legends");
+        d.readCommand("print song");
+        d.readCommand("print artist");
+        System.out.println("finished printing removals");
     }
-
-    /**
-     * Test method for {@link Database#removeSong(java.lang.String)}.
-     */
-    
-    public void testRemoveSong() {
-        fail("Not yet implemented"); // TODO
-    }
-
     /**
      * Test method for {@link Database#viewTrees()}.
      */
@@ -101,7 +96,7 @@ public class DatabaseTest extends student.TestCase {
      * Test method for {@link Database#listSongsByArtist(java.lang.String)}.
      */
     
-    public void testListSongsByArtist() {
+    public void testList() {
         Database d = new Database("db_sample1.txt", 200, 100);
         assertEquals(d.getArtistHash().size(), 0);
         d.readCommand("insert new song<SEP>stuff of legends");
@@ -113,30 +108,25 @@ public class DatabaseTest extends student.TestCase {
     }
 
     /**
-     * Test method for {@link Database#listArtistsBySong(java.lang.String)}.
-     */
-    
-    public void testListArtistsBySong() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
      * Test method for 
      * {@link Database#delete(java.lang.String, java.lang.String)}.
      */
     
     public void testDelete() {
-        fail("Not yet implemented"); // TODO
-    }
-
-    /**
-     * Test method for 
-     * {@link Database#deleteEntry(BST, Database.Hash, Database.Hash,
-     *  java.lang.String, java.lang.String)}.
-     */
-    
-    public void testDeleteEntry() {
-        fail("Not yet implemented"); // TODO
+        Database d = new Database("db_sample1.txt", 200, 100);
+        assertEquals(d.getArtistHash().size(), 0);
+        d.readCommand("insert new song<SEP>stuff of legends");
+        d.readCommand("insert new new band<SEP>stuff of legends");
+        d.readCommand("insert new song<SEP>silly song");
+        System.out.println("Deletion test");        
+        d.readCommand("delete artist a <SEP>not really");
+        d.readCommand("delete new song<SEP>not really");
+        d.readCommand("delete new new band<SEP>silly song");
+        d.readCommand("delete new song<SEP>silly song");
+        d.readCommand("delete new song<SEP>stuff of legends");
+        d.readCommand("print artist");
+        d.readCommand("print song");
+        System.out.println("finished printing deletions");
     }
 
 }

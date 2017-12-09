@@ -273,16 +273,16 @@ public class Database {
         int handle = artistHash.get(name);
         ArrayList<Integer> songs = artistTree.searchTree(handle);
         if (songs != null) {
-            System.out.println(songs.size());
-            System.out.println(artistHash.get(name.trim()));
-            System.out.println(mem.getRecordValue(songs.get(4)).trim());
+            //System.out.println(songs.size());
+            //System.out.println(artistHash.get(name.trim()));
+            //System.out.println(mem.readEntry(songs.get(4)).trim());
             for (int i = 0; i < songs.size(); i++)
             {
                 int songHandle = songs.get(i);
                 if(songTree.searchTree(songHandle).size() == 1)
                 {
                     delete(name,mem.getRecordValue(songHandle).trim());
-                    return;
+                    //return;
                 }
             }
         }
@@ -309,14 +309,14 @@ public class Database {
         if (artists != null) {
             for (int i = 0; i < artists.size(); i++)
             {
-                if(artists.get(i)!=null) {
+                if (artists.get(i)!=null) {
                     int artistHandle = artists.get(i);
-                    if( artistHandle != -1)
+                    if ( artistHandle != -1)
                     {
-                        if(artistTree.searchTree(artistHandle).size() == 1)
+                        if (artistTree.searchTree(artistHandle).size() == 1)
                         {
-                            delete(name,mem.getRecordValue(artistHandle).trim());
-                            return;
+                            delete(name, mem.getRecordValue(artistHandle).trim());
+                            //return;
                         }
                     }
                 }
@@ -469,12 +469,22 @@ public class Database {
      * @param songName the name of the song
      */
     public void delete(String artistName, String songName) {
-        boolean validEntry = true; // a good value to delete
         int aHandle = artistHash.get(artistName);
         int sHandle = songHash.get(songName);
+        if (aHandle < 0) {
+            System.out.println("|"
+                    + artistName + "| was not found in the database");
+            return;
+        }
+        if (sHandle < 0) {
+            System.out.println("|"
+                    + songName + "| was not found in the database");
+            return;
+        }
         ArrayList<Integer> test = artistTree.searchTree(aHandle);
         ArrayList<Integer> test2 = songTree.searchTree(sHandle);
-        if(test == null)
+        if (test == null || test2 == null 
+                || !test.contains(sHandle) || !test2.contains(aHandle))
         {
             System.out.println("The KVPair (|"
                     + artistName + "|,|" 
@@ -483,62 +493,55 @@ public class Database {
                     + songName + "|,|" 
                     + artistName + "|) was not found in the database");
             return;
-        }
-        if(test2 == null)
-        {
-            System.out.println("The KVPair (|"
-                    + artistName + "|,|" 
-                    + songName + "|) was not found in the database");
-            System.out.println("The KVPair (|"
-                    + songName + "|,|" 
-                    + artistName + "|) was not found in the database");
-            return;
-        }
+        }    
+        boolean found = false;
         for (int i = 0; i < test.size(); i++) {
             if(test.get(i) == sHandle)
             {
+                found = true;
                 break;
             }
-            else
+        }
+        if (!found) {
+            System.out.println("The KVPair (|"
+                    + artistName + "|,|" 
+                    + songName + "|) was not found in the database");
+        }
+        found = false;
+        for (int i = 0; i < test2.size(); i++) {
+            if(test2.get(i) == aHandle)
             {
-                System.out.println("The KVPair (|"
-                        + artistName + "|,|" 
-                        + songName + "|) was not found in the database");
-                System.out.println("The KVPair (|"
-                        + songName + "|,|" 
-                        + artistName + "|) was not found in the database");
-                return;
+                found = true;
+                break;
             }
         }
-        
-        if (aHandle == -1 || mem.getRecordFlag(aHandle) != 1 ) {
-            System.out.println("|"  +  artistName  +  
-                    "| does not exist in the artist database.");
-            validEntry = false;
+        if (!found) {
+            System.out.println("The KVPair (|"
+                    + songName + "|,|" 
+                    + artistName + "|) was not found in the database");
+            return;
         }
-        if (sHandle == -1 || mem.getRecordFlag(sHandle) != 1) {
-            System.out.println("|"  +  songName  +  
-                    "| does not exist in the song database.");
-            validEntry = false;
-        }
-        if (validEntry) {
+        int artistDeleted = deleteEntry(artistTree, aHandle, sHandle, 
+                artistName, songName); 
+        int songDeleted = deleteEntry(songTree, sHandle, aHandle, 
+                songName, artistName);
+        if (artistDeleted == 2) {
             artistHash.remove(artistName.trim());
-            songHash.remove(songName.trim());
-            int artistDeleted = deleteEntry(artistTree, aHandle, sHandle, 
-                    artistName, songName); 
-            int songDeleted = deleteEntry(songTree, sHandle, aHandle, 
-                    songName, artistName);
-            if (artistDeleted == 2) {
-                System.out.println("|"  +  artistName  +  
-                        "| is deleted from the artist database.");
-                mem.killRecord(aHandle);
-            }
-            if (songDeleted == 2) {
-                System.out.println("|"  +  songName  +  
-                        "| is deleted from the song database.");
-                mem.killRecord(sHandle);
-            }
+            System.out.println("|"  +  artistName  +  
+                    "| is deleted from the artist database.");
         }
+        if (songDeleted == 2) {
+            songHash.remove(songName.trim());
+            System.out.println("|"  +  songName  +  
+                    "| is deleted from the song database.");
+        }
+        if  (artistDeleted == 2) {
+            mem.killRecord(aHandle);
+        }
+        if (songDeleted == 2) {
+            mem.killRecord(sHandle);
+        }
+
     }
     
     /**

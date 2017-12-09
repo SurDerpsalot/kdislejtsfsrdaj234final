@@ -176,28 +176,13 @@ public class BST<Key extends Comparable<? super Key>,
         search(root, k).deleteSecondaryHandle(elem);
         // if the tree's key has no more associated handles, 
         // delete the key handle
-        ArrayList<E> values = search(getRoot(), k).getValueList();
-        if ( values == null || values.isEmpty()) {
+        ArrayList<E> values = searchTree(k);
+        //this.remove(k, elem, false);
+        if ( values == null ) {
             setRootNode(this.removeByKey(root, k));
             return true;
         }
         return false;
-        
-//        if (removeKey) {
-//            setRootNode(removeByKey(root, k));
-//            if (root != null && root.getKey() == null) {
-//                root = null;
-//            }
-//            return removeSuccess;
-//        }
-//        else {
-//            //THIS DOES NOT WORK PROPERLY
-//            setRootNode(removeValue(root, elem));
-//            if (root != null && root.getKey() == null) {
-//                root = null;
-//            }
-//            return removeSuccess;            
-//        }
     }
 
     /**

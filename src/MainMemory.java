@@ -98,9 +98,9 @@ public class MainMemory {
     public String getRecordValue(int record) {
         int size = getRecordSize(record);
         if (record >= 0 && record < blockFillSize) {
-            byte[] b = new byte[size];
+            byte[] b = new byte[size - 3];
             inBuff.position(record + 3);
-            inBuff.get(b, 0, size);
+            inBuff.get(b, 0, size - 3);
             String out = new String(b);
             return out;
         }
@@ -118,7 +118,7 @@ public class MainMemory {
         else {
             int size = inBuff.get(handle + 1) << 4;
             size += inBuff.get(handle + 2);
-            byte[] ret = new byte[size];
+            byte[] ret = new byte[size - 3];
             inBuff.position(handle + 3);
             inBuff.get(ret, 0, ret.length);
             String out = new String(ret);
