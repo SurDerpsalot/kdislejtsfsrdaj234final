@@ -10,9 +10,9 @@ public class DatabaseTest extends student.TestCase {
     public void testDatabase() {
         Database d = new Database("db_sample1.txt", 200, 100);
         assertNotNull(d);
-        assertEquals(d.mem.getBlockSize(), 200);
-        assertEquals(d.artistHash.getCapacity(), 100);
-        assertEquals(d.songHash.getCapacity(), 100);
+        assertEquals(d.getMem().getBlockSize(), 200);
+        assertEquals(d.getArtistHash().getCapacity(), 100);
+        assertEquals(d.getSongHash().getCapacity(), 100);
 
     }
 
@@ -22,23 +22,23 @@ public class DatabaseTest extends student.TestCase {
     
     public void testBeginParsing() {
         Database d = new Database("db_sample1.txt", 200, 100);
-        assertEquals(d.artistHash.size(), 0);
+        assertEquals(d.getArtistHash().size(), 0);
         d.readCommand("insert new song<SEP>stuff of legends");
         d.readCommand("insert new new band<SEP>stuff of legends");
-        assertEquals(d.artistHash.size(), 2);
-        assertEquals(d.songHash.size(), 1);
-        assertEquals(d.artistTree.treeDump().size(), 2);
-        assertEquals(d.songTree.treeDump().size(), 1);
+        assertEquals(d.getArtistHash().size(), 2);
+        assertEquals(d.getSongHash().size(), 1);
+        assertEquals(d.getArtistTree().treeDump(false).size(), 2);
+        assertEquals(d.getSongTree().treeDump(false).size(), 1);
         //TODO: test value tree values
-        assertEquals(d.artistTree.searchTree(0).size(), 1);
-        assertNull(d.artistTree.searchTree(11));
-        assertNull(d.songTree.searchTree(0));
-        assertEquals(d.songTree.searchTree(11).size(), 2);
+        assertEquals(d.getArtistTree().searchTree(0).size(), 1);
+        assertNull(d.getArtistTree().searchTree(11));
+        assertNull(d.getSongTree().searchTree(0));
+        assertEquals(d.getSongTree().searchTree(11).size(), 2);
         d.readCommand("delete new song<SEP>stuff of legends");
-        assertEquals(d.artistHash.size(), 2);
-        assertEquals(d.songHash.size(), 1);
-        assertEquals(d.artistTree.treeDump().size(), 1);
-        assertEquals(d.songTree.treeDump().size(), 1);
+        assertEquals(d.getArtistHash().size(), 2);
+        assertEquals(d.getSongHash().size(), 1);
+        assertEquals(d.getArtistTree().treeDump(false).size(), 1);
+        assertEquals(d.getSongTree().treeDump(false).size(), 1);
     }
 
     /**
@@ -114,7 +114,8 @@ public class DatabaseTest extends student.TestCase {
     }
 
     /**
-     * Test method for {@link Database#delete(java.lang.String, java.lang.String)}.
+     * Test method for 
+     * {@link Database#delete(java.lang.String, java.lang.String)}.
      */
     
     public void testDelete() {
@@ -122,7 +123,9 @@ public class DatabaseTest extends student.TestCase {
     }
 
     /**
-     * Test method for {@link Database#deleteEntry(BST, Database.Hash, Database.Hash, java.lang.String, java.lang.String)}.
+     * Test method for 
+     * {@link Database#deleteEntry(BST, Database.Hash, Database.Hash,
+     *  java.lang.String, java.lang.String)}.
      */
     
     public void testDeleteEntry() {

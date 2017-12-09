@@ -24,8 +24,7 @@ public class KVPairTest extends student.TestCase {
         assertEquals(kv.getKeyHandle().compareTo("key"), 0);
         KVPair<Float, Integer> kv2 = 
                 new KVPair<Float, Integer>((float)3.14159, 23);
-        assertEquals(kv2.getKeyHandle(), 3.14159, 0.00001);
-        
+        assertEquals(kv2.getKeyHandle(), 3.14159, 0.00001);        
     }
 
     /**

@@ -14,7 +14,15 @@ public class BST<Key extends Comparable<? super Key>,
 
     private TreeNode root; //the root of the BST
     private TreeNode temp; //a TreeNode instance accessible from the outside
-    protected boolean removeSuccess; //global to indicate 'node removal success'
+    private boolean removeSuccess; //global to indicate 'node removal success'
+    
+    /**
+     * gets the global to indicate 'node removal success'
+     * @return the global to indicate 'node removal success'
+     */
+    public boolean getRemoveSuccess() {
+        return removeSuccess;
+    }
     /**
      * default constructor
      */
@@ -30,7 +38,16 @@ public class BST<Key extends Comparable<? super Key>,
     public BST(TreeNode rt) {
         root = rt;
     };
-
+    /**
+     * adds a key-value pair to the BST
+     * @param key the key/handle
+     * @param value the value/handle
+     */
+    public void add(Key key, E value) {
+        TreeNode t = new TreeNode(key, value);
+        insert(getRoot(), t);
+        
+    }
     /**
      * this function inserts a new TreeNode into the BST.
      * The sort key is the name field, and if the same key is given to 
@@ -152,16 +169,15 @@ public class BST<Key extends Comparable<? super Key>,
      * 
      * @param k is the key name
      * @param elem is the value name
-     * @param removeKey is which value to remove
      * @return boolean true if the key's node was removed
      */
     public boolean delete(Key k, E elem) {
         removeSuccess = false;
-        this.search(getRoot(), k).deleteSecondaryHandle(elem);
+        search(root, k).deleteSecondaryHandle(elem);
         // if the tree's key has no more associated handles, 
         // delete the key handle
         ArrayList<E> values = search(getRoot(), k).getValueList();
-        if( values == null || values.isEmpty()) {
+        if ( values == null || values.isEmpty()) {
             setRootNode(this.removeByKey(root, k));
             return true;
         }
@@ -297,6 +313,7 @@ public class BST<Key extends Comparable<? super Key>,
         rt.setRight(removeValue(rt.getRight(), elem));
         return rt;
     }
+    
     /**
      * searches the BST for a node with the given name
      * @param k is the key name of the node to find
@@ -305,7 +322,7 @@ public class BST<Key extends Comparable<? super Key>,
     public ArrayList<E> searchTree(Key k) {
         KVPair<Key, E> pair = (search(getRoot(), k));
         if (pair == null) {
-            System.out.printf("Key not found: %s\n", k.toString());
+            //System.out.printf("Key not found: %s\n", k.toString());
             return null;
         } 
         else {
@@ -340,11 +357,12 @@ public class BST<Key extends Comparable<? super Key>,
     /**
      * Runs an in-Order traversal of the BST starting at the 
      * root and returns an arrayList of the handle values.
+     * @param output is true if this is dumping an output to the std out
      * @return the handles in the BST tree
      */
-    public ArrayList<Key> treeDump() { // (PrintWriter pw) {
+    public ArrayList<Key> treeDump(boolean output) { // (PrintWriter pw) {
         ArrayList<Key> handleList = new ArrayList<Key>();
-        handleList = inorderDump(root, handleList);
+        handleList = inorderDump(root, handleList, output);
 //        System.out.printf("BST size is %d\n", handleList.size());
         return handleList;
     }
@@ -356,16 +374,27 @@ public class BST<Key extends Comparable<? super Key>,
      * @param rt  is the base of the traversal.
      * @return is the in-order list of handles in this tree
      */
-    private ArrayList<Key> inorderDump(TreeNode rt, ArrayList<Key> list) {
+    private ArrayList<Key> inorderDump(TreeNode rt, ArrayList<Key> list, boolean output) {
         if (rt != null) {
             if (rt.getKey() == null) {
                 System.out.printf("Node has depth %d, Value (null)\n",
                         list.size());
                 return list;
             } 
-            list = inorderDump(rt.getLeft(), list);
+            list = inorderDump(rt.getLeft(), list, output);
             list.add(rt.getKey());
-            list = inorderDump(rt.getRight(), list);
+            if (output) {
+                if (rt.getValues().size() >= 1);
+                {
+                    int i = 0;
+                    while (rt.getValues().size() > i) {
+                        System.out.println("(" + rt.getKey() + "," + rt.getValues().get(i) + ")");
+                        i++;
+                    }
+                    
+                }
+            }
+            list = inorderDump(rt.getRight(), list, output);
         }
         else if (rt == getRoot()) {
             System.out.println("Node has depth 0, Value (null)");            

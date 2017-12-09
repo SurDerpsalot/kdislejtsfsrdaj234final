@@ -152,20 +152,20 @@ public class BSTTest extends student.TestCase {
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         newTree.searchTree(500);
         newTree.searchTree(9);
-        newTree.treeDump();
+        newTree.treeDump(false);
         newTree.remove(500, 6, true);
-        newTree.treeDump();
+        newTree.treeDump(false);
         newTree.remove(700, 8, true);
-        newTree.treeDump();
+        newTree.treeDump(false);
         newTree.remove(300, 5, false);
-        newTree.treeDump();
+        newTree.treeDump(false);
         newTree.remove(300, 5, true);
-        newTree.treeDump();
+        newTree.treeDump(true);
         newTree.remove(200, 4, true);
         assertEquals(newTree.isEmpty(), true);
-        newTree.treeDump();
+        newTree.treeDump(false);
         newTree.remove(100, 2, true);
-        newTree.treeDump();
+        newTree.treeDump(false);
     }
 
 }

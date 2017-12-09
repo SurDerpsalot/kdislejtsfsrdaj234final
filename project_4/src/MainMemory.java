@@ -96,11 +96,13 @@ public class MainMemory {
      * @return the string name of this record
      */
     public String getRecordValue(int record) {
-        byte[] b = new byte[getRecordSize(record)];
+        int size = getRecordSize(record);
         if (record >= 0 && record < blockFillSize) {
-            b = inBuff.get(buff, record + 3, 
-                    getRecordSize(record)).array();
-            return b.toString();
+            byte[] b = new byte[size];
+            inBuff.position(record + 3);
+            inBuff.get(b, 0, size);
+            String out = new String(b);
+            return out;
         }
         return "";
     }
@@ -110,15 +112,17 @@ public class MainMemory {
      * @return the string for the record
      */
     public String readEntry(int handle) {
-        if (getRecordFlag(handle) == 1) {
+        if(inBuff.get(handle) == 0) {
+            return "";
+        }
+        else {
             int size = inBuff.get(handle + 1) << 4;
             size += inBuff.get(handle + 2);
             byte[] ret = new byte[size];
-            inBuff.get(ret, handle + 3, ret.length);
-            return ret.toString();
-        }
-        else {
-            return "";
+            inBuff.position(handle + 3);
+            inBuff.get(ret, 0, ret.length);
+            String out = new String(ret);
+            return out;
         }
     }
     /**
