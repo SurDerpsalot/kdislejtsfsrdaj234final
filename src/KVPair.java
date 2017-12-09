@@ -67,10 +67,6 @@ public class KVPair<F extends Comparable<? super F>,
      * @return true if it already exists
      */
     protected boolean isDuplicateValue(S secondKey) {
-        if (secondaryHandles == null) {
-            return false;
-            //this is an error because we shouldn't have any blank lists
-        }
         int size = secondaryHandles.treeDump().size(); 
         if (size == 0) {
             return false;
@@ -105,14 +101,7 @@ public class KVPair<F extends Comparable<? super F>,
         public BSTValues(S rt) {
             root = new TNode<S>(rt);
         };
-        /**
-         * BST constructor given a TNode
-         * @param rt  is the root node you want to give the BST
-         */
-        public BSTValues(TNode<S> rt) {
-            root = rt;
-        };
-        
+                
         /**
          * this function inserts a new TNode into the BST.
          * The sort key is the name field, and if the same key is given to 
@@ -123,7 +112,7 @@ public class KVPair<F extends Comparable<? super F>,
          * @return a pointer to the root of the BST that includes the new node
          */
         public TNode<S> insert(TNode<S> rt, TNode<S> newNode) {
-            if (rt == null || rt.get() == null) {
+            if (rt == null) {
                 return newNode;
             } 
             else if (rt.get() == newNode.get()) { //duplicate value
@@ -158,45 +147,11 @@ public class KVPair<F extends Comparable<? super F>,
         };
 
         /**
-         * set the root node with the given parameters
-         * @param elem the value
-         */
-        public void setRootNode(S elem) {
-            root = new TNode<S>(elem);
-        };
-
-        /**
-         * set the temp node to a default constructed TNode.
-         */
-        public void setTempNode() {
-            temp = new TNode<S>();
-        };
-
-        /**
-         * set the temp node with the parameters of an existing TNode.
-         * 
-         * @param t   is the TNode to copy
-         */
-        public void setTempNode(TNode<S> t) {
-            temp = t;
-        };
-
-        /**
          * set the temp node with the given parameters
          * @param elem the value
          */
         public void setTempNode(S elem) {
             temp = new TNode<S>(elem);
-        };
-
-        /**
-         * point the temporary array to an existing array of TNodes
-         * 
-         * @param t
-         *            an array of TNodes
-         */
-        public void setTempArray(TNode<S>[] t) {
-            tempArray = t;
         };
 
         /**
@@ -230,14 +185,6 @@ public class KVPair<F extends Comparable<? super F>,
 
         //////////////////////////////////////////////////////
         // Validate node features
-        /**
-         * Identifies if the BST is empty.
-         * 
-         * @return true if the BST is empty.
-         */
-        public boolean isEmpty() {
-            return (root == null);
-        };
 
         /**
          * removes a single node that contains the name parameter from the BST.
@@ -400,14 +347,6 @@ public class KVPair<F extends Comparable<? super F>,
             private TNode<S> left;
             private TNode<S> right;
             private S value;
-            /**
-             * base constructor
-             */
-            public TNode() {
-                left = null;
-                right = null;
-            };
-
             /**
              * TNode copy constructor
              * 
