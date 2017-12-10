@@ -142,6 +142,8 @@ public class BSTTest extends student.TestCase {
         
         
         BST newTree = new BST();
+        newTree.treeDump(false);
+        newTree.treeDump(true);
         newTree.setRootNode(200, 4);
         newTree.setTempNode(500, 6);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
@@ -165,7 +167,39 @@ public class BSTTest extends student.TestCase {
         assertEquals(newTree.isEmpty(), true);
         newTree.treeDump(false);
         newTree.remove(100, 2, true);
+        assertFalse(newTree.getRemoveSuccess());
         newTree.treeDump(false);
     }
+    
+    /**
+     * Tests the delete class
+     */
+    public void testDelete()  {
+        BST newTree = new BST();
+        newTree.setRootNode(200, 4);
+        newTree.setTempNode(500, 6);
+        newTree.insert(newTree.getRoot(), newTree.getTemp());
+        assertEquals(newTree.isEmpty(), false);
+        newTree.add(10, 20);
+        newTree.add(20, 10);
+        newTree.add(9, 30);
+        newTree.add(9, 40);
+        newTree.add(600, 50);
+        newTree.add(400, 39);
+        newTree.add(450, 40);
+        newTree.add(350, 3);
+        newTree.delete(400, 39);
+        newTree.delete(500, 6);
+        newTree.delete(20, 10);
+        newTree.delete(10, 20);
+        newTree.delete(200, 4);
+        newTree.delete(9, 30);
+        newTree.delete(9, 40);
+        newTree.delete(600, 50);
+        newTree.delete(450, 40);
+        newTree.delete(350, 3);
+        assertEquals(newTree.isEmpty(), true);
+    }
+    
 
 }

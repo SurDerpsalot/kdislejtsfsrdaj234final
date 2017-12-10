@@ -21,7 +21,7 @@ public class MainMemoryTest extends student.TestCase {
         assertEquals(test1.getBlockSize(), 1024);
         assertEquals(test2.getBlockFillSize(), 0);
         assertEquals(test3.getBlockSize(), 4096);
-        assertEquals(test1.getInBuff().array().length == 1024, true);
+        assertEquals(test1.getInBuff().array().length, 1024);
         test1.setBlockSize(32);
         test2.setBlockFillSize(32);
         byte[] b = new byte[32];
@@ -164,20 +164,13 @@ public class MainMemoryTest extends student.TestCase {
         b[9] = 'e';
         test1.addToTheFill(b);
         assertEquals("sparkle", test1.readEntry(11));
-        b = new byte[5];
-        b[0] = 0;
-        b[1] = 0;
-        b[2] = 2;
-        b[3] = 'R';
-        b[4] = 'D';
-        test1.addToTheFill(b);
         assertEquals(test1.readEntry(22), "");
         assertEquals(-1, test1.getRecordSize(-1));
         assertEquals(-1, test1.getRecordSize(100000));
         assertEquals(10, test1.getRecordSize(11));
         test1.killRecord(11);
         assertEquals(0, test1.getRecordFlag(11));
-        assertEquals(26, test1.addEntryGetHandle("pinkiepie"));
+        assertEquals(21, test1.addEntryGetHandle("pinkiepie"));
     }
     
     

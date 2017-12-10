@@ -139,9 +139,6 @@ public class Database {
                 else if (topic.compareTo("song") == 0) {
                     listArtistsBySong(name);
                 }
-                else { 
-                    System.out.println("Error: bad input " + topic);
-                }
                 break;
             case "delete" ://Found an insert command
                 artistName = newSc.nextLine().trim();
@@ -160,9 +157,6 @@ public class Database {
                 else if (topic.compareTo("song") == 0) {
                     removeSong(name);
                 }
-                else { 
-                    System.out.println("Error: bad input " + topic);
-                }
                 break;
             case "print" :
                 topic = newSc.next();
@@ -175,9 +169,6 @@ public class Database {
                 else if (topic.compareTo("tree") == 0) {
                     viewTrees();
                 }
-                else { 
-                    System.out.println("Error: bad input " + topic);
-                }
                 break;
             default:
                 System.out.println("Unrecognized input "  +  cmd);
@@ -185,6 +176,13 @@ public class Database {
         } //end switch
         newSc.close();
     }
+    
+    /**
+     * This is the insert method. It is separate because it is extremely
+     * long. it takes in a scanner and then inserts the song and 
+     * artist into the data structures
+     * @param newSc the scanner being read from 
+     */
     private void insert(Scanner newSc) {
         String artistName = newSc.nextLine().trim();
         String songName = artistName.substring(
@@ -279,7 +277,6 @@ public class Database {
         int handle = artistHash.get(name);
         //list the songs matched to this artist
         ArrayList<Integer> songs = artistTree.searchTree(handle);
-        boolean deleted = false;
         if (songs != null) { //there are songs that map to the artist
             //for each song of that artist, get its handle,
             //and delete its corresponding KVPair
@@ -291,20 +288,10 @@ public class Database {
                         && songTree.searchTree(songHandle).size() >= 1)
                 { 
                     this.delete(name, mem.readEntry(songHandle));
-                    deleted = true;
 //                    delete(name, mem.readEntry(songHandle).trim());
                     //return;
                 }
             }
-        }
-        if (!deleted)
-        {
-            System.out.println("|" + name + "| is deleted from the"
-                    + " Artist database.");
-            artistTree.remove(handle, 0, true);                
-            songTree.remove(0, handle, false);
-            artistHash.remove(name);
-            mem.killRecord(handle);
         }
     }
     /**
@@ -320,7 +307,6 @@ public class Database {
         }
         int handle = songHash.get(name);
         ArrayList<Integer> artists = songTree.searchTree(handle);
-        boolean deleted = false;
         if (artists != null) {
             for (int i = 0; i < artists.size(); i++)
             {
@@ -330,22 +316,12 @@ public class Database {
                 if ( artistTree.searchTree(artistHandle) != null &&
                         artistTree.searchTree(artistHandle).size() >= 1)
                 {
-                        this.delete(mem.readEntry(artistHandle).trim(),
+                    this.delete(mem.readEntry(artistHandle).trim(),
                                 name);
-                        deleted = true;
                         //return;
                 }
                 //}
             }
-        }
-        if (!deleted)
-        {
-            System.out.println("|" + name + "| is deleted from"
-                    + " the Song database.");
-            songTree.remove(handle, 0, true);                
-            artistTree.remove(0, handle, false);        
-            songHash.remove(name);
-            mem.killRecord(handle);
         }
     }
     /**
@@ -415,8 +391,7 @@ public class Database {
      * @param artist is the artist whose songs we want to list
      */
     public void listSongsByArtist(String artist) {
-        if (artistHash == null || artistHash.size() == 0 
-                || artistHash.get(artist) == -1) {
+        if (artistHash.get(artist) == -1) {
             System.out.println(
                     "|" + artist + "| does not exist in the artist database.");
             return;
@@ -424,34 +399,29 @@ public class Database {
         int handle = artistHash.get(artist);
         ArrayList<Integer> connectedHandles = null;
         ArrayList<String> test = new ArrayList<String>();
-        if (artistTree != null) {
-            connectedHandles = artistTree.searchTree(handle);
-            if (connectedHandles != null) {
-                for (int entry = 0; entry < connectedHandles.size(); entry++ )
-                {
-                    if (connectedHandles.get(entry) >= 0) {
-                        if (test.isEmpty())
-                        {
-                            test.add(mem.readEntry(connectedHandles
-                                    .get(entry)).trim());
-                        }
-                        else
-                        {
-                            if (!test.contains(mem
-                                    .readEntry(connectedHandles
-                                            .get(entry)).trim())) {
-                                test.add(mem
-                                        .readEntry(connectedHandles
-                                                .get(entry)).trim());
-                            }
-                        }
-                    }
-                }
-                for (int outs = 0; outs < test.size(); outs++)
-                {
-                    System.out.println("|" + test.get(outs).trim() + "|");
-                }   
+        connectedHandles = artistTree.searchTree(handle);
+        for (int entry = 0; entry < connectedHandles.size(); entry++ )
+        {
+            if (test.isEmpty())
+            {
+                test.add(mem.readEntry(connectedHandles
+                        .get(entry)).trim());
+                        
             }
+            else
+            {
+                if (!test.contains(mem
+                        .readEntry(connectedHandles
+                                .get(entry)).trim())) {
+                    test.add(mem
+                            .readEntry(connectedHandles
+                                    .get(entry)).trim());
+                }
+            }
+        }
+        for (int outs = 0; outs < test.size(); outs++)
+        {
+            System.out.println("|" + test.get(outs).trim() + "|");
         }
     }
     /**
@@ -459,8 +429,7 @@ public class Database {
      * @param song the song name
      */
     public void listArtistsBySong(String song) {
-        if (songHash == null || songHash.size() == 0 
-                || songHash.get(song) == -1) {
+        if (songHash.get(song) == -1) {
             System.out.println(
                     "|" + song + "| does not exist in the song database.");
             return;
@@ -521,8 +490,7 @@ public class Database {
         }
         ArrayList<Integer> test = artistTree.searchTree(aHandle);
         ArrayList<Integer> test2 = songTree.searchTree(sHandle);
-        if (test == null || test2 == null 
-                || !test.contains(sHandle) || !test2.contains(aHandle))
+        if (!test.contains(sHandle) || !test2.contains(aHandle))
         {
             System.out.println("The KVPair (|"
                     + artistName + "|,|" 
@@ -532,33 +500,6 @@ public class Database {
                     + artistName + "|) was not found in the database.");
             return;
         }    
-        boolean found = false;
-        for (int i = 0; i < test.size(); i++) {
-            if (test.get(i) == sHandle)
-            {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("The KVPair (|"
-                    + artistName + "|,|" 
-                    + songName + "|) was not found in the database.");
-        }
-        found = false;
-        for (int i = 0; i < test2.size(); i++) {
-            if (test2.get(i) == aHandle)
-            {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println("The KVPair (|"
-                    + songName + "|,|" 
-                    + artistName + "|) was not found in the database.");
-            return;
-        }
         int artistDeleted = deleteEntry(artistTree, aHandle, sHandle, 
                 artistName, songName); 
         int songDeleted = deleteEntry(songTree, sHandle, aHandle, 

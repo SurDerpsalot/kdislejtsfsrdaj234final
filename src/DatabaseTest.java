@@ -13,6 +13,8 @@ public class DatabaseTest extends student.TestCase {
         assertEquals(d.getMem().getBlockSize(), 200);
         assertEquals(d.getArtistHash().getCapacity(), 100);
         assertEquals(d.getSongHash().getCapacity(), 100);
+        Database d2 = new Database("db_sample1.txt", 200, 100);
+        d2.beginParsing("db_sample1.txt");
 
     }
 
@@ -48,6 +50,8 @@ public class DatabaseTest extends student.TestCase {
     public void testRemove() {
         Database d = new Database("db_sample1.txt", 200, 100);
         assertEquals(d.getArtistHash().size(), 0);
+        d.readCommand("list artist a");
+        d.readCommand("list song songa");
         d.readCommand("insert new song<SEP>stuff of legends");
         d.readCommand("insert new song<SEP>really now");
         d.readCommand("insert new new band<SEP>stuff of legends");
@@ -140,6 +144,7 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("delete Drewid<SEP>stuff of legends");
         d.readCommand("delete first band<SEP>Library Card");
         d.readCommand("delete first band<SEP>Library Card");
+        d.readCommand("delete first band<SEP>silly song");
         d.readCommand("delete Drewid<SEP>silly song");
         d.readCommand("print artist");
         d.readCommand("print song");

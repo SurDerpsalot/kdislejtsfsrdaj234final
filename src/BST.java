@@ -74,14 +74,6 @@ public class BST {
     };
 
     /**
-     * sets the root node to a default constructed TreeNode.
-     * This is accessible from externally.
-     */
-    public void setRootNode() {
-        root = new TreeNode();
-    };
-
-    /**
      * set the root node with the parameters of 
      * an existing TreeNode. 
      * @param t   is the existing TreeNode to copy
@@ -104,13 +96,6 @@ public class BST {
      */
     public void setRootNode(int k, int elem) {
         root = new TreeNode(k, elem);
-    };
-
-    /**
-     * set the temp node to a default constructed TreeNode.
-     */
-    public void setTempNode() {
-        temp = new TreeNode();
     };
 
     /**
@@ -174,7 +159,7 @@ public class BST {
         // delete the key handle
         ArrayList<Integer> values = searchTree(k);
         //this.remove(k, elem, false);
-        if ( values == null || values.size() == 0) {
+        if (values.size() == 0) {
             setRootNode(this.removeByKey(root, k));
             return true;
         }
@@ -291,7 +276,7 @@ public class BST {
      */
     public ArrayList<Integer> searchTree(int k) {
         KVPair pair = (search(getRoot(), k));
-        if (pair == null || pair.getValueList() == null) {
+        if (pair == null) {
             //System.out.printf("Key not found: %s\n", k.toString());
             return null;
         } 
@@ -350,7 +335,7 @@ public class BST {
         if (rt != null) {
             list = inorderDump(rt.getLeft(), list, output);
             list.add(rt.getKey());
-            if (output && rt.getValues().size() >= 1) {
+            if (output) {
                 int i = 0;
                 while (rt.getValues().size() > i) {
                     System.out.println("(" + rt.getKey() +
@@ -378,13 +363,6 @@ public class BST {
         private TreeNode left;
         private TreeNode right;
         private KVPair kv;
-        /**
-         * base constructor
-         */
-        public TreeNode() {
-            left = null;
-            right = null;
-        };
 
         /**
          * TreeNode copy constructor
@@ -393,11 +371,9 @@ public class BST {
          *            is another TreeNode
          */
         public TreeNode(TreeNode t) {
-            if (t != null) {
-                left = t.getLeft();
-                right = t.getRight();
-                kv = t.getKVPair();
-            }
+            left = t.getLeft();
+            right = t.getRight();
+            kv = t.getKVPair();
         }
 
         /**
@@ -436,9 +412,6 @@ public class BST {
          * @param t   is the TreeNode to copy
          */
         public void setValue(TreeNode t) {
-            if (t == null) {
-                return;
-            }
             kv = t.getKVPair();
         }
        
