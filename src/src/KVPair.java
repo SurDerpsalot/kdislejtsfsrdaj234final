@@ -4,34 +4,31 @@ import java.util.ArrayList;
  * 
  * @author Madelyn Newcomb m1newc
  * @version 11/11/2017
- * @param <F> the key's type
- * @param <S> the value's type
  */
-public class KVPair<F extends Comparable<? super F>,
-    S extends Comparable<? super S>> {
-    private F firstHandle;
-    private BSTValues<S> secondaryHandles;
+public class KVPair {
+    private int firstHandle;
+    private BSTValues secondaryHandles;
     /**
      * constructor
      * @param fH the Key name's key
      * @param sH the Value name's key
      */
-    public KVPair(F fH, S sH) {
+    public KVPair(int fH, int sH) {
         firstHandle = fH;
-        secondaryHandles = new BSTValues<S>(sH);
+        secondaryHandles = new BSTValues(sH);
     }
     /**
      * get the Key name's key
-     * @return F: Key
+     * @return int: Key
      */
-    protected F getKeyHandle() {
+    protected int getKeyHandle() {
         return firstHandle;
     }
     /**
      * get the Value name's key
      * @return S: Value
      */
-    protected ArrayList<S> getValueList() {
+    protected ArrayList<Integer> getValueList() {
         return secondaryHandles.treeDump();
     }
     /**
@@ -39,11 +36,11 @@ public class KVPair<F extends Comparable<? super F>,
      * @param newValue is the value to add
      * @return the size of the secondary array
      */
-    protected int addValue(S newValue) {
-        if (secondaryHandles == null 
-                || secondaryHandles.getRoot() == null) {
-            secondaryHandles = new BSTValues<S>();
-        }
+    protected int addValue(int newValue) {
+//        if (secondaryHandles == null 
+//                || secondaryHandles.getRoot() == null) {
+//            secondaryHandles = new BSTValues();
+ //       }
         if (!isDuplicateValue(newValue)) {
             secondaryHandles.setTempNode(newValue);
             secondaryHandles.setRootNode(secondaryHandles.insert(
@@ -57,7 +54,7 @@ public class KVPair<F extends Comparable<? super F>,
      * @param secondKey is the value to delete
      * @return true if the value was deleted
      */
-    protected boolean deleteSecondaryHandle(S secondKey) {
+    protected boolean deleteSecondaryHandle(int secondKey) {
         secondaryHandles.remove(secondKey);
         return secondaryHandles.removeSuccess;
     }
@@ -66,40 +63,25 @@ public class KVPair<F extends Comparable<? super F>,
      * @param secondKey the value to match
      * @return true if it already exists
      */
-    protected boolean isDuplicateValue(S secondKey) {
-        int size = secondaryHandles.treeDump().size(); 
-        if (size == 0) {
-            return false;
-        }
+    protected boolean isDuplicateValue(int secondKey) {
         return secondaryHandles.searchTree(secondKey);
     }
     /**
      * 
      * @author maden
      *
-     * @param <S> is the type
      */
-    public class BSTValues<S> { // extends Comparable<? super F>
+    public class BSTValues { // extends Comparable<? super int>
 
-        private TNode<S> root; //the root of the BST
-        private TNode<S> temp; //a TNode instance accessible from the outside
-        private TNode<S>[] tempArray; //
+        private TNode root; //the root of the BST
+        private TNode temp; //a TNode instance accessible from the outside
         private boolean removeSuccess; //
-       // private ArrayList<S> removedArray;
-        /**
-         * default constructor
-         */
-        public BSTValues() {
-            root = null;
-            temp = null;
-        };
-
         /**
          * BST constructor given an element
          * @param rt  is the root node you want to give the BST
          */
-        public BSTValues(S rt) {
-            root = new TNode<S>(rt);
+        public BSTValues(int rt) {
+            root = new TNode(rt);
         };
                 
         /**
@@ -111,15 +93,14 @@ public class KVPair<F extends Comparable<? super F>,
          * @param newNode the parameters for the new node
          * @return a pointer to the root of the BST that includes the new node
          */
-        public TNode<S> insert(TNode<S> rt, TNode<S> newNode) {
+        public TNode insert(TNode rt, TNode newNode) {
             if (rt == null) {
                 return newNode;
             } 
-            else if (rt.get() == newNode.get()) { //duplicate value
-                return rt;
-            }
-            else if (rt.get().toString().compareTo(
-                    newNode.get().toString()) > 0) {
+//            else if (rt.get() == newNode.get()) { //duplicate value
+//                return rt;
+//            }
+            if (rt.get() > newNode.get()) {
                 // the root's name is after the new one alphabetically
                 rt.setLeft(insert(rt.getLeft(), newNode));
             } 
@@ -135,32 +116,16 @@ public class KVPair<F extends Comparable<? super F>,
          * an existing TNode. 
          * @param t   is the existing TNode to copy
          */
-        public void setRootNode(TNode<S> t) {
-            if (t != null) {
-                root = new TNode<S>(t);
-            }
-            else
-            {
-                root = null;
-            }
-                   
+        public void setRootNode(TNode t) {
+            root = new TNode(t);
         };
 
         /**
          * set the temp node with the given parameters
          * @param elem the value
          */
-        public void setTempNode(S elem) {
-            temp = new TNode<S>(elem);
-        };
-
-        /**
-         * get the pointer to the BST's tempArray.
-         * 
-         * @return tempArray
-         */
-        public TNode<S>[] getTempArray() {
-            return tempArray;
+        public void setTempNode(int elem) {
+            temp = new TNode(elem);
         };
 
         ///////////////////////////////////////////////
@@ -170,7 +135,7 @@ public class KVPair<F extends Comparable<? super F>,
          * 
          * @return TNode root.
          */
-        public TNode<S> getRoot() {
+        public TNode getRoot() {
             return root;
         }
 
@@ -179,7 +144,7 @@ public class KVPair<F extends Comparable<? super F>,
          * 
          * @return TNode temp.
          */
-        public TNode<S> getTemp() {
+        public TNode getTemp() {
             return temp;
         }
 
@@ -192,7 +157,7 @@ public class KVPair<F extends Comparable<? super F>,
          * @param elem is the value name
          * @return boolean true if the value was found and removed
          */
-        public boolean remove(S elem) {
+        public boolean remove(int elem) {
             removeSuccess = false;
             root = removeByKey(root, elem);
             return removeSuccess;            
@@ -205,7 +170,7 @@ public class KVPair<F extends Comparable<? super F>,
          *            is the root of the level
          * @return the root after deletion
          */
-        private TNode<S> deletemax(TNode<S> rt) {
+        private TNode deletemax(TNode rt) {
             if (rt.getRight() == null) {
                 return rt.getLeft();
             }
@@ -220,7 +185,7 @@ public class KVPair<F extends Comparable<? super F>,
          *            is the root of the current level.
          * @return the maximum value in the subtrees of rt.
          */
-        private TNode<S> getmax(TNode<S> rt) {
+        private TNode getmax(TNode rt) {
             if (rt.getRight() == null) {
                 return rt;
             }
@@ -235,21 +200,19 @@ public class KVPair<F extends Comparable<? super F>,
          * @param elem is the Key that matches on the TNode to be removed
          * @return the child after removal of the names TNode.
          */
-        private TNode<S> removeByKey(TNode<S> rt, S elem) {
+        private TNode removeByKey(TNode rt, int elem) {
             if (rt == null) { // the TNode could not be removed in this section
                 return null;
             } 
-            else if (rt.get() == null) { //the TNode is empty
-                return null;
-            }
-            if (rt.get().toString().compareTo(elem.toString()) > 0) { 
+            if (rt.get() > elem) { 
                 rt.setLeft(removeByKey(rt.getLeft(), elem));
             } 
-            else if (rt.get().toString().compareTo(elem.toString()) < 0) {
+            else if (rt.get() < elem) {
                 rt.setRight(removeByKey(rt.getRight(), elem));
             } 
             else { // Found it
                 removeSuccess = true;
+
                 if (rt.getLeft() == null) {
                     return rt.getRight();
                 } 
@@ -271,7 +234,7 @@ public class KVPair<F extends Comparable<? super F>,
          * @param elem is the key name of the node to find
          * @return the values that correspond to the given key
          */
-        public boolean searchTree(S elem) {
+        public boolean searchTree(int elem) {
             boolean found = (search(root, elem));
             return found;
         }
@@ -285,15 +248,15 @@ public class KVPair<F extends Comparable<? super F>,
          *            is the name of the node we are looking for
          * @return true if they find the element
          */
-        private boolean search(TNode<S> rt, S elem) {
-            if (rt == null || (rt.get() == null)) {
+        private boolean search(TNode rt, int elem) {
+            if (rt == null) {
                 return false;
             }
             if (rt.get() == elem) { // found it
                 return true;
             }
-            if (rt.get().toString().compareTo(
-                    elem.toString()) < 0) { // too small
+            if (rt.get() <
+                    elem ) { // too small
                 return search(rt.getRight(), elem);
             }
             // too big
@@ -306,8 +269,8 @@ public class KVPair<F extends Comparable<? super F>,
          * root and returns an arrayList of the handle values.
          * @return the handles in the BST tree
          */
-        public ArrayList<S> treeDump() { 
-            ArrayList<S> handleList = new ArrayList<S>();
+        public ArrayList<Integer> treeDump() { 
+            ArrayList<Integer> handleList = new ArrayList<Integer>();
             handleList = inorderDump(root, handleList);
           //  System.out.printf("BST size is %d\n", handleList.size());
             return handleList;
@@ -320,11 +283,9 @@ public class KVPair<F extends Comparable<? super F>,
          * @param rt  is the base of the traversal.
          * @return is the in-order list of handles in this tree
          */
-        private ArrayList<S> inorderDump(TNode<S> rt, ArrayList<S> list) {
+        private ArrayList<Integer> inorderDump(
+                TNode rt, ArrayList<Integer> list) {
             if (rt != null) {
-                if (rt.get() == null) {
-                    return list;
-                } 
                 list = inorderDump(rt.getLeft(), list);
                 list.add(rt.get());
                 list = inorderDump(rt.getRight(), list);
@@ -343,29 +304,27 @@ public class KVPair<F extends Comparable<? super F>,
          * @author maden
          *
          */
-        private class TNode<S> {
-            private TNode<S> left;
-            private TNode<S> right;
-            private S value;
+        private class TNode {
+            private TNode left;
+            private TNode right;
+            private int value;
             /**
              * TNode copy constructor
              * 
              * @param t
              *            is another TNode
              */
-            public TNode(TNode<S> t) {
-                if (t != null) {
-                    left = t.getLeft();
-                    right = t.getRight();
-                    value = t.get();
-                }
+            public TNode(TNode t) {
+                left = t.getLeft();
+                right = t.getRight();
+                value = t.get();
             }
 
             /**
              * constructor
              * @param elem is an existing value
              */
-            public TNode(S elem) {
+            public TNode(int elem) {
                 left = null;
                 right = null;
                 value = elem;
@@ -376,7 +335,7 @@ public class KVPair<F extends Comparable<? super F>,
              * 
              * @param t   is the node to copy into the left child
              */
-            public void setLeft(TNode<S> t) {
+            public void setLeft(TNode t) {
                 left = t;
             };
 
@@ -386,7 +345,7 @@ public class KVPair<F extends Comparable<? super F>,
              * @param t
              *            is the node to copy into the right child
              */
-            public void setRight(TNode<S> t) {
+            public void setRight(TNode t) {
                 right = t;
             };
 
@@ -395,10 +354,7 @@ public class KVPair<F extends Comparable<? super F>,
              * 
              * @param t   is the TNode to copy
              */
-            public void setValue(TNode<S> t) {
-                if (t == null) {
-                    return;
-                }
+            public void setValue(TNode t) {
                 value = t.get();
             }
            
@@ -408,7 +364,7 @@ public class KVPair<F extends Comparable<? super F>,
              * 
              * @return the (TNode) left child
              */
-            public TNode<S> getLeft() {
+            public TNode getLeft() {
                 return left;
             }
 
@@ -417,7 +373,7 @@ public class KVPair<F extends Comparable<? super F>,
              * 
              * @return the (TNode) right child
              */
-            public TNode<S> getRight() {
+            public TNode getRight() {
                 return right;
             }
 
@@ -426,7 +382,7 @@ public class KVPair<F extends Comparable<? super F>,
              * 
              * @return the value at this position
              */
-            public S get() {
+            public int get() {
                 return value;
             }
         }

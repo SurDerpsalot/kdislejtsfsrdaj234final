@@ -6,11 +6,8 @@ import java.util.ArrayList;
  * @version 2017-09-18 This is the base class for my implementation of a binary
  *          search tree. Several elements of this class was based on OpenDSA
  *          code. There is one subclass, the TreeNode.
- * @param <E> the value type
- * @param <Key> the key type 
  */
-public class BST<Key extends Comparable<? super Key>,
-    E extends Comparable<? super E>> {
+public class BST {
 
     private TreeNode root; //the root of the BST
     private TreeNode temp; //a TreeNode instance accessible from the outside
@@ -43,7 +40,7 @@ public class BST<Key extends Comparable<? super Key>,
      * @param key the key/handle
      * @param value the value/handle
      */
-    public void add(Key key, E value) {
+    public void add(int key, int value) {
         TreeNode t = new TreeNode(key, value);
         insert(getRoot(), t);
         
@@ -61,11 +58,11 @@ public class BST<Key extends Comparable<? super Key>,
         if (rt == null) {
             return newNode;
         } 
-        else if (rt.getKey().compareTo(newNode.getKey()) == 0) {
+        else if (rt.getKey() == newNode.getKey()) {
             //we need to merge the values
             rt.getKVPair().addValue(newNode.getValues().get(0));
         }
-        else if (rt.getKey().compareTo(newNode.getKey()) > 0) {
+        else if (rt.getKey() > newNode.getKey()) {
             // the root's name is after the new one alphabetically
             rt.setLeft(insert(rt.getLeft(), newNode));
         } 
@@ -105,7 +102,7 @@ public class BST<Key extends Comparable<? super Key>,
      * @param k the key
      * @param elem the value
      */
-    public void setRootNode(Key k, E elem) {
+    public void setRootNode(int k, int elem) {
         root = new TreeNode(k, elem);
     };
 
@@ -130,7 +127,7 @@ public class BST<Key extends Comparable<? super Key>,
      * @param k the key
      * @param elem the value
      */
-    public void setTempNode(Key k, E elem) {
+    public void setTempNode(int k, int elem) {
         temp = new TreeNode(k, elem);
     };
 
@@ -171,11 +168,11 @@ public class BST<Key extends Comparable<? super Key>,
      * @param elem is the value name
      * @return boolean true if the key's node was removed
      */
-    public boolean delete(Key k, E elem) {
+    public boolean delete(int k, int elem) {
         removeSuccess = search(root, k).deleteSecondaryHandle(elem);
         // if the tree's key has no more associated handles, 
         // delete the key handle
-        ArrayList<E> values = searchTree(k);
+        ArrayList<Integer> values = searchTree(k);
         //this.remove(k, elem, false);
         if ( values == null || values.size() == 0) {
             setRootNode(this.removeByKey(root, k));
@@ -192,20 +189,14 @@ public class BST<Key extends Comparable<? super Key>,
      * @param removeKey is which value to remove
      * @return boolean true if the KVPair was found and removed
      */
-    public boolean remove(Key k, E elem, boolean removeKey) {
+    public boolean remove(int k, int elem, boolean removeKey) {
         removeSuccess = false;
         if (removeKey) {
             setRootNode(removeByKey(root, k));
-            if (root != null && root.getKey() == null) {
-                root = null;
-            }
             return removeSuccess;
         }
         else {
             setRootNode(removeValue(root, elem));
-            if (root != null && root.getKey() == null) {
-                root = null;
-            }
             return removeSuccess;            
         }
     }
@@ -247,17 +238,14 @@ public class BST<Key extends Comparable<? super Key>,
      * @param k is the Key that matches on the TreeNode to be removed
      * @return the child after removal of the names TreeNode.
      */
-    private TreeNode removeByKey(TreeNode rt, Key k) {
+    private TreeNode removeByKey(TreeNode rt, int k) {
         if (rt == null) { // the TreeNode could not be removed in this section
             return null;
         } 
-        else if (rt.getKey() == null) { //the treeNode is empty
-            return null;
-        }
-        if (rt.getKey().compareTo(k) > 0) { 
+        if (rt.getKey() > k) { 
             rt.setLeft(removeByKey(rt.getLeft(), k));
         } 
-        else if (rt.getKey().compareTo(k) < 0) {
+        else if (rt.getKey() < k) {
             rt.setRight(removeByKey(rt.getRight(), k));
         } 
         else { // Found it
@@ -283,10 +271,9 @@ public class BST<Key extends Comparable<? super Key>,
      * @param rt the root
      * @param elem the value to remove
      * @return the same node
-     * TODO: check if we need to delete or nullify keys that 
      * have no values associated with them
      */
-    private TreeNode removeValue(TreeNode rt, E elem) {
+    private TreeNode removeValue(TreeNode rt, int elem) {
         if (rt == null) {
             return null;
         }
@@ -302,8 +289,8 @@ public class BST<Key extends Comparable<? super Key>,
      * @param k is the key name of the node to find
      * @return the values that correspond to the given key
      */
-    public ArrayList<E> searchTree(Key k) {
-        KVPair<Key, E> pair = (search(getRoot(), k));
+    public ArrayList<Integer> searchTree(int k) {
+        KVPair pair = (search(getRoot(), k));
         if (pair == null || pair.getValueList() == null) {
             //System.out.printf("Key not found: %s\n", k.toString());
             return null;
@@ -322,17 +309,18 @@ public class BST<Key extends Comparable<? super Key>,
      *            is the name of the node we are looking for
      * @return the KVPair with the specified key.
      */
-    private KVPair<Key, E> search(TreeNode rt, Key k) {
-        if (rt == null || (rt.getKey() == null)) {
+    private KVPair search(TreeNode rt, int k) {
+        if (rt == null) {
             return null;
         }
-        if (rt.kv.getKeyHandle().compareTo(k) == 0) { // found it
+        if (rt.kv.getKeyHandle() == k) { // found it
+
             return rt.getKVPair();
         }
-        if (rt.kv.getKeyHandle().compareTo(k) < 0) { // too small
+        if (rt.kv.getKeyHandle() < k ) { // too big
             return search(rt.getRight(), k);
         }
-        // too big
+        // too small
         return search(rt.getLeft(), k);
     }
 
@@ -343,8 +331,8 @@ public class BST<Key extends Comparable<? super Key>,
      * @param output is true if this is dumping an output to the std out
      * @return the handles in the BST tree
      */
-    public ArrayList<Key> treeDump(boolean output) { // (PrintWriter pw) {
-        ArrayList<Key> handleList = new ArrayList<Key>();
+    public ArrayList<Integer> treeDump(boolean output) { // (PrintWriter pw) {
+        ArrayList<Integer> handleList = new ArrayList<Integer>();
         handleList = inorderDump(root, handleList, output);
 //        System.out.printf("BST size is %d\n", handleList.size());
         return handleList;
@@ -357,30 +345,20 @@ public class BST<Key extends Comparable<? super Key>,
      * @param rt  is the base of the traversal.
      * @return is the in-order list of handles in this tree
      */
-    private ArrayList<Key> inorderDump(TreeNode rt, ArrayList<Key> list, boolean output) {
+    private ArrayList<Integer> inorderDump(TreeNode rt, 
+            ArrayList<Integer> list, boolean output) {
         if (rt != null) {
-            if (rt.getKey() == null) {
-              //  System.out.printf("Node has depth %d, Value (null)\n",
-              //          list.size());
-                return list;
-            } 
             list = inorderDump(rt.getLeft(), list, output);
             list.add(rt.getKey());
-            if (output) {
-                if (rt.getValues().size() >= 1);
-                {
-                    int i = 0;
-                    while (rt.getValues().size() > i) {
-                        System.out.println("(" + rt.getKey() + "," + rt.getValues().get(i) + ")");
-                        i++;
-                    }
-                    
+            if (output && rt.getValues().size() >= 1) {
+                int i = 0;
+                while (rt.getValues().size() > i) {
+                    System.out.println("(" + rt.getKey() +
+                            "," + rt.getValues().get(i) + ")");
+                    i++;
                 }
             }
             list = inorderDump(rt.getRight(), list, output);
-        }
-        else if (rt == getRoot()) {
-           // System.out.println("Node has depth 0, Value (null)");            
         }
         return list;
     }
@@ -399,7 +377,7 @@ public class BST<Key extends Comparable<? super Key>,
     public class TreeNode {
         private TreeNode left;
         private TreeNode right;
-        private KVPair<Key, E> kv;
+        private KVPair kv;
         /**
          * base constructor
          */
@@ -427,10 +405,10 @@ public class BST<Key extends Comparable<? super Key>,
          * @param k is an existing key
          * @param elem is an existing value
          */
-        public TreeNode(Key k, E elem) {
+        public TreeNode(int k, int elem) {
             left = null;
             right = null;
-            kv = new KVPair<Key, E>(k, elem);
+            kv = new KVPair(k, elem);
         };
 
         /**
@@ -487,7 +465,7 @@ public class BST<Key extends Comparable<? super Key>,
          * 
          * @return the (String) name
          */
-        public KVPair<Key, E> getKVPair() {
+        public KVPair getKVPair() {
             return kv;
         }
         /**
@@ -495,7 +473,7 @@ public class BST<Key extends Comparable<? super Key>,
          * 
          * @return the (Key) name
          */
-        public Key getKey() {
+        public int getKey() {
             return kv.getKeyHandle();
         }
         /**
@@ -503,7 +481,7 @@ public class BST<Key extends Comparable<? super Key>,
          * 
          * @return the secondary value(s)
          */
-        public ArrayList<E> getValues() {
+        public ArrayList<Integer> getValues() {
             return kv.getValueList();
         }
 

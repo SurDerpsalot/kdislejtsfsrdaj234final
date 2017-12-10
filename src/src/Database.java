@@ -16,12 +16,12 @@ public class Database {
     /**
      * The BST that stores the Artists
      */
-    private BST<Integer, Integer> artistTree;
+    private BST artistTree;
    
     /**
      * The BST that stores the Songs
      */
-    private BST<Integer, Integer> songTree;
+    private BST songTree;
     
     /**
      * The Memory Pool
@@ -42,14 +42,14 @@ public class Database {
      * getter
      * @return the BST containing the Artists
      */
-    public BST<Integer, Integer> getArtistTree() {
+    public BST getArtistTree() {
         return artistTree;
     }
     /**
      * getter
      * @return the BST containing the Songs
      */
-    public BST<Integer, Integer> getSongTree() {
+    public BST getSongTree() {
         return songTree;
     }
     /**
@@ -88,8 +88,8 @@ public class Database {
         try {
             sc = new Scanner(new File(filename));
             mem = new MainMemory(sizeMem);
-            artistTree = new BST<Integer, Integer>();
-            songTree = new BST<Integer, Integer>();
+            artistTree = new BST();
+            songTree = new BST();
             artistHash = new Hash(sizeHash);
             songHash = new Hash(sizeHash);
         } 
@@ -124,83 +124,11 @@ public class Database {
         String topic;
         Scanner newSc = new Scanner(cmd);
         String todo = newSc.next();
+        String artistName;
+        String songName;
         switch(todo) {
             case "insert" ://Found an insert command
-                String artistName = newSc.nextLine().trim();
-                String songName = artistName.substring(
-                        artistName.indexOf("<SEP>") + 5);
-                artistName = artistName.substring(
-                        0, artistName.indexOf("<SEP>"));
-                int artistHandle = 0;
-                int songHandle = 0;
-                if (artistHash.get(artistName) != -1) {
-                    System.out.println("|" + artistName + 
-                            "| duplicates a record already" 
-                            + " in the Artist database.");
-                    //artistDuplicate = true;
-                    artistHandle = artistHash.get(artistName);
-                }
-                else {
-                    artistHandle = mem.addEntryGetHandle(artistName);
-                    artistHash.put(artistName, artistHandle);
-                    if(artistHash.get(artistName) == artistHandle) {
-                            System.out.println("|" + artistName + 
-                            "| is added to the Artist database.");
-                    }
-                }
-                if (songHash.get(songName) != -1) {
-                    System.out.println("|" + songName + 
-                            "| duplicates a record already" 
-                            + " in the Song database.");
-                    //songDuplicate = true;
-                    songHandle = songHash.get(songName);
-                }
-                else {
-                    songHandle = mem.addEntryGetHandle(songName);
-                    songHash.put(songName, songHandle);
-                    System.out.println("|" + songName + 
-                            "| is added to the Song database.");
-                }
-                if (artistTree.searchTree(artistHandle) == null ||
-                        !artistTree.searchTree(artistHandle).contains(songHandle)) {
-                    artistTree.add(artistHandle, songHandle);
-                    System.out.println("The KVPair (|"
-                        + artistName + "|,|" 
-                        + songName + "|),(" 
-                        + artistHandle + "," 
-                        + songHandle + ") is added to the tree.");
-                }
-                else {
-                    System.out.println("The KVPair (|"
-                            + artistName + "|,|" 
-                            + songName + "|),(" 
-                            + artistHandle + "," 
-                            + songHandle 
-                            + ") duplicates a record already in the tree.");
-                }
-                if (songTree.searchTree(songHandle) == null ||
-                        !songTree.searchTree(songHandle).contains(artistHandle)) {
-                    songTree.add(songHandle, artistHandle);
-                    System.out.println("The KVPair (|"
-                        + songName + "|,|" 
-                        + artistName + "|),(" 
-                        + songHandle + "," 
-                        + artistHandle + ") is added to the tree.");
-                }
-                else {
-                    System.out.println("The KVPair (|"
-                            + songName + "|,|" 
-                            + artistName + "|),(" 
-                            + songHandle + "," 
-                            + artistHandle 
-                            + ") duplicates a record already in the tree.");
-                }
-                artistTree.setTempNode(artistHandle, songHandle);
-                artistTree.setRootNode(artistTree.insert(artistTree.getRoot(),
-                        artistTree.getTemp()));
-                songTree.setTempNode(songHandle, artistHandle);
-                songTree.setRootNode(songTree.insert(songTree.getRoot(),
-                        songTree.getTemp()));
+                insert(newSc);
                 break;
             case "list" :
                 topic = newSc.next();
@@ -211,7 +139,7 @@ public class Database {
                 else if (topic.compareTo("song") == 0) {
                     listArtistsBySong(name);
                 }
-                else { //TODO: add error condition
+                else { 
                     System.out.println("Error: bad input " + topic);
                 }
                 break;
@@ -232,7 +160,7 @@ public class Database {
                 else if (topic.compareTo("song") == 0) {
                     removeSong(name);
                 }
-                else { //TODO: add error condition
+                else { 
                     System.out.println("Error: bad input " + topic);
                 }
                 break;
@@ -247,7 +175,7 @@ public class Database {
                 else if (topic.compareTo("tree") == 0) {
                     viewTrees();
                 }
-                else { //TODO: add error condition
+                else { 
                     System.out.println("Error: bad input " + topic);
                 }
                 break;
@@ -256,6 +184,85 @@ public class Database {
                 break;
         } //end switch
         newSc.close();
+    }
+    private void insert(Scanner newSc) {
+        String artistName = newSc.nextLine().trim();
+        String songName = artistName.substring(
+                artistName.indexOf("<SEP>") + 5);
+        artistName = artistName.substring(
+                0, artistName.indexOf("<SEP>"));
+        int artistHandle = 0;
+        int songHandle = 0;
+        if (artistHash.get(artistName) != -1) {
+            System.out.println("|" + artistName + 
+                    "| duplicates a record already" 
+                    + " in the Artist database.");
+            //artistDuplicate = true;
+            artistHandle = artistHash.get(artistName);
+        }
+        else {
+            artistHandle = mem.addEntryGetHandle(artistName);
+            artistHash.put(artistName, artistHandle);
+            if (artistHash.get(artistName) == artistHandle) {
+                System.out.println("|" + artistName + 
+                        "| is added to the Artist database.");
+            }
+        }
+        if (songHash.get(songName) != -1) {
+            System.out.println("|" + songName + 
+                    "| duplicates a record already" 
+                    + " in the Song database.");
+            //songDuplicate = true;
+            songHandle = songHash.get(songName);
+        }
+        else {
+            songHandle = mem.addEntryGetHandle(songName);
+            songHash.put(songName, songHandle);
+            System.out.println("|" + songName + 
+                    "| is added to the Song database.");
+        }
+        if (artistTree.searchTree(artistHandle) == null ||
+                !artistTree.searchTree(artistHandle)
+                .contains(songHandle)) {
+            artistTree.add(artistHandle, songHandle);
+            System.out.println("The KVPair (|"
+                + artistName + "|,|" 
+                + songName + "|),(" 
+                + artistHandle + "," 
+                + songHandle + ") is added to the tree.");
+        }
+        else {
+            System.out.println("The KVPair (|"
+                    + artistName + "|,|" 
+                    + songName + "|),(" 
+                    + artistHandle + "," 
+                    + songHandle 
+                    + ") duplicates a record already in the tree.");
+        }
+        if (songTree.searchTree(songHandle) == null ||
+                !songTree.searchTree(songHandle)
+                .contains(artistHandle)) {
+            songTree.add(songHandle, artistHandle);
+            System.out.println("The KVPair (|"
+                + songName + "|,|" 
+                + artistName + "|),(" 
+                + songHandle + "," 
+                + artistHandle + ") is added to the tree.");
+        }
+        else {
+            System.out.println("The KVPair (|"
+                    + songName + "|,|" 
+                    + artistName + "|),(" 
+                    + songHandle + "," 
+                    + artistHandle 
+                    + ") duplicates a record already in the tree.");
+        }
+        artistTree.setTempNode(artistHandle, songHandle);
+        artistTree.setRootNode(artistTree.insert(artistTree.getRoot(),
+                artistTree.getTemp()));
+        songTree.setTempNode(songHandle, artistHandle);
+        songTree.setRootNode(songTree.insert(songTree.getRoot(),
+                songTree.getTemp()));
     }
     
     /**
@@ -272,9 +279,10 @@ public class Database {
         int handle = artistHash.get(name);
         //list the songs matched to this artist
         ArrayList<Integer> songs = artistTree.searchTree(handle);
-        
+        boolean deleted = false;
         if (songs != null) { //there are songs that map to the artist
-            //for each song of that artist, get its handle, and delete its corresponding KVPair
+            //for each song of that artist, get its handle,
+            //and delete its corresponding KVPair
             for (int i = 0; i < songs.size(); i++)
             { 
                 int songHandle = songs.get(i);
@@ -282,16 +290,22 @@ public class Database {
                 if (songTree.searchTree(songHandle) != null 
                         && songTree.searchTree(songHandle).size() >= 1)
                 { 
-                    this.delete(name, mem.getRecordValue(songHandle));
-//                    delete(name, mem.getRecordValue(songHandle).trim());
+                    this.delete(name, mem.readEntry(songHandle));
+                    deleted = true;
+//                    delete(name, mem.readEntry(songHandle).trim());
                     //return;
                 }
             }
         }
-        artistTree.remove(handle, 0, true);                
-        songTree.remove(0, handle, false);
-        artistHash.remove(name);
-        mem.killRecord(handle);
+        if (!deleted)
+        {
+            System.out.println("|" + name + "| is deleted from the"
+                    + " Artist database.");
+            artistTree.remove(handle, 0, true);                
+            songTree.remove(0, handle, false);
+            artistHash.remove(name);
+            mem.killRecord(handle);
+        }
     }
     /**
      * removes a song from the tree
@@ -306,31 +320,33 @@ public class Database {
         }
         int handle = songHash.get(name);
         ArrayList<Integer> artists = songTree.searchTree(handle);
-        
+        boolean deleted = false;
         if (artists != null) {
             for (int i = 0; i < artists.size(); i++)
             {
                 
                 //if (artists.get(i) != null) {
                 int artistHandle = artists.get(i);
-                if ( artistTree.searchTree(artistHandle) != null 
-                        || artistTree.searchTree(artistHandle).size() >= 1)
+                if ( artistTree.searchTree(artistHandle) != null &&
+                        artistTree.searchTree(artistHandle).size() >= 1)
                 {
-                    if (artistTree.searchTree(artistHandle) == null || 
-                            artistTree.searchTree(artistHandle).size() <= 1)
-                    {
-                        delete(name, mem.getRecordValue(artistHandle));
+                        this.delete(mem.readEntry(artistHandle).trim(),
+                                name);
+                        deleted = true;
                         //return;
-                    }
                 }
                 //}
             }
         }
-        //System.out.println("|" + name + "| is deleted from the Song database.");
-        songTree.remove(handle, 0, true);                
-        artistTree.remove(0, handle, false);        
-        songHash.remove(name);
-        mem.killRecord(handle);
+        if (!deleted)
+        {
+            System.out.println("|" + name + "| is deleted from"
+                    + " the Song database.");
+            songTree.remove(handle, 0, true);                
+            artistTree.remove(0, handle, false);        
+            songHash.remove(name);
+            mem.killRecord(handle);
+        }
     }
     /**
      * print the artist tree followed by the song tree
@@ -353,12 +369,13 @@ public class Database {
             artistHandles = artistTree.treeDump(false);
             if (artistHandles != null ) {
                 for (int pos = 0; pos < artistHandles.size(); pos++ ) {
-                    int startPosInMem = artistHash.get(mem.getRecordValue(
+                    int startPosInMem = artistHash.get(mem.readEntry(
                             artistHandles.get(pos)).trim());
-                    if(startPosInMem >= 0) {
-                        String artistName = mem.getRecordValue(startPosInMem);
+                    if (startPosInMem >= 0) {
+                        String artistName = mem.readEntry(startPosInMem);
                         System.out.println("|"  + artistName.trim() + "| " 
-                        + String.valueOf(artistHandles.get(pos)));
+                                + artistHash.h(artistName.trim(), 
+                                artistHash.getCapacity()));
                         totalArtists++;
                     }
                 }
@@ -379,11 +396,12 @@ public class Database {
             if (songHandles != null ) {
                 for (int pos = 0; pos < songHandles.size(); pos++ ) {
                     int startPosInMem = songHash.get(
-                            mem.getRecordValue(songHandles.get(pos)).trim());
+                            mem.readEntry(songHandles.get(pos)).trim());
                     if (startPosInMem >= 0) {
-                        String songName = mem.getRecordValue(startPosInMem);
+                        String songName = mem.readEntry(startPosInMem);
                         System.out.println("|" + songName.trim() + "| "
-                                + String.valueOf(songHandles.get(pos)));
+                                + songHash.h(songName.trim(),
+                                        songHash.getCapacity()));
                     }
                 }
                 totalSongs = songHandles.size();
@@ -409,16 +427,22 @@ public class Database {
         if (artistTree != null) {
             connectedHandles = artistTree.searchTree(handle);
             if (connectedHandles != null) {
-                for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
+                for (int entry = 0; entry < connectedHandles.size(); entry++ )
+                {
                     if (connectedHandles.get(entry) >= 0) {
-                        if(test.isEmpty())
+                        if (test.isEmpty())
                         {
-                            test.add(mem.readEntry(connectedHandles.get(entry)).trim());
+                            test.add(mem.readEntry(connectedHandles
+                                    .get(entry)).trim());
                         }
                         else
                         {
-                            if(!test.contains(mem.readEntry(connectedHandles.get(entry)).trim())) {
-                                test.add(mem.readEntry(connectedHandles.get(entry)).trim());
+                            if (!test.contains(mem
+                                    .readEntry(connectedHandles
+                                            .get(entry)).trim())) {
+                                test.add(mem
+                                        .readEntry(connectedHandles
+                                                .get(entry)).trim());
                             }
                         }
                     }
@@ -447,16 +471,23 @@ public class Database {
         if (songTree != null) {
             connectedHandles = songTree.searchTree(handle);
             if (connectedHandles != null) {
-                for (int entry = 0; entry < connectedHandles.size(); entry++ ) {
+                for (int entry = 0; entry < connectedHandles.size(); entry++ )
+                {
                     if (connectedHandles.get(entry) >= 0) {
-                        if(test.isEmpty())
+                        if (test.isEmpty())
                         {
-                            test.add(mem.readEntry(connectedHandles.get(entry)).trim());
+                            test.add(mem
+                                    .readEntry(connectedHandles
+                                            .get(entry)).trim());
                         }
                         else
                         {
-                            if(!test.contains(mem.readEntry(connectedHandles.get(entry)).trim())) {
-                                test.add(mem.readEntry(connectedHandles.get(entry)).trim());
+                            if (!test.contains(mem
+                                    .readEntry(connectedHandles
+                                            .get(entry)).trim())) {
+                                test.add(mem
+                                        .readEntry(connectedHandles
+                                                .get(entry)).trim());
                             }
                         }
                     }
@@ -479,7 +510,8 @@ public class Database {
         int sHandle = songHash.get(songName);
         if (aHandle < 0) {
             System.out.println("|"
-                    + artistName + "| does not exist in the artist database.");
+                    + artistName + "| does not exist in"
+                            + " the artist database.");
             return;
         }
         if (sHandle < 0) {
@@ -502,7 +534,7 @@ public class Database {
         }    
         boolean found = false;
         for (int i = 0; i < test.size(); i++) {
-            if(test.get(i) == sHandle)
+            if (test.get(i) == sHandle)
             {
                 found = true;
                 break;
@@ -515,7 +547,7 @@ public class Database {
         }
         found = false;
         for (int i = 0; i < test2.size(); i++) {
-            if(test2.get(i) == aHandle)
+            if (test2.get(i) == aHandle)
             {
                 found = true;
                 break;
@@ -553,13 +585,13 @@ public class Database {
     /**
      * deletes a single tree entry
      * @param tree is which tree to search
-     * @param keyHash is the key's hash table
-     * @param valueHash is the value's hash table
+     * @param keyHandle is the key's hash table
+     * @param valueHandle is the value's hash table
      * @param keyName is the name of the key to delete an entry for
      * @param valueName is the value to delete
      * @return true if the key will be deleted
      */
-    public int deleteEntry(BST<Integer, Integer> tree, int keyHandle, 
+    public int deleteEntry(BST tree, int keyHandle, 
             int valueHandle, String keyName, String valueName) {
         if (tree.delete(keyHandle, 
                 valueHandle)) {

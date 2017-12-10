@@ -10,7 +10,7 @@ public class BSTTest extends student.TestCase {
      * test the BST tree's default implementation
      */
     public void testBST() {
-        BST<Integer, Integer>  newTree = new BST<Integer, Integer>();
+        BST  newTree = new BST();
         assertNull(newTree.getRoot());
         assertNull(newTree.getTemp());
     }
@@ -19,10 +19,10 @@ public class BSTTest extends student.TestCase {
      * test the BST construction with an existing tempNode
      */
     public void testBSTTreeNode() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         newTree.setRootNode(1, 2);
-        BST<Integer, Integer> newTree2 = 
-                new BST<Integer, Integer>(newTree.getRoot());
+        BST newTree2 = 
+                new BST(newTree.getRoot());
         assertNotNull(newTree.getRoot());
         assertNotNull(newTree2.getRoot());
     }
@@ -31,7 +31,7 @@ public class BSTTest extends student.TestCase {
      * test the insert function
      */
     public void testInsert() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         newTree.setRootNode(2, 3);
         newTree.setTempNode(1, 2);
         newTree.insert(newTree.getRoot(), newTree.getTemp());
@@ -43,42 +43,42 @@ public class BSTTest extends student.TestCase {
         newTree.insert(newTree.getRoot(), newTree.getTemp());
         assertEquals(newTree.getRoot().getKey() == 2, true);
         assertEquals(newTree.getRoot().getLeft().
-                getKey().compareTo(1), 0);
+                getKey(), 1);
         assertEquals(newTree.getRoot().getRight().
-                getKey().compareTo(3), 0);
+                getKey(), 3);
     }
 
     /**
      * test setting and getting the root
      */
     public void testSetRootNode() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertTrue(newTree.isEmpty());
         newTree.setRootNode(1, 4);
         assertFalse(newTree.isEmpty());
-        BST<Integer, Integer>.TreeNode t = newTree.getRoot();
-        assertEquals(t.getKey().compareTo(1), 0);
+        BST.TreeNode t = newTree.getRoot();
+        assertEquals(t.getKey(), 1);
     }
 
     /**
      * test setting the root with one argument
      */
     public void testSetRootNodeTreeNode() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertTrue(newTree.isEmpty());
         newTree.setTempNode(2, 3);
         newTree.setRootNode(newTree.getTemp());
-        assertEquals(newTree.getRoot().getKey().compareTo(2), 0);
+        assertEquals(newTree.getRoot().getKey(), 2);
     }
 
     /**
      * test setting the root with parameters
      */
     public void testSetRootNodeKeyE() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertTrue(newTree.isEmpty());
         newTree.setRootNode(1, 2);
-        assertEquals(newTree.getRoot().getKey().compareTo(1), 0);
+        assertEquals(newTree.getRoot().getKey(), 1);
         assertEquals((int)newTree.getRoot().getValues().get(0), 2);
     }
 
@@ -86,33 +86,33 @@ public class BSTTest extends student.TestCase {
      * test setting the and getting temp node
      */
     public void testSetGetTempNode() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertNull(newTree.getTemp());
         newTree.setTempNode(2, 4);
         assertNotNull(newTree.getTemp());
-        BST<Integer, Integer>.TreeNode t = newTree.getTemp();
-        assertEquals(t.getKey().compareTo(2), 0);
+        BST.TreeNode t = newTree.getTemp();
+        assertEquals(t.getKey(), 2);
     }
 
     /**
      * test setting the temp node with one argument
      */
     public void testSetTempNodeTreeNode() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertNull(newTree.getTemp());
         newTree.setRootNode(1, 3);
         newTree.setTempNode(newTree.getRoot());
-        assertEquals(newTree.getTemp().getKey().compareTo(1), 0);
+        assertEquals(newTree.getTemp().getKey(), 1);
     }
 
     /**
      * test setting the temp node with parameters
      */
     public void testSetTempNodeKeyE() {
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         assertNull(newTree.getTemp());
         newTree.setTempNode(3, 4);
-        assertEquals(newTree.getTemp().getKey().compareTo(3), 0);
+        assertEquals(newTree.getTemp().getKey(), 3);
         assertEquals((int)newTree.getTemp().getValues().size(), 1);
         assertEquals((int)newTree.getTemp().getValues().get(0), 4);
     }
@@ -121,7 +121,7 @@ public class BSTTest extends student.TestCase {
 //     * set the tempArray
 //     */
 //    public void testSetGetTempArray() {
-//        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+//        BST newTree = new BST();
 //        newTree.setRootNode();
 //        newTree.setRootNode(3, 4);
 //        newTree.setTempNode();
@@ -141,7 +141,7 @@ public class BSTTest extends student.TestCase {
     public void testRemoveKey() {
         
         
-        BST<Integer, Integer> newTree = new BST<Integer, Integer>();
+        BST newTree = new BST();
         newTree.setRootNode(200, 4);
         newTree.setTempNode(500, 6);
         newTree.insert(newTree.getRoot(), newTree.getTemp());

@@ -3,6 +3,7 @@
  * @author Brad
  * @version 1.0
  * @param T is the type to extend
+ * @param <T> is the generic
  */
 public class Handle<T extends Comparable<? super T>> {
     private T memIndex;
