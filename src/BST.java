@@ -6,8 +6,6 @@ import java.util.ArrayList;
  * @version 2017-09-18 This is the base class for my implementation of a binary
  *          search tree. Several elements of this class was based on OpenDSA
  *          code. There is one subclass, the TreeNode.
- * @param <E> the value type
- * @param <Key> the key type 
  */
 public class BST {
 
@@ -172,13 +170,11 @@ public class BST {
      */
     public boolean delete(int k, int elem) {
         removeSuccess = search(root, k).deleteSecondaryHandle(elem);
-        //System.out.println("---------------------RemoveSuccess--"+removeSuccess+ "----------------------------");
         // if the tree's key has no more associated handles, 
         // delete the key handle
         ArrayList<Integer> values = searchTree(k);
         //this.remove(k, elem, false);
         if ( values == null || values.size() == 0) {
-            //System.out.println("--------------------------returnsTrueForDeleteing----------------------------");
             setRootNode(this.removeByKey(root, k));
             return true;
         }
@@ -275,7 +271,6 @@ public class BST {
      * @param rt the root
      * @param elem the value to remove
      * @return the same node
-     * TODO: check if we need to delete or nullify keys that 
      * have no values associated with them
      */
     private TreeNode removeValue(TreeNode rt, int elem) {
@@ -320,12 +315,9 @@ public class BST {
         }
         if (rt.kv.getKeyHandle() == k) { // found it
 
-           // System.out.println("---------------------foundatRootthan----------------------------");
             return rt.getKVPair();
         }
         if (rt.kv.getKeyHandle() < k ) { // too big
-
-           // System.out.println("---------------------foundgreaterThan---------------------------");
             return search(rt.getRight(), k);
         }
         // too small
@@ -353,25 +345,20 @@ public class BST {
      * @param rt  is the base of the traversal.
      * @return is the in-order list of handles in this tree
      */
-    private ArrayList<Integer> inorderDump(TreeNode rt, ArrayList<Integer> list, boolean output) {
+    private ArrayList<Integer> inorderDump(TreeNode rt, 
+            ArrayList<Integer> list, boolean output) {
         if (rt != null) {
             list = inorderDump(rt.getLeft(), list, output);
             list.add(rt.getKey());
-            if (output) {
-                if (rt.getValues().size() >= 1);
-                {
-                    int i = 0;
-                    while (rt.getValues().size() > i) {
-                        System.out.println("(" + rt.getKey() + "," + rt.getValues().get(i) + ")");
-                        i++;
-                    }
-                    
+            if (output && rt.getValues().size() >= 1) {
+                int i = 0;
+                while (rt.getValues().size() > i) {
+                    System.out.println("(" + rt.getKey() +
+                            "," + rt.getValues().get(i) + ")");
+                    i++;
                 }
             }
             list = inorderDump(rt.getRight(), list, output);
-        }
-        else if (rt == getRoot()) {
-           // System.out.println("Node has depth 0, Value (null)");            
         }
         return list;
     }

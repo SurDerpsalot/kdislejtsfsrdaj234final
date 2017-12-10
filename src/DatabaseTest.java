@@ -29,7 +29,6 @@ public class DatabaseTest extends student.TestCase {
         assertEquals(d.getSongHash().size(), 1);
         assertEquals(d.getArtistTree().treeDump(false).size(), 2);
         assertEquals(d.getSongTree().treeDump(false).size(), 1);
-        //TODO: test value tree values
         assertEquals(d.getArtistTree().searchTree(0).size(), 1);
         assertNull(d.getArtistTree().searchTree(11));
         assertNull(d.getSongTree().searchTree(0));
@@ -52,7 +51,8 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("insert new song<SEP>stuff of legends");
         d.readCommand("insert new song<SEP>really now");
         d.readCommand("insert new new band<SEP>stuff of legends");
-        System.out.println("---------------------Removal test-------------------");        
+        System.out.println("---------------------Removal test--------"
+                + "-----------");        
         d.readCommand("remove artist a");
         d.readCommand("remove artist new song");
         d.readCommand("print artist");
@@ -84,7 +84,9 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("remove song stuff of legends two");
         d.readCommand("print song");
         d.readCommand("print artist");
-        System.out.println("--------------------------------finished printing removals------------------------------ ");
+        System.out.println("--------------------"
+                + "------------finished printing removals-----------------"
+                + "------------- ");
     }
 
     /**
@@ -131,7 +133,8 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("insert first band<SEP>Library Card");
         d.readCommand("insert The Beebops<SEP>first on a top ten");
         d.readCommand("insert The Beebops<SEP>silly song");
-        System.out.println("------------------------------Deletion test-----------------------------");        
+        System.out.println("------------------------------Deletion"
+                + " test-----------------------------");        
         d.readCommand("delete artist a<SEP>silly song");
         d.readCommand("delete The Beebops<SEP>silly song");
         d.readCommand("delete Drewid<SEP>stuff of legends");
@@ -140,7 +143,8 @@ public class DatabaseTest extends student.TestCase {
         d.readCommand("delete Drewid<SEP>silly song");
         d.readCommand("print artist");
         d.readCommand("print song");
-        System.out.println("--------------------------finished printing deletions--------------------------");
+        System.out.println("--------------------------finished printing"
+                + " deletions--------------------------");
     }
 
 }
