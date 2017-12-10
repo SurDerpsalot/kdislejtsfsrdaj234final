@@ -102,7 +102,7 @@ public class MainMemory {
             inBuff.position(record + 3);
             inBuff.get(b, 0, size - 3);
             String out = new String(b);
-            return out;
+            return out.trim();
         }
         return "";
     }
@@ -122,7 +122,7 @@ public class MainMemory {
             inBuff.position(handle + 3);
             inBuff.get(ret, 0, ret.length);
             String out = new String(ret);
-            return out;
+            return out.trim();
         }
     }
     /**

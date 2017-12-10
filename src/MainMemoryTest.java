@@ -144,10 +144,10 @@ public class MainMemoryTest extends student.TestCase {
         b[10] = 't';
         test1.addToTheFill(b);
         assertEquals(test1.getBuff().length == 11, true);
-        assertEquals("twilight".equals(test1.getRecordValue(0)),true);
-        assertEquals(test1.getRecordValue(22) == "",true);
-        assertEquals(test1.getRecordValue(-2) == "",true);
-        assertEquals("twilight".equals(test1.readEntry(0)),true);
+        assertEquals("twilight".equals(test1.getRecordValue(0).trim()), true);
+        assertEquals(test1.getRecordValue(22) == "", true);
+        assertEquals(test1.getRecordValue(-2) == "", true);
+        assertEquals("twilight".equals(test1.readEntry(0).trim()), true);
         assertEquals(test1.getRecordFlag(0) == 1, true);
         assertEquals(test1.getRecordFlag(12) == -1, true);
         assertEquals(test1.getRecordFlag(-1) == -1, true);
