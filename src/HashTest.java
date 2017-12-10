@@ -80,9 +80,11 @@ public class HashTest extends student.TestCase {
         assertEquals(hm.getCapacity(), 16);
         assertEquals(4, hm.get("keyF"));
         assertEquals(true, hm.remove("keyF"));
+        assertEquals(false, hm.remove("keyF"));
         assertEquals(hm.size(), 6);
         assertEquals(hm.getCapacity(), 16);
         assertEquals(-1, hm.get("keyF"));
+        assertFalse(hm.remove("deletethis"));
     }
     
     

@@ -290,9 +290,9 @@ public class Database {
                 if (songTree.searchTree(songHandle) != null 
                         && songTree.searchTree(songHandle).size() >= 1)
                 { 
-                    this.delete(name, mem.getRecordValue(songHandle));
+                    this.delete(name, mem.readEntry(songHandle));
                     deleted = true;
-//                    delete(name, mem.getRecordValue(songHandle).trim());
+//                    delete(name, mem.readEntry(songHandle).trim());
                     //return;
                 }
             }
@@ -330,7 +330,7 @@ public class Database {
                 if ( artistTree.searchTree(artistHandle) != null &&
                         artistTree.searchTree(artistHandle).size() >= 1)
                 {
-                        this.delete(mem.getRecordValue(artistHandle).trim(),
+                        this.delete(mem.readEntry(artistHandle).trim(),
                                 name);
                         deleted = true;
                         //return;
@@ -369,10 +369,10 @@ public class Database {
             artistHandles = artistTree.treeDump(false);
             if (artistHandles != null ) {
                 for (int pos = 0; pos < artistHandles.size(); pos++ ) {
-                    int startPosInMem = artistHash.get(mem.getRecordValue(
+                    int startPosInMem = artistHash.get(mem.readEntry(
                             artistHandles.get(pos)).trim());
                     if (startPosInMem >= 0) {
-                        String artistName = mem.getRecordValue(startPosInMem);
+                        String artistName = mem.readEntry(startPosInMem);
                         System.out.println("|"  + artistName.trim() + "| " 
                                 + artistHash.h(artistName.trim(), 
                                 artistHash.getCapacity()));
@@ -396,9 +396,9 @@ public class Database {
             if (songHandles != null ) {
                 for (int pos = 0; pos < songHandles.size(); pos++ ) {
                     int startPosInMem = songHash.get(
-                            mem.getRecordValue(songHandles.get(pos)).trim());
+                            mem.readEntry(songHandles.get(pos)).trim());
                     if (startPosInMem >= 0) {
-                        String songName = mem.getRecordValue(startPosInMem);
+                        String songName = mem.readEntry(startPosInMem);
                         System.out.println("|" + songName.trim() + "| "
                                 + songHash.h(songName.trim(),
                                         songHash.getCapacity()));

@@ -31,6 +31,7 @@ public class KVPairTest extends student.TestCase {
         KVPair kv = new KVPair(12, 27);
         assertEquals(kv.addValue(24), 2);
         assertEquals(kv.addValue(25), 3);
+        assertEquals(kv.addValue(24), 3);
         assertEquals(kv.getKeyHandle(), 12);
         assertEquals(kv.getValueList().size(), 3);
         assertEquals(kv.getValueList().get(0).intValue(), 24);
@@ -76,7 +77,7 @@ public class KVPairTest extends student.TestCase {
         System.out.println(kv.getValueList().get(13).intValue());
         System.out.println(kv.getValueList().get(14).intValue());
         assertEquals(kv.getValueList().size(), 15);
-        assertTrue(kv.deleteSecondaryHandle(39));;
+        assertTrue(kv.deleteSecondaryHandle(39));
         assertTrue(kv.deleteSecondaryHandle(26));
         assertTrue(kv.deleteSecondaryHandle(2));
         assertTrue(kv.deleteSecondaryHandle(48));
@@ -88,7 +89,7 @@ public class KVPairTest extends student.TestCase {
         assertEquals(kv.addValue(27), 11);
         assertEquals(kv.addValue(27), 11);
         assertTrue(kv.deleteSecondaryHandle(27));
-        assertTrue(!kv.getValueList().isEmpty());
+        assertFalse(kv.getValueList().isEmpty());
     }
 
 }

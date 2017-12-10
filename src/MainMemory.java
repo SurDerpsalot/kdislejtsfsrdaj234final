@@ -95,7 +95,7 @@ public class MainMemory {
      * @param record the record's starting index
      * @return the string name of this record
      */
-    public String getRecordValue(int record) {
+    public String readEntry(int record) {
         int size = getRecordSize(record);
         if (record >= 0 && record < blockFillSize) {
             byte[] b = new byte[size - 3];
@@ -106,11 +106,11 @@ public class MainMemory {
         }
         return "";
     }
-    /**
+    /*
      * gets the record's value from a given handle
      * @param handle the index to read
      * @return the string for the record
-     */
+     *
     public String readEntry(int handle) {
         if (inBuff.get(handle) == 0) {
             return "";
@@ -124,7 +124,7 @@ public class MainMemory {
             String out = new String(ret);
             return out.trim();
         }
-    }
+    }*/
     /**
      * returns the byte array
      * @return is the byte[]

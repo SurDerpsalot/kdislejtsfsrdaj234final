@@ -4,8 +4,6 @@ import java.util.ArrayList;
  * 
  * @author Madelyn Newcomb m1newc
  * @version 11/11/2017
- * @param <int> the key's type
- * @param <S> the value's type
  */
 public class KVPair {
     private int firstHandle;
@@ -39,10 +37,10 @@ public class KVPair {
      * @return the size of the secondary array
      */
     protected int addValue(int newValue) {
-        if (secondaryHandles == null 
-                || secondaryHandles.getRoot() == null) {
-            secondaryHandles = new BSTValues();
-        }
+//        if (secondaryHandles == null 
+//                || secondaryHandles.getRoot() == null) {
+//            secondaryHandles = new BSTValues();
+ //       }
         if (!isDuplicateValue(newValue)) {
             secondaryHandles.setTempNode(newValue);
             secondaryHandles.setRootNode(secondaryHandles.insert(
@@ -66,33 +64,18 @@ public class KVPair {
      * @return true if it already exists
      */
     protected boolean isDuplicateValue(int secondKey) {
-        int size = secondaryHandles.treeDump().size(); 
-        if (size == 0) {
-            return false;
-        }
         return secondaryHandles.searchTree(secondKey);
     }
     /**
      * 
      * @author maden
      *
-     * @param <S> is the type
      */
     public class BSTValues { // extends Comparable<? super int>
 
         private TNode root; //the root of the BST
         private TNode temp; //a TNode instance accessible from the outside
-        private TNode[] tempArray; //
         private boolean removeSuccess; //
-       // private ArrayList<S> removedArray;
-        /**
-         * default constructor
-         */
-        public BSTValues() {
-            root = null;
-            temp = null;
-        };
-
         /**
          * BST constructor given an element
          * @param rt  is the root node you want to give the BST
@@ -114,10 +97,10 @@ public class KVPair {
             if (rt == null) {
                 return newNode;
             } 
-            else if (rt.get() == newNode.get()) { //duplicate value
-                return rt;
-            }
-            else if (rt.get()> newNode.get()) {
+//            else if (rt.get() == newNode.get()) { //duplicate value
+//                return rt;
+//            }
+            if (rt.get() > newNode.get()) {
                 // the root's name is after the new one alphabetically
                 rt.setLeft(insert(rt.getLeft(), newNode));
             } 
@@ -134,14 +117,7 @@ public class KVPair {
          * @param t   is the existing TNode to copy
          */
         public void setRootNode(TNode t) {
-            if (t != null) {
-                root = new TNode(t);
-            }
-            else
-            {
-                root = null;
-            }
-                   
+            root = new TNode(t);
         };
 
         /**
@@ -150,15 +126,6 @@ public class KVPair {
          */
         public void setTempNode(int elem) {
             temp = new TNode(elem);
-        };
-
-        /**
-         * get the pointer to the BST's tempArray.
-         * 
-         * @return tempArray
-         */
-        public TNode[] getTempArray() {
-            return tempArray;
         };
 
         ///////////////////////////////////////////////
@@ -246,7 +213,6 @@ public class KVPair {
             else { // Found it
                 removeSuccess = true;
 
-             //   System.out.println("--------------------------"+elem+ "----------------------------");
                 if (rt.getLeft() == null) {
                     return rt.getRight();
                 } 
@@ -317,7 +283,8 @@ public class KVPair {
          * @param rt  is the base of the traversal.
          * @return is the in-order list of handles in this tree
          */
-        private ArrayList<Integer> inorderDump(TNode rt, ArrayList<Integer> list) {
+        private ArrayList<Integer> inorderDump(
+                TNode rt, ArrayList<Integer> list) {
             if (rt != null) {
                 list = inorderDump(rt.getLeft(), list);
                 list.add(rt.get());
@@ -348,11 +315,9 @@ public class KVPair {
              *            is another TNode
              */
             public TNode(TNode t) {
-                if (t != null) {
-                    left = t.getLeft();
-                    right = t.getRight();
-                    value = t.get();
-                }
+                left = t.getLeft();
+                right = t.getRight();
+                value = t.get();
             }
 
             /**
@@ -390,9 +355,6 @@ public class KVPair {
              * @param t   is the TNode to copy
              */
             public void setValue(TNode t) {
-                if (t == null) {
-                    return;
-                }
                 value = t.get();
             }
            

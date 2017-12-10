@@ -266,37 +266,30 @@ public class Hash {
         {
             return false;
         }
-        if (hashTable.get(hashIndex) == null)
+        int hIndex = hashIndex;
+        int it = 1;
+        while (hashTable.get(hIndex) != null)
         {
-            return false;
-        }
-        else
-        {
-            int hIndex = hashIndex;
-            int it = 1;
-            while (hashTable.get(hIndex) != null)
+            if (hashTable.get(hIndex).key.compareTo(k) == 0)
             {
-                if (hashTable.get(hIndex).key.compareTo(k) == 0)
+                if (hashTable.get(hIndex).tombstone)
                 {
-                    if (hashTable.get(hIndex).tombstone)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        Pair dead = new Pair(hashTable.get(hIndex).key);
-                        hashTable.set(hIndex, dead);
-                        //System.out.println(hashTable.get(hIndex).key.trim());
-                        //System.out.println(hashTable.get(hIndex).indexmem);
-                        return true;  
-                    }
+                    return false;
                 }
-                hIndex = (hashIndex + (it * it)) % hSize;
-                hIndex = Math.abs(hIndex);
-                it++;
+                else
+                {
+                    Pair dead = new Pair(hashTable.get(hIndex).key);
+                    hashTable.set(hIndex, dead);
+                    //System.out.println(hashTable.get(hIndex).key.trim());
+                    //System.out.println(hashTable.get(hIndex).indexmem);
+                    return true;  
+                }
             }
-            return false;
+            hIndex = (hashIndex + (it * it)) % hSize;
+            hIndex = Math.abs(hIndex);
+            it++;
         }
+        return false;
     }
     /**
      * Getter for the number of elements in the hash table
@@ -311,39 +304,6 @@ public class Hash {
      */
     public int getCapacity() {
         return hSize;
-    }
-    
-    public boolean getTomb(String k) {
-       int hashIndex = h(k, hSize);
-       if (pairsInHash == 0)
-       {
-           return false;
-       }
-       if (hashTable.get(hashIndex) == null)
-       {
-           return false;
-       }
-       else
-       {
-           int hIndex = hashIndex;
-           int it = 1;
-       while (hashTable.get(hIndex) != null)
-       {
-           if (hashTable.get(hIndex).key.compareTo(k) == 0)
-           {
-               if (hashTable.get(hIndex).tombstone)
-               {
-                   return true;
-               }
-               return false;
-           }
-                    
-                    hIndex = (hashIndex + (it * it)) % hSize;
-                    hIndex = Math.abs(hIndex);
-                    it++;
-                }
-                return false;
-            }
     }
     
     
